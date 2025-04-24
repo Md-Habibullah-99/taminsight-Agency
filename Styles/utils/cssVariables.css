@@ -1,0 +1,399 @@
+        /* CSS VARIABLES */
+        :root {
+          /* Fonts remain unchanged */
+          --font-primary: "Helveticanowdisplay", Helvetica, Roboto, Arial, apple-system, sans-serif;
+          --font-serif: "Flechatests", "Georgia", "Times New Roman", Times, serif;
+          /* Desktop sizes (default) */
+          --font-s-h0: clamp(2.25rem, 1.4559rem + 3.9706vw, 6rem);
+          /* 36px to 96px */
+          --font-s-h1: clamp(2rem, 1.3824rem + 3.0882vw, 4.5rem);
+          /* 32px to 72px */
+          --font-s-h2: clamp(1.875rem, 1.3603rem + 2.5735vw, 3.75rem);
+          /* 30px to 60px */
+          --font-s-h3: clamp(1.625rem, 1.1985rem + 2.1324vw, 3rem);
+          /* 26px to 48px */
+          --font-s-h4: clamp(1.5rem, 1.1765rem + 1.6176vw, 2.25rem);
+          /* 24px to 36px */
+          --font-s-h5: clamp(1.25rem, 0.9559rem + 1.4706vw, 1.75rem);
+          /* 20px to 28px */
+          --font-s-h6: clamp(1.125rem, 1.0515rem + 0.3676vw, 1.25rem);
+          /* 18px to 20px */
+          --font-base: clamp(1rem, 0.9265rem + 0.3676vw, 1.125rem);
+          /* 16px to 18px */
+          --container: calc((100px * 12) + (16px * (12 - 1)));
+          /* 1276px */
+        }
+
+
+        /* RESET & NORMALIZATION "", */
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        figure,
+        blockquote,
+        dl,
+        dd,
+        ul,
+        ol {
+          margin: 0;
+          padding: 0;
+        }
+
+        audio,
+        canvas,
+        progress,
+        video {
+          vertical-align: baseline;
+          display: inline-block;
+        }
+
+        audio:not([controls]) {
+          height: 0;
+          display: none;
+        }
+
+        /* Hidden elements */
+        [hidden],
+        template {
+          display: none;
+        }
+
+        b,
+        strong {
+          font-weight: 700;
+        }
+
+        dfn {
+          font-style: italic;
+        }
+
+        em {
+          font-style: normal;
+        }
+
+        /* Remove default list styles */
+        ul,
+        ol {
+          list-style: none;
+        }
+
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
+        }
+
+        p {
+          line-height: 1.4;
+        }
+
+        /* Links */
+        a {
+          text-decoration: none;
+          color: inherit;
+          background-color: transparent;
+        }
+
+        a:active,
+        a:hover {
+          outline: 0;
+        }
+
+        :is(h1, h2, h3, h4, h5, h6, p) a {
+          text-decoration: underline;
+        }
+
+        /* Images */
+        img {
+          max-width: 100%;
+          display: inline-block;
+        }
+
+        /* SVG */
+        svg {
+          max-width: 100%;
+        }
+
+        svg:not(:root) {
+          overflow: hidden;
+        }
+
+        /* Videos */
+        video {
+          width: 100%;
+          object-fit: cover;
+        }
+
+        /* Forms & Inputs */
+        input,
+        textarea,
+        select,
+        button {
+          font: inherit;
+          margin: 0;
+          border: none;
+          outline: none;
+          background: none;
+        }
+
+        /* Buttons */
+        button {
+          cursor: pointer;
+        }
+
+        /* Tables */
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+        }
+
+        /* Fieldset */
+        fieldset {
+          border: 0;
+          padding: 0;
+        }
+
+        /* Accessibility */
+        [hidden] {
+          display: none;
+        }
+
+        .hidden {
+          display: none !important;
+        }
+
+        /* Sections, Header, Footer */
+        section,
+        header,
+        footer {
+          position: relative;
+        }
+
+        /* Prevent horizontal scroll */
+        .page_wrap {
+          overflow: clip;
+        }
+
+        /* WEBFLOW-SPECIFIC RESETS */
+
+        /* Webflow Rich Text fixes */
+        .w-richtext>*:first-child {
+          margin-top: 0;
+        }
+
+        .w-richtext>*:last-child {
+          margin-bottom: 0;
+        }
+
+        .w-richtext a {
+          position: relative;
+          z-index: 4;
+        }
+
+        /* Webflow Clickable Fix */
+        .wf-design-mode .g_clickable_wrap {
+          z-index: 0;
+        }
+
+        .g_clickable_wrap a[href="#"] {
+          display: none;
+        }
+
+        .g_clickable_wrap a[href="#"]~button {
+          display: block;
+        }
+
+
+        /* Font family utility classes */
+        .ff-primary {
+          font-family: var(--font-primary) !important;
+        }
+
+        .ff-secondary {
+          font-family: var(--font-serif) !important;
+          font-weight: 500;
+        }
+
+
+        /* heading font styles */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: var(--font-primary);
+          line-height: 1;
+          font-weight: var(--font--weight-bold);
+          letter-spacing: -0.025em;
+          color: var(--c-based-black);
+        }
+
+        h1::after,
+        h2::after,
+        h3::after,
+        h4::after,
+        h5::after {
+          content: ' ';
+          display: block;
+          height: 0.025em;
+        }
+
+        /* individual font styles */
+        .headling-display {
+          font-size: var(--font-s-h0);
+          line-height: 0.9em;
+        }
+
+        .headling-display-style {
+          font-size: var(--font-s-h0);
+          line-height: 0.9em;
+          font-family: var(--font-serif) !important;
+          font-weight: 500;
+        }
+
+        h1,
+        .heading-h1 {
+          font-size: var(--font-s-h1);
+        }
+
+        h2,
+        .heading-h2 {
+          font-size: var(--font-s-h2);
+        }
+
+        h3,
+        .heading-h3 {
+          font-size: var(--font-s-h3);
+        }
+
+        h4,
+        .heading-h4 {
+          font-size: var(--font-s-h4);
+        }
+
+        h5,
+        .heading-h5 {
+          font-size: var(--font-s-h5);
+        }
+
+        h6,
+        .heading-h6 {
+          font-size: var(--font-s-h6);
+          letter-spacing: var(--ls2);
+        }
+
+        .heading-style-h1,
+        .heading-style-h2,
+        .heading-style-h3,
+        .heading-style-h4,
+        .heading-style-h5 {
+          font-family: var(--font-serif) !important;
+          font-weight: 500;
+        }
+
+        /* SVG & ICONS */
+        .svgsprite {
+          width: 100%;
+          height: 100%;
+          display: block;
+          overflow: visible !important;
+        }
+
+        /* Base icon class */
+        [class^="icon-"] {
+          aspect-ratio: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          flex-grow: 0;
+        }
+
+        /* IMAGE UTILITIES */
+        html .img-style {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.48s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+
+        /* MARGIN UTILITIES */
+        .u-margin-trim> :first-child,
+        .u-margin-trim> :not(:not(.w-condition-invisible) ~ :not(.w-condition-invisible)) {
+          margin-top: 0;
+        }
+
+        .u-margin-trim> :last-child,
+        .u-margin-trim> :not(:has(~ :not(.w-condition-invisible))) {
+          margin-bottom: 0;
+        }
+
+        /* STYLEGUIDE ELEMENTS */
+        .styleguide_col>*:first-child {
+          display: flex;
+          height: 6.25rem;
+          margin-bottom: 0.5rem;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0.125rem;
+          border-radius: 8px;
+        }
+
+        .styleguide_col>.swatch {
+          border: 1px dashed rgba(0, 0, 0, 0.5);
+        }
+
+        /* Standard container for regular pages */
+        .container-large {
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          max-width: calc((95.33px * 12) + (16px * 11));
+          /* 1320px */
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+
+        /* Wider container specifically for agency pages */
+        .agency-page .container-large {
+          max-width: calc((100px * 12) + (16px * 11));
+          /* 1376px */
+        }
+
+        /* Increase container size on very large screens */
+        @media screen and (min-width: 1920px) {
+          .agency-page .container-large {
+            max-width: calc((112px * 12) + (16px * (12 - 1)));
+            /* 1520px */
+          }
+        }
+
+        .container-medium {
+          width: 100%;
+          max-width: 64rem;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+
+        .container-small {
+          width: 100%;
+          max-width: 48rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
