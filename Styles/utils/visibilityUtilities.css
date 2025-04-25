@@ -1,21 +1,21 @@
-        /* VISIBILITY UTILITIES */
-        /* Hide only on desktop (shows on mobile/tablet) */
-        @media (min-width: 992px) {
-          .is-hidden-desktop {
-            display: none !important;
-          }
-        }
+/* VISIBILITY UTILITIES */
+/* Hide only on desktop (shows on mobile/tablet) */
+@media (min-width: 992px) {
+  .is-hidden-desktop {
+    display: none !important;
+  }
+}
 
-        /* Hide only on mobile (shows on desktop/tablet) */
-        @media (max-width: 767px) {
-          .is-hidden-mobile {
-            display: none !important;
-          }
-        }
+/* Hide only on mobile (shows on desktop/tablet) */
+@media (max-width: 767px) {
+  .is-hidden-mobile {
+    display: none !important;
+  }
+}
 
-        /* TEXT UTILITIES */
-        [class*="text-"] h1,
-        [class*="text-"] h2,
-        [class*="text-"] h3 {
-          color: inherit;
-        }
+/* TEXT UTILITIES */
+[class*="text-"] h1,
+[class*="text-"] h2,
+[class*="text-"] h3 {
+  color: inherit;
+}
