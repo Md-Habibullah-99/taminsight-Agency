@@ -1,6 +1,6 @@
 .footer-primary{
-  background-color: #2F4153;
-  border: 1px solid gray;
+  background-image: linear-gradient(180deg,var(--color--based-black),var(--color--gray-800));
+  border: 1px solid #ffffff;
   border-radius: 0px;
 }
 
@@ -15,7 +15,6 @@
 
 .footer-social__title-container{
   height: 100%;
-  border-right: 2px solid gray;
 }
 
 .footer-social__title-all{
@@ -54,7 +53,7 @@
   font-size: 24px;
   margin-bottom: 13px;
   font-family: Helvetica,"Roboto Flex", sans-serif;
-  /* font-variation-settings: "GRAD" -60, "slnt" 0, "XTRA" 515, "XOPQ" 96, "YOPQ" 50, "YTLC" 550, "YTUC" 620, "YTAS" 770, "YTDE" -150, "YTFI" 752, "opsz" 20; */
+  font-variation-settings: "GRAD" -60, "slnt" 0, "XTRA" 515, "XOPQ" 96, "YOPQ" 50, "YTLC" 550, "YTUC" 620, "YTAS" 770, "YTDE" -150, "YTFI" 752, "opsz" 20;
 }
 
 .footer-primary .footer-social {
@@ -66,7 +65,7 @@
 }
 
 .footer-address-item:last-child {
-  border-left: 2px solid #2F4153;
+  border-left: 1px solid #ffffff;
   padding-left: 40px;
   padding-top: 40px;
 }
@@ -101,7 +100,7 @@
   }
 
   .footer-address {
-    border-top: 2px solid #2F4153;
+    border-top: 1px solid #ffffff;
   }
 
 }
