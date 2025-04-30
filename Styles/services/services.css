@@ -1,0 +1,43 @@
+.service-container-all{
+  margin-top: 0px;
+  padding-top: 50px;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+.service-container{
+  padding: 0px;
+  margin: 0px;
+  margin-top: -100px;
+  position: sticky;
+  top: 5px;
+  color: white;
+  background-color: black;
+  border-radius: 40px 40px 40px 40px;
+}
+.service-title{
+  padding-top: 40px;
+  padding-left: 40px;
+  font-size: 30px;
+}
+.container-contex{
+  padding: 10px 50px 150px 50px;
+  font-size: 20px;
+}
+
+.service-container-logo-branding{
+  background-color: bisque;
+  color: black;
+}
+.service-container-campaign-design{
+  background-color: brown;
+}
+.service-container-event-branding{
+  background-color: aquamarine;
+  color: black;
+}
+.service-container-print-design{
+  background-color: blueviolet;
+}
+/* .service-container-social-media-design{
+  
+} */
