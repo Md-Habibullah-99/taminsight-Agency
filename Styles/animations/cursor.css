@@ -4,20 +4,20 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   /* height: 100vh; */
   /* background-color: black; */
   cursor: none;
 }
 
-.cursor-dot{
+.cursor-dot {
   width: 5px;
   height: 5px;
   background-color: rgb(0, 0, 0);
   /* z-index: 3; */
 }
 
-.cursor-outline{
+.cursor-outline {
   width: 30px;
   height: 30px;
   /* background-color: rgb(227, 250, 126); */
@@ -25,7 +25,8 @@ body{
   /* border: 1px solid rgba(105, 105, 105, 0.664); */
   /* z-index: 2; */
 }
-.cursor-another-outline{
+
+.cursor-another-outline {
   width: 45px;
   height: 45px;
   /* background-color: rgb(216, 255, 110); */
@@ -35,7 +36,7 @@ body{
 
 .cursor-dot,
 .cursor-outline,
-.cursor-another-outline{
+.cursor-another-outline {
   position: fixed;
   top: 0;
   left: 0;
@@ -43,4 +44,16 @@ body{
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
+}
+
+@media (max-width: 834px) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor-dot,
+  .cursor-outline,
+  .cursor-another-outline {
+    opacity: 0;
+  }
 }

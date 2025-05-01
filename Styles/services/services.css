@@ -1,11 +1,12 @@
-.service-container-all{
+.service-container-all {
   margin-top: 0px;
   padding-top: 50px;
   margin-left: -40px;
   margin-right: -40px;
   margin-bottom: -210px;
 }
-.service-container{
+
+.service-container {
   border: 2px solid var(--color--based-white);
   border-radius: var(--radius--24);
   background-color: #f4f0e9;
@@ -15,56 +16,151 @@
   position: sticky;
   top: 0px;
 }
-.service-title{
+
+.service-title {
   padding-top: 10px;
   padding-left: 80px;
   font-size: 72px;
 }
-.container-contex{
+
+.container-contex {
   padding: 10px 50px 150px 100px;
   font-size: 18px;
 }
 
 
-.service-container-logo-branding{
+.service-container-logo-branding {
   background-color: #f4f0e9;
 }
+
 .service-container-logo-branding,
-.service-container-logo-branding .service-title{
+.service-container-logo-branding .service-title {
   color: #141413;
 }
 
-.service-container-campaign-design{
+.service-container-campaign-design {
   top: 85px;
   background-color: #d4d1cb;
 }
+
 .service-container-campaign-design,
-.service-container-campaign-design .service-title{
+.service-container-campaign-design .service-title {
   color: #353533;
 }
 
-.service-container-event-branding{
+.service-container-event-branding {
   top: 170px;
   background-color: #b8b4ae;
 }
+
 .service-container-event-branding,
-.service-container-event-branding .service-title{
+.service-container-event-branding .service-title {
   color: #444442;
 }
 
-.service-container-print-design{
+.service-container-print-design {
   top: 255px;
   background-color: #7c7a76;
 }
+
 .service-container-print-design,
-.service-container-print-design .service-title{
+.service-container-print-design .service-title {
   color: #cfcfc9;
 }
 
-.service-container-social-media-design{
+.service-container-social-media-design {
   background-color: #31302e;
 }
+
 .service-container-social-media-design,
-.service-container-social-media-design .service-title{
+.service-container-social-media-design .service-title {
   color: #dfdfd8;
+}
+
+@media (max-width: 1100px) {
+  .service-title {
+    font-size: 66px;
+  }
+
+  .container-contex {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .service-title {
+    font-size: 50px;
+  }
+
+  .container-contex {
+    font-size: 16px;
+  }
+  
+  .service-container-campaign-design {
+    top: 68px;
+  }
+
+  .service-container-event-branding {
+    top: 138px;
+  }
+
+  .service-container-print-design {
+    top: 208px;
+  }
+}
+
+@media (max-width: 900px) {
+  .service-title {
+    font-size: 50px;
+  }
+
+  .container-contex {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 550px) {
+  .service-container-all {
+    margin: 20px -17px -200px -17px;
+  }
+  
+  .service-container{
+    border-radius: 18px;
+  }
+  .service-title {
+    padding-top: 10px;
+    padding-left: 30px;
+  }
+  
+  .container-contex {
+    padding: 20px 30px 150px 30px;
+  }
+  
+  .service-title {
+    font-size: 38px;
+  }
+
+  .container-contex {
+    font-size: 16px;
+  }
+  
+  .service-container-logo-branding {
+    top: 40px;
+  }
+  
+  .service-container-campaign-design {
+    top: 95px;
+  }
+
+  .service-container-event-branding {
+    top: 150px;
+  }
+
+  .service-container-print-design {
+    top: 205px;
+  }
+
+  /* .service-container-social-media-design {
+    margin-top: -20px;
+  } */
 }
