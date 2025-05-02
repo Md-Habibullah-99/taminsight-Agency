@@ -34,59 +34,12 @@
   border-right: 1px solid #ffffff;
 }
 
-
-/* .footer-address {
-  border-left: 2px solid #2F4153;
-  padding: 50px;
-} */
-
-.footer-address p {
-  font-size: 26px;
-  margin-bottom: 18px;
-  color: #ffffff;
-}
-
-.footer-address h6 {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.footer-address h5 {
-  font-size: 30px;
-  margin-bottom: 13px;
-  font-family: Helvetica,"Roboto Flex", sans-serif;
-  font-variation-settings: "GRAD" -60, "slnt" 0, "XTRA" 515, "XOPQ" 96, "YOPQ" 50, "YTLC" 550, "YTUC" 620, "YTAS" 770, "YTDE" -150, "YTFI" 752, "opsz" 20;
-}
-
 .footer-primary .footer-social {
   justify-content: end;
 }
 
 
-
-@media (min-width: 499px) {
-  .footer-address {
-    display: block;
-    padding-left: 12px;
-  }
-  
-  
-}
 @media (max-width: 500px) {
-  .footer-address {
-    display: block;
-    padding-left: 12px;
-  }
-  
-  .footer-address p {
-    font-size: 8px;
-    font-weight: 500;
-  }
-  
-  .footer-address h5 {
-    font-size: 8px;
-    font-weight: 700;
-  }
 
   .title__main {
     font-size: 8px;
@@ -95,21 +48,7 @@
   
 }
 @media (max-width: 600px) {
-  .footer-address {
-    display: block;
-    padding-left: 9px;
-  }
   
-  .footer-address p {
-    font-size: 8px;
-    font-weight: 500;
-  }
-  
-  .footer-address h5 {
-    font-size: 8px;
-    font-weight: 700;
-  }
-
   .title__main {
     font-size: 11px;
     font-weight: 500;
@@ -123,18 +62,6 @@
   
 } */
 @media (max-width: 900px) {
-
-  
-  
-  .footer-address p {
-    font-size: 12px;
-    font-weight: 500;
-  }
-  
-  .footer-address h5 {
-    font-size: 12px;
-    font-weight: 700;
-  }
 
   .title__main {
     font-size: 22px;
@@ -162,18 +89,6 @@
     border-right: 1px solid #ffffff;
   }
   
-  
-  
-  .footer-address p {
-    font-size: 26px;
-    font-weight: 500;
-  }
-  
-  .footer-address h5 {
-    font-size: 28px;
-    font-weight: 700;
-  }
-
   .title__main {
     font-size: 22px;
     font-weight: 500;
