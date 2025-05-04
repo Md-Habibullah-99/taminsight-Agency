@@ -29,52 +29,64 @@
 }
 
 
-.service-container-logo-branding {
+.service-container-logo-branding,
+.service-container-event-branding {
   background-color: #f4f0e9;
 }
-
 .service-container-logo-branding,
-.service-container-logo-branding .service-title {
+.service-container-logo-branding .service-title,
+.service-container-event-branding,
+.service-container-event-branding .service-title {
   color: #141413;
 }
 
-.service-container-campaign-design {
+/* .service-container-campaign-design {
   top: 85px;
   background-color: #d4d1cb;
-}
-
-.service-container-campaign-design,
+} */
+/* .service-container-campaign-design,
 .service-container-campaign-design .service-title {
   color: #353533;
+} */
+
+.service-container-campaign-design,
+.service-container-print-design{
+  background-color: #31302e;
+  
+}
+.service-container-campaign-design,
+.service-container-campaign-design .service-title,
+.service-container-print-design,
+.service-container-print-design .service-title{
+  color: #dfdfd8;
 }
 
-.service-container-event-branding {
+/* .service-container-event-branding {
   top: 170px;
   background-color: #b8b4ae;
-}
-
-.service-container-event-branding,
+} */
+/* .service-container-event-branding,
 .service-container-event-branding .service-title {
   color: #444442;
-}
+} */
 
-.service-container-print-design {
+/* .service-container-print-design {
   top: 255px;
   background-color: #7c7a76;
-}
-
-.service-container-print-design,
+} */
+/* .service-container-print-design,
 .service-container-print-design .service-title {
   color: #cfcfc9;
-}
+} */
 
 .service-container-social-media-design {
-  background-color: #31302e;
+  /* background-color: #31302e; */
+  background-color: #f4f0e9;
 }
-
 .service-container-social-media-design,
 .service-container-social-media-design .service-title {
-  color: #dfdfd8;
+  /* color: #dfdfd8; */
+  color: #141413;
 }
 
 @media (max-width: 1100px) {
