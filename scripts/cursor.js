@@ -51,19 +51,21 @@ function onClick() {
 }
 
 
-const hoverSubsectionFooterPrimary = document.querySelector('.footer-primary');
-const hoverSubsectionAbout = document.querySelector('.intro');
 const targetSubsection = document.querySelector('.cursor-dot');
 
-if (hoverSubsectionFooterPrimary && targetSubsection) {
-  hoverSubsectionFooterPrimary.addEventListener('mouseenter', () => {
-    targetSubsection.style.backgroundColor = 'white';
-  });
+// const hoverSubsectionFooterPrimary = document.querySelector('.footer-primary');
+// if (hoverSubsectionFooterPrimary && targetSubsection) {
+  //   hoverSubsectionFooterPrimary.addEventListener('mouseenter', () => {
+    //     targetSubsection.style.backgroundColor = 'white';
+    //   });
+    
+    //   hoverSubsectionFooterPrimary.addEventListener('mouseleave', () => {
+      //     targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
+//   });
+// }
 
-  hoverSubsectionFooterPrimary.addEventListener('mouseleave', () => {
-    targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
-  });
-}
+const hoverSubsectionAbout = document.querySelector('.intro');
+
 if (hoverSubsectionAbout && targetSubsection) {
   hoverSubsectionAbout.addEventListener('mouseenter', () => {
     targetSubsection.style.backgroundColor = 'white';
