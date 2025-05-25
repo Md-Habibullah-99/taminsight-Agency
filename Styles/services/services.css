@@ -79,14 +79,18 @@
   color: #cfcfc9;
 } */
 
+/* .service-container-packaging{
+  top: 340px;
+} */
+
 .service-container-social-media-design {
-  /* background-color: #31302e; */
-  background-color: #f4f0e9;
+  background-color: #31302e;
+  /* background-color: #f4f0e9; */
 }
 .service-container-social-media-design,
 .service-container-social-media-design .service-title {
-  /* color: #dfdfd8; */
-  color: #141413;
+  color: #dfdfd8;
+  /* color: #141413; */
 }
 
 @media (max-width: 1100px) {
