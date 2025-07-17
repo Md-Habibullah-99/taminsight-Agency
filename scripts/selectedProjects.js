@@ -1,70 +1,56 @@
-// Add autoplay on hover for all videos
-const videos = document.querySelectorAll('.video-content');
-videos.forEach(video => {
-  video.addEventListener('mouseenter', () => {
-    video.play();
-  });
-  video.addEventListener('mouseleave', () => {
-    video.pause();
-    video.currentTime = 0; // Optional: reset to start
-  });
+// ---
+
+/**
+ * Handles autoplay and looping on hover for video containers.
+ * When a user hovers over a '.video-container', the video inside will play and loop.
+ * When the hover ends, the video will pause, reset, and show its poster.
+ */
+document.querySelectorAll('.video-container').forEach(container => {
+  const video = container.querySelector('.video-content'); // Assuming .video-content is the video element
+  if (video) {
+    container.addEventListener('mouseenter', () => {
+      video.play();
+      video.loop = true; // Enable looping when hovering
+    });
+
+    container.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+      video.loop = false; // Disable looping when mouse leaves
+      video.load(); // Show poster if set
+    });
+  }
 });
 
-// Special handling for the second video to autoplay on hover and show poster on mouseleave
-const poster_01 = document.querySelector('video[poster="tamim-khan-eid-ul-adha-post-02-01.jpg"]');
-if (poster_01) {
-  poster_01.addEventListener('mouseenter', () => {
-    poster_01.play();
-  });
-  poster_01.addEventListener('mouseleave', () => {
-    poster_01.pause();
-    poster_01.currentTime = 0;
-    poster_01.load(); // Show poster
-  });
-}
+// ---
 
-// Special handling for the marked video to autoplay on hover and show poster on mouseleave
-const poster_02 = document.querySelector('video[poster="tamim-khan-eid-ul-adha-post-01.jpg"]');
-if (poster_02) {
-  poster_02.addEventListener('mouseenter', () => {
-    poster_02.play();
-  });
-  poster_02.addEventListener('mouseleave', () => {
-    poster_02.pause();
-    poster_02.currentTime = 0;
-    poster_02.load(); // Show poster
-  });
-}
-
-// Special handling for the first video to autoplay on hover and show poster on mouseleave
-const showPoster = document.querySelector('.video-content');
-if (showPoster) {
-  showPoster.addEventListener('mouseenter', () => {
-    showPoster.play();
-  });
-  showPoster.addEventListener('mouseleave', () => {
-    showPoster.pause();
-    showPoster.currentTime = 0;
-    showPoster.load(); // Show poster if set
-  });
-}
-
-// Autoplay all videos if window width <= 530px
+/**
+ * Manages responsive autoplay for all videos based on screen width.
+ * If the screen width is 530px or less, all videos with the class '.video-content' will autoplay, loop, and be muted.
+ * Otherwise, they will be paused, reset, and their posters will be shown.
+ * Muting is crucial for autoplay policies in many browsers.
+ */
 function handleResponsiveAutoplay() {
   const isSmallScreen = window.innerWidth <= 530;
   const videos = document.querySelectorAll('.video-content');
+
   videos.forEach(video => {
     if (isSmallScreen) {
       video.play();
       video.setAttribute('autoplay', '');
+      video.setAttribute('loop', '');
+      video.setAttribute('muted', '');
     } else {
       video.pause();
       video.removeAttribute('autoplay');
+      video.removeAttribute('loop');
+      video.removeAttribute('muted');
       video.currentTime = 0;
       video.load();
     }
   });
 }
 
+// Attach the responsive autoplay handler to window resize and DOM content loaded events
 window.addEventListener('resize', handleResponsiveAutoplay);
 window.addEventListener('DOMContentLoaded', handleResponsiveAutoplay);
