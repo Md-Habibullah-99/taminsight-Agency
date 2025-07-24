@@ -157,7 +157,7 @@ function initWeatherTime() {
     }
     // Get weather icon URL
     function getWeatherIcon(main) {
-        const baseUrl = "../../Tamim-Agency/images/footerElements/watherIcons/";
+        const baseUrl = "https://raw.githubusercontent.com/Habibullah-Hisam/taminsight-Agency/a319a5f51ee24eace59d01dfecdebea90948d636/images/footerElements/watherIcons/";
         switch (main) {
             case "Clear":
             default:
