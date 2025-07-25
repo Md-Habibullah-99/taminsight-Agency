@@ -1,0 +1,8 @@
+.footer-primary-left{
+  color: white;
+  padding-left: 35px;
+}
+
+.footer-primary-left:hover p a{
+  color: #6161fa;
+}
