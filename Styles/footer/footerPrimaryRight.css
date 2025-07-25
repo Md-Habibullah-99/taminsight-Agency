@@ -1,0 +1,11 @@
+.footer-primary-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 0px;
+  padding: 0px 50px 30px 20px;
+  width: 30%;
+  height: 100%;
+  font-size: 14px;
+  color: white;
+}
