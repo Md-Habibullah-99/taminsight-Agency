@@ -7,5 +7,23 @@
   width: 30%;
   height: 100%;
   font-size: 14px;
-  color: white;
+}
+
+.footer-primary-right-title,
+.footer-right-elements{
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.footer-primary-right-title{
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer-right-elements{
+  color: #b3b3b9;
+}
+
+.footer-right-elements:hover{
+  opacity: .5;
 }
