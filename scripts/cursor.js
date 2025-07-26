@@ -58,6 +58,7 @@ function changeCursorColor() {
   const targetSubsection = document.querySelector('.cursor-dot');
   const hoverIntro = document.querySelector('.intro');
   const hoverFooter = document.querySelector('.footer-primary');
+  const hoverPricing = document.querySelector('.pricing_card');
   
   if (hoverIntro && targetSubsection) {
     hoverIntro.addEventListener('mouseenter', () => {
@@ -75,6 +76,15 @@ function changeCursorColor() {
     });
   
     hoverFooter.addEventListener('mouseleave', () => {
+      targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
+    });
+  }
+  if (hoverPricing && targetSubsection) {
+    hoverPricing.addEventListener('mouseenter', () => {
+      targetSubsection.style.backgroundColor = 'white';
+    });
+  
+    hoverPricing.addEventListener('mouseleave', () => {
       targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
     });
   }
