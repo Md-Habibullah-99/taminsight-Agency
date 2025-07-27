@@ -166,6 +166,8 @@ function initWeatherTime() {
                 return `${baseUrl}clouds.svg`;
             case "Rain":
                 return `${baseUrl}rain.svg`;
+            case "Night":
+                return `${baseUrl}moon.png`;
             case "Snow":
                 return `${baseUrl}snow.svg`;
         }

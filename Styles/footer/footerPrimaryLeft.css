@@ -3,6 +3,16 @@
   padding-left: 35px;
 }
 
-.footer-primary-left:hover p a{
-  color: #6161fa;
+.footer-primary-left-title_header{
+  padding-top: 2px;
+  padding-bottom: 1px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer-primary-left-title_header_arrow{
+  width: 20px;
+  height: auto;
+  margin-left: 5px;
+  margin-right: 5px;
 }
