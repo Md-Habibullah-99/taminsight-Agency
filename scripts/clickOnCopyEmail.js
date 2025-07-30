@@ -1,7 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   // Option 1: Using a class on <a> tags
-  const copyLinks = document.querySelectorAll('.email-link-click-to-copy');
+  // const copyLinks = document.querySelectorAll('.email-link-click-to-copy');
+  const copyLinks = document.querySelectorAll('.footer-primary-up');
   copyLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent the link from navigating
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to show a confirmation tooltip
   function showCopyConfirmationTooltip(element) {
     element.classList.add('copied-tooltip');
-    element.setAttribute('data-tooltip', 'Copied!');
+    element.setAttribute('data-tooltip', 'Email Copied!');
 
     // Remove the tooltip class after a delay
     setTimeout(() => {

@@ -21,9 +21,11 @@
 }
 
 .footer-right-elements{
+  cursor: none;
   color: #b3b3b9;
 }
 
 .footer-right-elements:hover{
   opacity: .5;
+  cursor: none;
 }
