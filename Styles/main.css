@@ -2252,13 +2252,13 @@ textarea.w-select {
   --color--brand-maroon: #4f1c1f;
   --radius--radius-24\<deleted\|variable-a177ec3d-74a3-1771-6cb9-37fa38fd6927\>: 1.5rem;
   --space--140: 8.75rem;
-  --_faizur---ash-gray\<deleted\|variable-88744805-18fa-1a4c-512c-9b6454e9ff1b\>: #5a616c;
+  --_tamim---ash-gray\<deleted\|variable-88744805-18fa-1a4c-512c-9b6454e9ff1b\>: #5a616c;
   --color--gray-900: #0f0f0e;
   --color--text-inverse: var(--color--based-white);
   --font--text-cta: 1.125rem;
-  --_faizur---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>: #a5a5a6;
+  --_tamim---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>: #a5a5a6;
   --radius--8: .5rem;
-  --_faizur---secondary-pink\<deleted\|variable-52df15d2-b76f-bdcc-5b52-b4f7aab87f2c\>: #d0b0de;
+  --_tamim---secondary-pink\<deleted\|variable-52df15d2-b76f-bdcc-5b52-b4f7aab87f2c\>: #d0b0de;
   --color--cream-200: #d1cfc6;
   --color--cream-100: #f0eee7;
   --color--cream-700: #413c38;
@@ -2493,39 +2493,45 @@ a {
 }
 
 .marquee-grid {
-  display: flex
+  display: block;
+  width: 100%;
 }
 
 .marquee-grid-item {
   white-space: nowrap;
   flex-wrap: wrap;
   flex: none;
-  grid-template-rows: auto;
-  grid-template-columns: 12.5rem 12.5rem 12.5rem 12.5rem 12.5rem 12.5rem 12.5rem 12.5rem;
+  flex-grow: var(--_tamim---ash-gray\<deleted\|variable-88744805-18fa-1a4c-512c-9b6454e9ff1b\>);
+  grid-auto-rows: auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   justify-content: space-around;
   align-self: center;
   place-items: center start;
-  display: flex
+  display: grid;
+  width: 100%;
 }
 
 .client-logo {
-  padding-right: var(--space--128);
+  padding: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
   opacity: .6;
   justify-content: center;
   align-self: center;
   align-items: flex-start;
-  height: 3rem;
+  height: 50px;
   display: flex
 }
-
+/* 
 .client-logo.lg {
-  height: 5.5rem
+  height: 3.3rem
 }
 
 .client-logo.md {
-  height: 3.5rem
-}
+  height: 5.3rem
+} */
 
 .marquee {
   padding-top: var(--space--60);
@@ -2941,7 +2947,7 @@ a {
 
 .client-logo-img {
   max-width: none;
-  height: 100%
+  height: 50px
 }
 
 .c-bg-filled {
@@ -3407,16 +3413,16 @@ a {
   overflow: hidden
 }
 
-.quickintro-faizur-about {
+.quickintro-tamim-about {
   padding-right: var(--space--s-56\<deleted\|variable-2bb2c0e2-508e-0545-d21f-28c52b8a7440\>);
   font-size: var(--font--text-lg)
 }
 
-.quickintro-faizur {
+.quickintro-tamim {
   display: flex
 }
 
-.quickintro-faizur-hi {
+.quickintro-tamim-hi {
   flex: 0 0 30%
 }
 
@@ -4239,7 +4245,7 @@ a {
 .list_simple.is-custom-list {
   padding-top: var(--space--32);
   grid-row-gap: var(--space--8);
-  border-top: 1px solid var(--_faizur---ash-gray\<deleted\|variable-88744805-18fa-1a4c-512c-9b6454e9ff1b\>);
+  border-top: 1px solid var(--_tamim---ash-gray\<deleted\|variable-88744805-18fa-1a4c-512c-9b6454e9ff1b\>);
   justify-content: flex-start;
   align-items: flex-start
 }
@@ -4652,7 +4658,7 @@ a {
 }
 
 .head_line {
-  background-color: var(--_faizur---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>);
+  background-color: var(--_tamim---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>);
   width: 10rem;
   height: 2px
 }
@@ -4755,7 +4761,7 @@ a {
 }
 
 .orginal-price.is-card-price {
-  color: var(--_faizur---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>)
+  color: var(--_tamim---slate-500\<deleted\|variable-38448427-ff2d-d3fe-e206-6acb5751009b\>)
 }
 
 .promo_banner {
@@ -4876,7 +4882,7 @@ a {
 }
 
 .text-span-4 {
-  color: var(--_faizur---secondary-pink\<deleted\|variable-52df15d2-b76f-bdcc-5b52-b4f7aab87f2c\>)
+  color: var(--_tamim---secondary-pink\<deleted\|variable-52df15d2-b76f-bdcc-5b52-b4f7aab87f2c\>)
 }
 
 .promo_link {
@@ -5317,7 +5323,8 @@ a {
   text-align: center;
   max-width: 550px;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  margin-bottom: -50px;
 }
 
 .svg-arrow-down {
@@ -6076,7 +6083,7 @@ a {
     flex: 0 auto
   }
 
-  .quickintro-faizur-about {
+  .quickintro-tamim-about {
     padding-right: var(--space--s-0\<deleted\|variable-f70e95cf-0f3f-5965-c0b4-5c8e5f3badac\>)
   }
 
@@ -6550,16 +6557,16 @@ a {
     margin-bottom: 0
   }
 
-  .quickintro-faizur-about {
+  .quickintro-tamim-about {
     font-size: var(--font--text-md)
   }
 
-  .quickintro-faizur {
+  .quickintro-tamim {
     grid-column-gap: var(--space--24);
     grid-row-gap: var(--space--24)
   }
 
-  .quickintro-faizur-hi {
+  .quickintro-tamim-hi {
     font-size: var(--space--48);
     flex-basis: 20%
   }
@@ -7236,7 +7243,7 @@ a {
     padding-right: 0
   }
 
-  .quickintro-faizur {
+  .quickintro-tamim {
     flex-flow: column
   }
 
