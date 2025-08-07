@@ -1,49 +1,188 @@
-.bangladesh-finance-islamic-logo{
-  
+.worked-with-container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space--60) var(--space--20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bangladesh-finance-logo{
-  
+.work-with {
+  padding-top: var(--space--60);
+  padding-bottom: var(--space--60);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.bcb-logo{
-  
+.clients_logo_title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-left: 0;
 }
 
-.gazi-tyre-logo{
-  
+.logo-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.gazi-group-logo{
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  min-height: 100px;
 }
 
-.ipdc-finance-logo{
-  
+.company-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Allow custom width/height via inline style or class */
+  /* Default size, can be overridden */
+  max-width: 180px;
+  flex: 1 1 120px;
 }
 
-.ezviz-logo-container{
-  
+.logo-row img {
+  width: 100%;
+  height: auto;
+  max-height: 90px;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: max-width 0.2s, max-height 0.2s;
+  /* Allow per-logo override via class or inline style */
 }
 
-.ezviz-logo{
+/* Example per-logo custom size classes */
+.gazi-group-logo {
+  max-width: 120px;
+  max-height: 80px;
 }
 
-.akij-plastic-logo-container{
-  /* contain: content; */
+.shajgoj-logo {
+  max-width: 110px;
+  max-height: 70px;
 }
 
-.akij-plastic-logo{
-  
+.bangladesh-finance-logo {
+  max-width: 130px;
+  max-height: 80px;
 }
 
-/* .bank-asia-islamic-logo-container{
-  
-} */
-
-.bank-asia-islamic-logo{
-  
+.bangladesh-finance-islamic-logo {
+  max-width: 120px;
+  max-height: 80px;
 }
 
-.ultra-logo{
+.ezviz-logo {
+  max-width: 100px;
+  max-height: 60px;
+}
+
+.ultra-logo {
+  max-width: 100px;
+  max-height: 60px;
+}
+
+.bank-asia-logo {
+  max-width: 120px;
+  max-height: 80px;
+}
+
+.bank-asia-islamic-logo {
+  max-width: 120px;
+  max-height: 80px;
+}
+
+.akij-plastic-logo {
+  max-width: 90px;
+  max-height: 50px;
+}
+
+.gazi-tyres-logo {
+  max-width: 120px;
+  max-height: 80px;
+}
+
+.bcb-logo-img {
+  max-width: 120px;
+  max-height: 80px;
+}
+
+/* Responsive: stack logos and allow wrapping on small screens */
+@media (max-width: 1024px) {
+  .logo-row {
+    gap: 10px;
+  }
+
+  .company-img-container {
+    max-width: 140px;
+    flex: 1 1 90px;
+  }
+
+  .logo-row img {
+    max-width: 100px;
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-with {
+    padding: 20px;
+  }
+
+  .clients_logo_title {
+    text-align: left;
+  }
+
+  .logo-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+    justify-content: flex-start;
+  }
+
+  .company-img-container {
+    max-width: 100px;
+    flex: 1 1 60px;
+  }
+
+  .logo-row img {
+    max-width: 80px;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-row {
+    /* Keep row structure, just resize logos */
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .company-img-container {
+    max-width: 70px;
+    flex: 1 1 40px;
+  }
+
+  .logo-row img {
+    max-width: 60px;
+    max-height: 28px;
+  }
   
 }
