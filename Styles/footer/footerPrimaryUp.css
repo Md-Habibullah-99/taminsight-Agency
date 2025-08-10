@@ -22,3 +22,9 @@
 .email-link-click-to-copy:hover{
   cursor: none;
 }
+
+@media (max-width: 460px) {
+  .email-link-click-to-copy{
+    font-size: 30px;
+  }
+}
