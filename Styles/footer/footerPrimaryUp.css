@@ -1,8 +1,15 @@
 .footer-primary-up{
   color: white;
-  padding-left: 35px;
   padding-bottom: 35px;
+  width: 1376px;
+  max-width: 1376px;
+}
+.footer-primary-up-container{
+  width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-primary-up-title_header{
@@ -10,6 +17,9 @@
   padding-bottom: 1px;
   color: #ffffff;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  max-width: 1376px;
 }
 
 .footer-primary-up-title_header_arrow{
@@ -21,6 +31,10 @@
 
 .email-link-click-to-copy:hover{
   cursor: none;
+}
+
+.title__main{
+  max-width: 1376px;
 }
 
 @media (max-width: 460px) {
