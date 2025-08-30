@@ -72,19 +72,21 @@
 
 /* Example per-logo custom size classes */
 .gazi-group-logo {
-  max-width: 250px !important;
+  min-width: 220px;
   /* max-height: 80px; */
   margin-right: 20px;
 }
 
 .shajgoj-logo {
-  max-width: 110px;
-  max-height: 60px;
+  min-width: 170px;
+  /* max-height: 60px; */
+  margin-right: 20px;
 }
 
 .bangladesh-finance-logo {
   max-width: 130px;
   max-height: 80px;
+  margin-right: 20px;
 }
 
 .bangladesh-finance-islamic-logo {
