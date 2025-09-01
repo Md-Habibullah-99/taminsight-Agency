@@ -9,9 +9,9 @@
 .service_offer_title{
   position: sticky;
   top: 112px;
+  padding-bottom: 250px;
   margin-left: 120px;
   margin-right: 20px;
-  width: 450px;
   font-size: 34px;
   font-weight: 400;
 }
