@@ -1,26 +1,36 @@
 .service_offer_title-container{
-  top: 20px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  padding-bottom: 100px;
 }
 
 .service_offer_title{
   position: sticky;
-  top: 50px;
+  top: 112px;
+  margin-left: 120px;
+  margin-right: 20px;
+  width: 450px;
+  font-size: 34px;
+  font-weight: 400;
 }
 
 .service_offer {
-  grid-column-gap: var(--space--24);
-  grid-row-gap: var(--space--24);
   display: flex
 }
 
+/* .service_offer-services{
+  margin-left: -100px;
+} */
+
 .service_offer-service{
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 .service_offer-service_title{
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 83px;
+  font-weight: 450;
 }
 
 .service_offer-service_description{
@@ -31,6 +41,8 @@
 .service_offer-service_description-element {
   display: inline-block;
   position: relative;
+  font-size: 26px;
+  padding-bottom: 10px;
 }
 
 
