@@ -1,0 +1,40 @@
+.awards_section-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.awards_section-title_container{
+  display: flex;
+  align-items: flex-start;
+  margin-left: 120px;
+}
+.awards_section-title{
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0;
+  max-width: 280px;
+  line-height: 1.1;
+}
+
+.awards-container{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.award-item{
+  width: calc(70% - 10px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 32px;
+  margin-top: -1px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+.award-title{
+  font-size: 22px;
+  font-weight: 400;
+}
+.award-description{
+  font-size: 19px;
+}
