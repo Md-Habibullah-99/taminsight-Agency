@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   padding-bottom: 100px;
+  width: 600px;
 }
 
 .service_offer_title{
@@ -20,9 +21,9 @@
   display: flex
 }
 
-/* .service_offer-services{
-  margin-left: -100px;
-} */
+.service_offer-services{
+  margin-left: -50px;
+}
 
 .service_offer-service{
   margin-bottom: 100px;
