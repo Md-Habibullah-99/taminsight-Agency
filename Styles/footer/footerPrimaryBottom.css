@@ -1,10 +1,13 @@
 /* left */
 
 .footer-primary-left{
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  color: #b3b3b9;
 }
 
 .footer-primary-left_content {
+  margin-top: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +17,34 @@
 .footer-primary-left_logo{
   width: 200px;
   height: auto;
+}
+
+.company-deck{
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.company-deck-button{
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.company-deck-button img{
+  width: 50%;
+  margin-top: -3px;
+  transform: rotate(-90deg);
+}
+.company-deck-button-title{
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 5px;
 }
 
 
