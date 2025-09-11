@@ -1,9 +1,37 @@
+/* Responsive and dynamic layout for footer-primary-bottom */
+.footer-primary-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 5vw;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .footer-primary-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 3vw;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-primary-bottom {
+    padding: 16px 2vw;
+    gap: 8px;
+  }
+}
 /* left */
 
 .footer-primary-left{
   display: flex;
   flex-direction: column;
   color: #b3b3b9;
+  align-items: start;
 }
 
 .footer-primary-left_content {
@@ -56,7 +84,7 @@
   justify-content: space-between;
   margin-right: 0px;
   padding: 25px 25px 30px 20px;
-  width: 30%;
+  width: 35%;
   height: 100%;
   font-size: 14px;
 }
@@ -81,31 +109,61 @@
   opacity: .5;
   cursor: none;
 }
+.footer-address-elements:hover{
+  opacity: 1;
+}
 
-@media (max-width: 875px) {
-  .footer-primary-right{
-    width: 40%;
+/* Dynamic responsive layout for footer-primary_Bottom_container and children */
+.footer-primary_Bottom_container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 32px;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-primary-left {
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 420px;
+}
+
+.footer-primary-right {
+  flex: 1 1 260px;
+  min-width: 180px;
+  max-width: 420px;
+  font-size: 14px;
+  padding: 25px 25px 30px 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .footer-primary_Bottom_container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 20px;
+    gap: 16px;
+  }
+  .footer-primary-left,
+  .footer-primary-right {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
-@media (max-width: 875px) {
-  .footer-primary_Bottom_container{
-    padding-left: 40px;
-    padding-right: 15px;
+
+@media (max-width: 600px) {
+  .footer-primary_Bottom_container {
+    padding: 10px 8px;
+    gap: 8px;
   }
-}
-@media (max-width: 634px) {
-  .footer-primary-right{
-    width: 50%;
-  }
-}
-@media (max-width: 500px) {
-  .footer-primary-right{
-    width: 60%;
-  }
-}
-@media (max-width: 456px) {
-  .footer-primary-right{
-    font-size: 11px;
-    width: 70%;
+  .footer-primary-right {
+    font-size: 12px;
+    padding: 16px 0 16px 0;
   }
 }
