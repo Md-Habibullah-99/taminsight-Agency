@@ -4,25 +4,25 @@
   left: 0;
   right: 0;
   padding-bottom: 40px;
-  width: 600px;
+  max-width: 500px;
 }
 
 .service_offer_title{
   position: sticky;
   top: 112px;
   padding-bottom: 250px;
-  margin-left: 120px;
+  margin-left: 30px;
   margin-right: 20px;
   font-size: 34px;
   font-weight: 400;
 }
 
 .service_offer {
-  display: flex
+  display: flex;
 }
 
 .service_offer-services{
-  margin-left: -50px;
+  margin-left: 50px;
 }
 
 .service_offer-service{
@@ -47,10 +47,44 @@
 }
 
 
+@media screen and (max-width:1300px) {
+  .service_offer_title{
+    margin-bottom: 70px;
+  }
+}
+@media screen and (max-width:1189px) {
+  .service_offer_title{
+    margin-bottom: 90px;
+  }
+}
+@media screen and (max-width:1155px) {
+  .service_offer_title{
+    margin-bottom: 120px;
+  }
+}
+@media screen and (max-width:1086px) {
+  .service_offer_title{
+    margin-bottom: 170px;
+  }
+}
 @media screen and (max-width:991px) {
   
   .service_offer {
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+  .service_offer_title{
+    margin-bottom: 100px;
+    padding-bottom: 0px;
+  }
+  .service_offer_title-container{
+    padding-bottom: 0px;
+  }
+  .service_offer-services{
+    margin-left: 30px;
+  }
+  .service_offer-service{
+    margin-bottom: 70px;
   }
 }
 @media screen and (max-width:767px) {

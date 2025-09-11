@@ -17,6 +17,9 @@
     padding: 20px 3vw;
     gap: 12px;
   }
+  .footer-primary-right{
+    border-top: #b3b3b9be 1px solid;
+  }
 }
 
 @media (max-width: 600px) {
