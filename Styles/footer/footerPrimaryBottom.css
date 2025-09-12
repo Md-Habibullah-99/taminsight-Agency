@@ -62,7 +62,7 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin-right: 15px;
+  margin-right: 10px;
   position: relative;
 }
 
@@ -72,10 +72,9 @@
   transform: rotate(-90deg);
 }
 .company-deck-button-title{
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   color: #ffffff;
-  margin-top: 5px;
 }
 
 
