@@ -15,6 +15,7 @@
   margin-right: 20px;
   font-size: 34px;
   font-weight: 400;
+  line-height: 1.3;
 }
 
 .service_offer {
@@ -76,6 +77,7 @@
   .service_offer_title{
     margin-bottom: 100px;
     padding-bottom: 0px;
+    font-size: 30px;
   }
   .service_offer_title-container{
     padding-bottom: 0px;
@@ -86,16 +88,46 @@
   .service_offer-service{
     margin-bottom: 70px;
   }
+  .service_offer-service_title{
+    font-size: 64px;
+    margin-bottom: 15px;
+  }
+  .service_offer-service_description-element{
+    font-size: 22px;
+  }
 }
 @media screen and (max-width:767px) {
-
   .service_offer {
     grid-column-gap: var(--space--12);
     grid-row-gap: var(--space--12)
   }
+  .service_offer_title{
+    margin-bottom: 70px;
+    font-size: 26px;
+  }
+  .service_offer-service_title{
+    font-size: 56px;
+  }
+  .service_offer-service_description-element{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:720px) {
+  .service_offer_title{
+    margin-bottom: 50px;
+    font-size: 22px;
+  }
+  .service_offer-service{
+    margin-bottom: 50px;
+  }
+  .service_offer-service_title{
+    font-size: 48px;
+  }
+  .service_offer-service_description-element{
+    font-size: 18px;
+  }
 }
 @media screen and (max-width:479px) {
-
   .service_offer {
     grid-column-gap: var(--space--16);
     grid-row-gap: var(--space--16)
