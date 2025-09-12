@@ -59,33 +59,38 @@ function changeCursorColor() {
   const hoverIntro = document.querySelector('.intro');
   const hoverFooter = document.querySelector('.footer-primary');
   const hoverPricing = document.querySelector('.pricing_card');
-  
+  const hoverLogoArea = document.querySelector('.worked-with-container');
+
   if (hoverIntro && targetSubsection) {
     hoverIntro.addEventListener('mouseenter', () => {
       targetSubsection.style.backgroundColor = 'white';
     });
-  
     hoverIntro.addEventListener('mouseleave', () => {
-      targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
+      targetSubsection.style.backgroundColor = 'black';
     });
   }
-  
   if (hoverFooter && targetSubsection) {
     hoverFooter.addEventListener('mouseenter', () => {
       targetSubsection.style.backgroundColor = 'white';
     });
-  
     hoverFooter.addEventListener('mouseleave', () => {
-      targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
+      targetSubsection.style.backgroundColor = 'black';
     });
   }
   if (hoverPricing && targetSubsection) {
     hoverPricing.addEventListener('mouseenter', () => {
       targetSubsection.style.backgroundColor = 'white';
     });
-  
     hoverPricing.addEventListener('mouseleave', () => {
-      targetSubsection.style.backgroundColor = 'black'; // Revert to the original color
+      targetSubsection.style.backgroundColor = 'black';
+    });
+  }
+  if (hoverLogoArea && targetSubsection) {
+    hoverLogoArea.addEventListener('mouseenter', () => {
+      targetSubsection.style.backgroundColor = 'white';
+    });
+    hoverLogoArea.addEventListener('mouseleave', () => {
+      targetSubsection.style.backgroundColor = 'black';
     });
   }
 }
