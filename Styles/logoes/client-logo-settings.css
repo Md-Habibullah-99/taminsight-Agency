@@ -8,14 +8,11 @@
   margin-left: 24px;
   margin-right: 24px;
   padding: 60px 40px;
-  background: #101117;
+  /* background: #000000ad; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 36px;
   overflow: hidden;
-  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08);
-  box-sizing: border-box;
 }
 
 .work-with {
@@ -47,7 +44,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
   gap: 48px 32px;
   align-items: center;
   justify-items: center;
@@ -90,7 +87,7 @@
   height: 60px;
   max-width: 180px;
   object-fit: contain;
-  filter: brightness(1.2) invert(1) grayscale(0);
+  filter: brightness(1.2) invert(.18) grayscale(0);
   opacity: 1;
   display: block;
   margin: 0 auto;
@@ -112,7 +109,7 @@
     margin-right: 24px;
   }
   .logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
     gap: 36px 18px;
   }
   .company-img-container {
@@ -124,13 +121,14 @@
     max-width: 120px;
   }
 }
+
 @media (max-width: 1080px) {
   .worked-with-container {
     margin-left: 24px;
     margin-right: 24px;
   }
   .logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
     gap: 36px 18px;
   }
   .company-img-container {
@@ -153,20 +151,36 @@
     padding-right: 12px;
   }
   .logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 24px 11px;
+  }
+  .company-img-container {
+    max-width: 140px;
+    min-width: 80px;
+  }
+  .logo-row img, .logo-grid img {
+    height: 44px;
+    max-width: 120px;
+  }
+}
+@media (max-width: 640px) {
+  .worked-with-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
     gap: 18px 8px;
   }
   .company-img-container {
-    max-width: 100px;
-    min-width: 40px;
+    max-width: 120px;
+    min-width: 60px;
   }
   .logo-row img, .logo-grid img {
-    height: 32px;
-    max-width: 60px;
+    height: 40px;
+    max-width: 90px;
   }
 }
-
-
 
 
 
@@ -176,15 +190,15 @@
     padding-right: 4px;
   }
   .logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    /* grid-template-columns: repeat(3, minmax(60px, 1fr)); */
     gap: 8px 2px;
   }
-  .company-img-container {
+  /* .company-img-container {
     max-width: 60px;
     min-width: 24px;
-  }
-  .logo-row img, .logo-grid img {
-    height: 18px;
-    max-width: 32px;
-  }
+  } */
+  /* .logo-row img, .logo-grid img {
+    height: 28px;
+    max-width: 70px;
+  } */
 }

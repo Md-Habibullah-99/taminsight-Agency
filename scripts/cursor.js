@@ -59,7 +59,7 @@ function changeCursorColor() {
   const hoverIntro = document.querySelector('.intro');
   const hoverFooter = document.querySelector('.footer-primary');
   const hoverPricing = document.querySelector('.pricing_card');
-  const hoverLogoArea = document.querySelector('.worked-with-container');
+  // const hoverLogoArea = document.querySelector('.worked-with-container');
 
   if (hoverIntro && targetSubsection) {
     hoverIntro.addEventListener('mouseenter', () => {
@@ -85,13 +85,13 @@ function changeCursorColor() {
       targetSubsection.style.backgroundColor = 'black';
     });
   }
-  if (hoverLogoArea && targetSubsection) {
-    hoverLogoArea.addEventListener('mouseenter', () => {
-      targetSubsection.style.backgroundColor = 'white';
-    });
-    hoverLogoArea.addEventListener('mouseleave', () => {
-      targetSubsection.style.backgroundColor = 'black';
-    });
-  }
+  // if (hoverLogoArea && targetSubsection) {
+  //   hoverLogoArea.addEventListener('mouseenter', () => {
+  //     targetSubsection.style.backgroundColor = 'white';
+  //   });
+  //   hoverLogoArea.addEventListener('mouseleave', () => {
+  //     targetSubsection.style.backgroundColor = 'black';
+  //   });
+  // }
 }
 changeCursorColor();
