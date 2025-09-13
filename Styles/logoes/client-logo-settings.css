@@ -1,10 +1,18 @@
-.worked-with-container{
-  width: 100%;
+
+
+
+.worked-with-container {
+  width: 100% auto;
   margin: 0 auto;
-  padding: var(--space--60) var(--space--20);
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 60px 40px;
+  /* background: #000000ad; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .work-with {
@@ -26,170 +34,171 @@
   margin-left: 0;
 }
 
+
+
+/* Responsive CSS Grid for logos */
+
+
 .logo-grid {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  gap: 48px 32px;
+  align-items: center;
+  justify-items: center;
+  background: transparent;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+
+/* Remove .logo-row: not needed with grid layout */
 .logo-row {
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 10px 0;
-  min-height: 80px;
+  display: contents;
 }
 
 .row-1{
   margin-right: -13px;
 }
 
+
+
+
 .company-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Allow custom width/height via inline style or class */
-  /* Default size, can be overridden */
-  max-width: 180px;
-  flex: 1 1 120px;
-}
-
-.logo-row img {
   width: 100%;
-  height: auto;
-  max-height: 90px;
-  max-width: 160px;
+  max-width: 200px;
+  min-width: 120px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.logo-row img, .logo-grid img {
+  width: auto;
+  height: 60px;
+  max-width: 180px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: max-width 0.2s, max-height 0.2s;
-  /* Allow per-logo override via class or inline style */
+  filter: brightness(1.2) invert(.18) grayscale(0);
+  opacity: 1;
+  display: block;
+  margin: 0 auto;
+  transition: none;
 }
 
-/* Example per-logo custom size classes */
-.gazi-group-logo {
-  min-width: 220px;
-  /* max-height: 80px; */
-  margin-right: 20px;
-}
 
-.shajgoj-logo {
-  min-width: 170px;
-  /* max-height: 60px; */
-  margin-right: 20px;
-}
 
-.bangladesh-finance-logo {
-  max-width: 130px;
-  max-height: 80px;
-  margin-right: 20px;
-}
-
-.bangladesh-finance-islamic-logo {
-  max-width: 120px;
-  max-height: 80px;
-}
-
-.ezviz-logo {
-  max-width: 100px;
-  max-height: 60px;
-}
-
-.ultra-logo {
-  max-width: 100px;
-  max-height: 60px;
-}
-
-.bank-asia-logo {
-  max-width: 120px;
-  max-height: 80px;
-}
-
-.bank-asia-islamic-logo {
-  max-width: 120px;
-  max-height: 80px;
-}
-
-.akij-plastic-logo {
-  max-width: 90px;
-  max-height: 50px;
-}
-
-.gazi-tyres-logo {
-  max-width: 120px;
-  max-height: 80px;
-}
-
-.bcb-logo-img {
-  max-width: 120px;
-  max-height: 80px;
-}
+/* Remove per-logo sizing for uniformity. If needed, add only for extreme cases. */
 
 /* Responsive: stack logos and allow wrapping on small screens */
-@media (max-width: 1024px) {
-  .logo-row {
-    gap: 10px;
-  }
 
+
+
+
+@media (max-width: 1200px) {
+  .worked-with-container {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .logo-grid {
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 36px 18px;
+  }
   .company-img-container {
     max-width: 140px;
-    flex: 1 1 90px;
+    min-width: 80px;
   }
-
-  .logo-row img {
-    max-width: 100px;
-    max-height: 60px;
+  .logo-row img, .logo-grid img {
+    height: 44px;
+    max-width: 120px;
   }
 }
 
-@media (max-width: 768px) {
-  .work-with {
-    padding: 20px;
+@media (max-width: 1080px) {
+  .worked-with-container {
+    margin-left: 24px;
+    margin-right: 24px;
   }
-
-  .clients_logo_title {
-    text-align: left;
+  .logo-grid {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    gap: 36px 18px;
   }
-
-  .logo-row {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
-    justify-content: flex-start;
-  }
-
   .company-img-container {
-    max-width: 100px;
-    flex: 1 1 60px;
+    max-width: 140px;
+    min-width: 80px;
   }
-
-  .logo-row img {
-    max-width: 80px;
-    max-height: 40px;
+  .logo-row img, .logo-grid img {
+    height: 44px;
+    max-width: 120px;
   }
 }
+
+
+
+
+
+@media (max-width: 900px) {
+  .worked-with-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 24px 11px;
+  }
+  .company-img-container {
+    max-width: 140px;
+    min-width: 80px;
+  }
+  .logo-row img, .logo-grid img {
+    height: 44px;
+    max-width: 120px;
+  }
+}
+@media (max-width: 640px) {
+  .worked-with-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .logo-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    gap: 18px 8px;
+  }
+  .company-img-container {
+    max-width: 120px;
+    min-width: 60px;
+  }
+  .logo-row img, .logo-grid img {
+    height: 40px;
+    max-width: 90px;
+  }
+}
+
+
 
 @media (max-width: 480px) {
-  .logo-row {
-    /* Keep row structure, just resize logos */
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    justify-content: flex-start;
+  .worked-with-container {
+    padding-left: 4px;
+    padding-right: 4px;
   }
-
-  .company-img-container {
-    max-width: 70px;
-    flex: 1 1 40px;
+  .logo-grid {
+    /* grid-template-columns: repeat(3, minmax(60px, 1fr)); */
+    gap: 8px 2px;
   }
-
-  .logo-row img {
+  /* .company-img-container {
     max-width: 60px;
-    max-height: 28px;
-  }
-  
+    min-width: 24px;
+  } */
+  /* .logo-row img, .logo-grid img {
+    height: 28px;
+    max-width: 70px;
+  } */
 }
