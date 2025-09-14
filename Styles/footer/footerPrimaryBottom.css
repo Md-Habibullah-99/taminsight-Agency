@@ -60,19 +60,19 @@
   color: #000000;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   margin-right: 10px;
   position: relative;
 }
 
 .company-deck-button img{
   width: 50%;
-  margin-top: -3px;
+  margin-bottom: 4px;
   transform: rotate(-90deg);
 }
 .company-deck-button-title{
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 600;
   color: #ffffff;
 }
@@ -156,6 +156,9 @@
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+  }
+  .footer-primary-left{
+    max-height: 156px;
   }
 }
 
