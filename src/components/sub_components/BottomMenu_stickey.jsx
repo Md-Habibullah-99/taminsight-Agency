@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import { NavHashLink } from 'react-router-hash-link';
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import $ from 'jquery';
 
 export default function BottomMenuSticky() {
+  // Register GSAP ScrollTo once
+  gsap.registerPlugin(ScrollToPlugin);
   useEffect(() => {
     function animateBottomMenu() {
         const $shape = $(".bottom-menu-shape");
@@ -215,10 +218,15 @@ export default function BottomMenuSticky() {
     };
   }, []);
 
+  const SCROLL_DURATION = 1; // seconds (~1000ms)
+  const SCROLL_OFFSET = -80; // keep your existing offset
   const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80; 
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    const y = el.getBoundingClientRect().top + window.pageYOffset + SCROLL_OFFSET;
+    gsap.to(window, {
+      duration: SCROLL_DURATION,
+      scrollTo: { y, autoKill: true },
+      ease: 'power2.out'
+    });
   }
 
   return (
