@@ -5,6 +5,7 @@ import Projects from "../main_components/Projects";
 import Process from "../main_components/Process";
 import Plans from "../main_components/Plans";
 import Intro from "../main_components/Intro";
+import FAQs from "../main_components/FAQs";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Process />
       <Plans />
       <Intro />
+      <FAQs />
     </>
   )
 }
