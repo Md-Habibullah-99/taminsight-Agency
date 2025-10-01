@@ -69,8 +69,10 @@ const Header = () => {
     </div>
     <div id="js-navbar-menu" className="navbar_menu">
       <div className="navbar_menu_wrapper">
-        <div className="navbar_menu_links"><a href="#" aria-current="page"
-            className="btn_link is-only-mobile w--current">Home</a>
+        <div className="navbar_menu_links"><Link to="/" aria-current="page"
+            className="btn_link is-only-mobile w--current">Home</Link>
+          <Link to="/affiliate"
+            className="btn_link is-only-mobile">Affiliate</Link>
           <a href="https://www.figma.com/deck/rBQAlmywVditVjZ3lsQj4c/Taminsight_Portfolio-2025_Branding-Agency?node-id=1-257&viewport=-159%2C-129%2C0.73&t=DImIymB1uDCa3ur9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
             className="btn_link is-only-mobile">Company Deck</a>
           <a href="https://www.linkedin.com/pulse/%E0%A6%AA%E0%A6%AF%E0%A6%95%E0%A6%9C-%E0%A6%A1%E0%A6%9C%E0%A6%87%E0%A6%A8%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A6%95%E0%A6%B0%E0%A6%AF-%E0%A6%85%E0%A6%AD%E0%A6%9C%E0%A6%9E%E0%A6%A4-%E0%A6%93-%E0%A6%9A%E0%A6%AF%E0%A6%B2%E0%A6%9E%E0%A6%9C--tamim-khan"
