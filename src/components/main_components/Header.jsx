@@ -9,7 +9,7 @@ const Header = () => {
 
           <svg width="368" height="30" viewBox="0 0 368 30" fill="none" xmlns="http://www.w3.org/2000/svg"
             className="footer-primary-left_logo">
-            <g clip-path="url(#clip0_133_30)">
+            <g clipPath="url(#clip0_133_30)">
               <path d="M13.1203 29.0421V9.70816H0.00418091V0.734375H37.2773V9.70816H24.1528V29.0421H13.1203Z"
                 fill="#000000" />
               <path

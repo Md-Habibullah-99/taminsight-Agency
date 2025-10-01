@@ -29,16 +29,16 @@ const Hero = () => {
               <div className="btn_content">
                 <div className="weight-bold">See more</div><svg xmlns="http://www.w3.org/2000/svg"
                   className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="square"></path>
+                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
+                    strokeLinecap="square"></path>
                 </svg>
               </div>
             </a><a href="https://www.whatsapp.com/" target="_blank" className="btn_cta btn-border w-inline-block">
               <div className="btn_content">
                 <div className="weight-bold">Book a Call</div><svg xmlns="http://www.w3.org/2000/svg"
                   className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="square"></path>
+                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
+                    strokeLinecap="square"></path>
                 </svg>
               </div>
             </a></div>
@@ -55,7 +55,7 @@ const Hero = () => {
                 <div className="slide w-slide">
 
                   <img src="images/hero/tamim_hero_1600.jpg" loading="eager" sizes="(max-width: 2000px) 100vw, 2000px"
-                    srcset="images/hero/tamim_hero_1600.jpg 500w, images/hero/tamim_hero_1600.jpg 800w, images/hero/tamim_hero_1080.jpg 1080w, images/hero/tamim_hero_1600.jpg 1600w, images/hero/tamim_hero_1600.jpg 2000w"
+                    srcSet="images/hero/tamim_hero_1600.jpg 500w, images/hero/tamim_hero_1600.jpg 800w, images/hero/tamim_hero_1080.jpg 1080w, images/hero/tamim_hero_1600.jpg 1600w, images/hero/tamim_hero_1600.jpg 2000w"
                     alt="taminsight-project" className="showreel-img" />
                 </div>
               </div>
@@ -68,7 +68,7 @@ const Hero = () => {
         <div className="work-with logo-cursor-area" data-logo-cursor-area>
           <div className="clients_logo_title">
             <h2 className="line-height-md c-text-tertiary"
-              style="font-size:1.3rem; letter-spacing:0.1em; margin-bottom: 1.5rem; text-align:center;">Brands I've
+              style={{fontSize:'1.3rem', letterSpacing:'0.1em', marginBottom: '1.5rem', textAlign:'center'}}>Brands I've
               Worked With</h2>
           </div>
           <div className="logo-grid">
