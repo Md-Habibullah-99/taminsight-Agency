@@ -43,13 +43,20 @@ export default function BottomMenuSticky() {
         $shape.css("transition", `all ${transitionDuration}ms`);
 
         const handleResize = () => updateShape();
+        const handleClick = (e) => {
+            const $target = $(e.currentTarget);
+            positionShape($target);
+        };
+
         $(window).on("resize", handleResize);
+        $('.bottom-menu-link').on('click', handleClick);
 
         setTimeout(updateShape, 100); // Initial call
 
         return () => {
             observer.disconnect();
             $(window).off("resize", handleResize);
+            $('.bottom-menu-link').off('click', handleClick);
         };
     }
 
