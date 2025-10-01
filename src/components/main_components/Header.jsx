@@ -45,7 +45,7 @@ const Header = () => {
         <div className="menu_list">
           <div className="menu_list_wrapper"><a
               href="https://www.figma.com/deck/rBQAlmywVditVjZ3lsQj4c/Taminsight_Portfolio-2025_Branding-Agency?node-id=1-257&viewport=-159%2C-129%2C0.73&t=DImIymB1uDCa3ur9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
-              className="btn btn_link w-inline-block" target="_blank"><em><span data-text="Resume">Resume</span></em></a><a
+              className="btn btn_link w-inline-block" target="_blank"><em><span data-text="Company Deck">Company Deck</span></em></a><a
               href="https://www.linkedin.com/pulse/%E0%A6%AA%E0%A6%AF%E0%A6%95%E0%A6%9C-%E0%A6%A1%E0%A6%9C%E0%A6%87%E0%A6%A8%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A6%95%E0%A6%B0%E0%A6%AF-%E0%A6%85%E0%A6%AD%E0%A6%9C%E0%A6%9E%E0%A6%A4-%E0%A6%93-%E0%A6%9A%E0%A6%AF%E0%A6%B2%E0%A6%9E%E0%A6%9C-md-tamim-khan"
               className="btn btn_link w-inline-block" target="_blank"><em><span data-text="Case Study">Case
                   Study</span></em></a>
@@ -65,7 +65,7 @@ const Header = () => {
         <div className="navbar_menu_links"><a href="#" aria-current="page"
             className="btn_link is-only-mobile w--current">Home</a>
           <a href="https://www.figma.com/proto/zwndL1kxvzoPGwyyPo4U6S/Tamim-Khan-Resume?page-id=4%3A38&node-id=1253-14&viewport=425%2C52%2C0.79&t=M7kFP6DxTbonsXug-1&scaling=min-zoom&content-scaling=fixed"
-            className="btn_link is-only-mobile">Resume</a>
+            className="btn_link is-only-mobile">Company Deck</a>
           <a href="https://www.linkedin.com/pulse/%E0%A6%AA%E0%A6%AF%E0%A6%95%E0%A6%9C-%E0%A6%A1%E0%A6%9C%E0%A6%87%E0%A6%A8%E0%A6%B0-%E0%A6%AA%E0%A6%B0%E0%A6%95%E0%A6%B0%E0%A6%AF-%E0%A6%85%E0%A6%AD%E0%A6%9C%E0%A6%9E%E0%A6%A4-%E0%A6%93-%E0%A6%9A%E0%A6%AF%E0%A6%B2%E0%A6%9E%E0%A6%9C--tamim-khan"
             className="btn_link is-only-mobile">Case Study</a>
           {/* <a href="#" className="btn_link is-only-mobile">Tools</a> */}
