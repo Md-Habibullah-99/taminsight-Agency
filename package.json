@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "gsap": "^3.13.0",
     "hash-router": "^0.4.0",
+    "jquery": "^3.7.1",
     "lottie": "^0.0.1",
     "lottie-web": "^5.13.0",
     "react": "^19.1.1",
