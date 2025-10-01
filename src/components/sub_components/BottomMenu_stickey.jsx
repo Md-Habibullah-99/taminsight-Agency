@@ -12,7 +12,7 @@ export default function BottomMenuSticky() {
         const $shape = $(".bottom-menu-shape");
         if (!$shape.length) return;
         const $shapeBg = $(".bottom-menu-shape-bg");
-        const transitionDuration = 500;
+  const transitionDuration = 1000;
     const shapeEl = $shape[0];
     // Smooth, interruptible animators for transform X and width
     const xTo = gsap.quickTo(shapeEl, 'x', { duration: 0.35, ease: 'power3.out', overwrite: 'auto' });
