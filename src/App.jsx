@@ -1,19 +1,23 @@
 import React from 'react'
-import Header from './components/main_components/Header'
-import Hero from './components/main_components/Hero'
-import Projects from './components/main_components/Projects'
-import Process from './components/main_components/Process'
-// import Footer from './components/main_components/Footer';
+
+import { HashRouter, Route, Routes } from 'react-router-dom'
+
+import Home from './components/Pages/Home'
+import Affiliate from './components/Pages/Affiliate'
+import Layout from './components/sub_components/Layout'
 
 function App() {
   
   return (
     <>
-      <Header />
-      <Hero />
-      <Projects />
-      <Process />
-      {/* <Footer /> */}
+      <HashRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/affiliate" element={<Affiliate />} />
+          </Route>
+        </Routes>
+      </HashRouter>
     </>
   )
 }

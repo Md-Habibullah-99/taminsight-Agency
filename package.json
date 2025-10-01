@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "hash-router": "^0.4.0",
     "lottie": "^0.0.1",
     "lottie-web": "^5.13.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.3",
+    "router": "^2.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
