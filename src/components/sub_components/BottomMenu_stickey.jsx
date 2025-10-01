@@ -84,9 +84,90 @@ export default function BottomMenuSticky() {
     const cleanupAnimate = animateBottomMenu();
     const cleanupSticky = stickyBottomMenu();
 
+  // Observe page sections and sync active link (pill) based on scroll position
+  function observeActiveSection() {
+    const sectionIds = ['home','projects','process','plans','quick-intro','faqs'];
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const menu = document.querySelector('.bottom-menu');
+    const linkForId = (id) => menu?.querySelector(`a[href$="#${id}"]`);
+    let currentActiveId = null;
+
+    const setActive = (id) => {
+      if (!id || currentActiveId === id) return;
+      currentActiveId = id;
+      const links = menu?.querySelectorAll('.bottom-menu-link');
+      if (links) links.forEach(l => l.classList.remove('active'));
+      const link = linkForId(id);
+      if (link) {
+        link.classList.add('active');
+        // Nudge the pill immediately to reduce perceived lag
+        const $el = $(link);
+        const $shape = $(".bottom-menu-shape");
+        const $menu = $(".bottom-menu");
+        if ($shape.length && $menu.length) {
+          const width = $el.innerWidth();
+          const left = $el.offset().left - $menu.offset().left;
+          $shape.css({ left, width, opacity: 1 });
+        }
+      }
+    };
+
+    // IntersectionObserver tuned to the middle band of the viewport
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible.length) {
+        setActive(visible[0].target.id);
+      } else {
+        // Fallback: pick the section whose top is above viewport center
+        const viewportMiddle = window.scrollY + window.innerHeight / 2;
+        let candidate = sections[0];
+        for (const sec of sections) {
+          const top = sec.getBoundingClientRect().top + window.scrollY;
+          if (top <= viewportMiddle) candidate = sec;
+        }
+        if (candidate) setActive(candidate.id);
+      }
+    }, { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+    sections.forEach(s => observer.observe(s));
+
+    // Initial sync on mount after layout settles
+    const init = () => {
+      const viewportMiddle = window.scrollY + window.innerHeight / 2;
+      let candidate = sections[0];
+      for (const sec of sections) {
+        const top = sec.getBoundingClientRect().top + window.scrollY;
+        if (top <= viewportMiddle) candidate = sec;
+      }
+      if (candidate) setActive(candidate.id);
+    };
+    const initTimeout = setTimeout(init, 100);
+
+    // Also re-evaluate on resize to maintain correct active state
+    const onResize = () => init();
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      clearTimeout(initTimeout);
+      window.removeEventListener('resize', onResize);
+      observer.disconnect();
+    };
+  }
+
+  const cleanupObserver = observeActiveSection();
+
     return () => {
         if (cleanupAnimate) cleanupAnimate();
         if (cleanupSticky) cleanupSticky();
+    if (cleanupObserver) cleanupObserver();
     };
   }, []);
 
