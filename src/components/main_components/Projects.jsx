@@ -298,7 +298,7 @@ function Projects() {
 
                     <video
                       ref={videoRef}
-                      src="/videos/gazi-tyres-03.mp4"
+                      src="https://cdn.artstation.com/p/video_sources/001/479/516/gazi-tyres-03.mp4"
                       className="video-content"
                       muted
                       loop
