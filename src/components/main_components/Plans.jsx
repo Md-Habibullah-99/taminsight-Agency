@@ -1,6 +1,106 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import Swiper from "swiper";
+import 'swiper/css';
 
 export default function Plans() {
+  const swiperRef = useRef(null);
+  const swiperInstanceRef = useRef(null);
+  const autoSlideTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    function clientSwiper() {
+      let activeIndex = 0;
+      const autoSlideInterval = 12000;
+      let initialized = false;
+      const $swiper = swiperRef.current;
+
+      function setupSwiper() {
+        if (initialized || !$swiper) return;
+        initialized = true;
+
+        swiperInstanceRef.current = new Swiper($swiper, {
+          loop: false,
+          speed: 500,
+          autoplay: false,
+          watchSlidesProgress: true,
+          allowTouchMove: true,
+        });
+
+        const swiperInstance = swiperInstanceRef.current;
+        const slideCount = $swiper.querySelectorAll(".swiper-slide").length;
+        const avatars = $swiper.querySelectorAll(".clients_avatar");
+        let progressContainer = $swiper.querySelector(".progress-container");
+
+        if (!progressContainer) {
+          progressContainer = document.createElement("div");
+          progressContainer.className = "progress-container";
+          $swiper.appendChild(progressContainer);
+          for (let i = 0; i < slideCount; i++) {
+            const dot = document.createElement("div");
+            dot.className = "progress-dot";
+            if (i === 0) dot.classList.add("active");
+            dot.setAttribute("data-index", i);
+            progressContainer.appendChild(dot);
+            dot.addEventListener("click", function () {
+              const idx = parseInt(this.getAttribute("data-index"));
+              clearTimeout(autoSlideTimeoutRef.current);
+              activeIndex = idx;
+              swiperInstance.slideTo(activeIndex);
+              updateProgress(activeIndex);
+            });
+          }
+        }
+        const dots = $swiper.querySelectorAll(".progress-dot");
+
+        function updateProgress(idx) {
+          dots.forEach((dot) => dot.classList.remove("active"));
+          avatars.forEach((avatar) => avatar.classList.remove("active"));
+          if (dots[idx]) dots[idx].classList.add("active");
+          if (avatars[idx]) avatars[idx].classList.add("active");
+
+          clearTimeout(autoSlideTimeoutRef.current);
+          autoSlideTimeoutRef.current = setTimeout(() => {
+            activeIndex = (activeIndex + 1) % slideCount;
+            swiperInstance.slideTo(activeIndex);
+            updateProgress(activeIndex);
+          }, autoSlideInterval);
+        }
+
+        setTimeout(() => updateProgress(activeIndex), 100);
+
+        swiperInstance.on("slideChange", function () {
+          clearTimeout(autoSlideTimeoutRef.current);
+          activeIndex = swiperInstance.activeIndex;
+          updateProgress(activeIndex);
+        });
+      }
+
+      if ($swiper) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              setupSwiper();
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe($swiper);
+
+        return () => {
+            observer.disconnect();
+            if (swiperInstanceRef.current) {
+                swiperInstanceRef.current.destroy();
+            }
+            clearTimeout(autoSlideTimeoutRef.current);
+        }
+      }
+    }
+
+    const cleanup = clientSwiper();
+    return cleanup;
+  }, []);
+
   
   
   
@@ -180,7 +280,7 @@ export default function Plans() {
                 </div>
               </div>
               <div className="pricing_grid_right">
-                <div className="swiper is-clients w-dyn-list">
+                <div ref={swiperRef} className="swiper is-clients w-dyn-list">
                   <div role="list" className="swiper-wrapper is-clients w-dyn-items">
                     <div role="listitem" className="swiper-slide w-dyn-item">
                       <div className="clients_testimonial">
