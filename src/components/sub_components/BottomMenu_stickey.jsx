@@ -10,6 +10,10 @@ export default function BottomMenuSticky() {
         if (!$shape.length) return;
         const $shapeBg = $(".bottom-menu-shape-bg");
         const transitionDuration = 500;
+    const shapeEl = $shape[0];
+    // Smooth, interruptible animators for transform X and width
+    const xTo = gsap.quickTo(shapeEl, 'x', { duration: 0.35, ease: 'power3.out', overwrite: 'auto' });
+    const wTo = gsap.quickTo(shapeEl, 'width', { duration: 0.35, ease: 'power3.out', overwrite: 'auto' });
 
         function updateShape() {
             $(".bottom-menu-link-bg").css("opacity", "0");
@@ -22,13 +26,17 @@ export default function BottomMenuSticky() {
             }
         }
 
-        function positionShape($el) {
-            const menu = $(".bottom-menu");
-            if (!menu.length || !$el.length) return;
-            const width = $el.innerWidth();
-            const left = $el.offset().left - menu.offset().left;
-            $shape.css({ left, width });
-        }
+    function positionShape($el) {
+      const $menu = $(".bottom-menu");
+      if (!$menu.length || !$el.length) return;
+      const el = $el[0];
+      const menuEl = $menu[0];
+      const linkRect = el.getBoundingClientRect();
+      const menuRect = menuEl.getBoundingClientRect();
+      const left = linkRect.left - menuRect.left;
+      const width = linkRect.width;
+      $shape.css({ transform: `translateX(${left}px)`, width });
+    }
 
         const observerConfig = { attributes: true, attributeFilter: ['class'], childList: false, subtree: false };
         const observer = new MutationObserver(() => {
@@ -39,13 +47,18 @@ export default function BottomMenuSticky() {
             observer.observe(link, observerConfig);
         });
 
-        $shapeBg.css("transition", `width ${transitionDuration / 2}ms`);
-        $shape.css("transition", `all ${transitionDuration}ms`);
-
-        const handleResize = () => updateShape();
+    $shapeBg.css("transition", `width ${transitionDuration / 2}ms`);
+    // Let GSAP handle transform/width animations; set will-change for perf
+    $shape.css({ willChange: 'transform, width' });
+        // GPU-friendly transform animation for smoother movement
+    $shape.css({
+      transition: `transform ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1), width ${transitionDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`,
+      willChange: 'transform, width'
+    });
+    const handleResize = () => updateShape();
         const handleClick = (e) => {
             const $target = $(e.currentTarget);
-            positionShape($target);
+      positionShape($target);
         };
 
         $(window).on("resize", handleResize);
@@ -96,10 +109,35 @@ export default function BottomMenuSticky() {
     const menu = document.querySelector('.bottom-menu');
     const linkForId = (id) => menu?.querySelector(`a[href$="#${id}"]`);
     let currentActiveId = null;
+    let pendingClickId = null;
+    let lockUntil = 0; // time until which we ignore non-click driven updates
+    let lastUpdate = 0;
+    const MIN_INTERVAL = 120; // ms hysteresis to reduce flicker
+
+    // Lock to the clicked target briefly to avoid fights with scroll updates
+    const clickListener = (e) => {
+      const a = e.target.closest('a.bottom-menu-link');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      const hashIndex = href.indexOf('#');
+      if (hashIndex >= 0) {
+        pendingClickId = href.slice(hashIndex + 1);
+        lockUntil = Date.now() + 900; // align with smooth scroll duration
+      }
+    };
+    menu?.addEventListener('click', clickListener);
 
     const setActive = (id) => {
       if (!id || currentActiveId === id) return;
+      const now = Date.now();
+      if (pendingClickId && id !== pendingClickId && now < lockUntil) return;
+      if (now - lastUpdate < MIN_INTERVAL) return;
+      lastUpdate = now;
       currentActiveId = id;
+      if (id === pendingClickId && now < lockUntil) {
+        // Clear lock once we hit the clicked section
+        pendingClickId = null;
+      }
       const links = menu?.querySelectorAll('.bottom-menu-link');
       if (links) links.forEach(l => l.classList.remove('active'));
       const link = linkForId(id);
@@ -110,9 +148,14 @@ export default function BottomMenuSticky() {
         const $shape = $(".bottom-menu-shape");
         const $menu = $(".bottom-menu");
         if ($shape.length && $menu.length) {
-          const width = $el.innerWidth();
-          const left = $el.offset().left - $menu.offset().left;
-          $shape.css({ left, width, opacity: 1 });
+          const el = $el[0];
+          const linkRect = el.getBoundingClientRect();
+          const menuRect = $menu[0].getBoundingClientRect();
+          const left = linkRect.left - menuRect.left;
+          const width = linkRect.width;
+          requestAnimationFrame(() => {
+            $shape.css({ transform: `translateX(${left}px)`, width, opacity: 1 });
+          });
         }
       }
     };
@@ -135,7 +178,7 @@ export default function BottomMenuSticky() {
         }
         if (candidate) setActive(candidate.id);
       }
-    }, { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+  }, { root: null, rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
 
     sections.forEach(s => observer.observe(s));
 
@@ -158,6 +201,7 @@ export default function BottomMenuSticky() {
     return () => {
       clearTimeout(initTimeout);
       window.removeEventListener('resize', onResize);
+      menu?.removeEventListener('click', clickListener);
       observer.disconnect();
     };
   }
