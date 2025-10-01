@@ -1,0 +1,55 @@
+        /* MOBILE STYLES (max-width: 767px) */
+        @media (max-width: 767px) {
+
+          /* Typography */
+          body {
+            font-size: 1rem;
+          }
+
+          /* Buttons */
+          .cta-full-on-mobile .btn_cta {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          /* Navigation */
+          body.sale-page .nav-cta {
+            display: none;
+          }
+
+          .nav_product {
+            display: none;
+          }
+
+          .cta-full-on-mobile .btn_cta {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          body.sale-page .nav-cta {
+            display: none;
+          }
+
+          .nav_product {
+            display: none;
+          }
+
+          .on-mobile-full .btn_cta {
+            width: 100%;
+            display: flex;
+          }
+        }
+
+        /* TABLET STYLES (768px-991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+          /* Add tablet-specific styles here */
+        }
+
+        /* DESKTOP STYLES (min-width: 992px) */
+        @media (min-width: 992px) {
+          /* Add desktop-specific styles here */
+        }
