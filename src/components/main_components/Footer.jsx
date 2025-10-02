@@ -11,26 +11,27 @@ export default function Footer()
           <div className="footer-primary-up_title">
 
             <p className="footer-primary-up-title_header">Click<img
-                src="images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
-                className="footer-primary-up-title_header_arrow" />Copy<img
-                src="images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
+              src="/images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
+              alt=""
+              className="footer-primary-up-title_header_arrow" />Copy<img
+                src="/images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
+                alt=""
                 className="footer-primary-up-title_header_arrow" />Contact</p>
           </div>
           <h2 className="title title__main">
-            <a className="email-link-click-to-copy" href="taminsight@gmail.com">taminsight@gmail.com</a>
+            <a className="email-link-click-to-copy" href="mailto:taminsight@gmail.com">taminsight@gmail.com</a>
           </h2>
         </div>
       </div>
 
       <div className="footer-primary_Bottom_container">
-
         <div className="footer-primary-left">
           <div className="footer-primary-left_content">
             <a href="#home" aria-current="page" className="footer-primary-left_logo_aTag w-inline-block">
 
               <svg width="368" height="30" viewBox="0 0 368 30" fill="none" xmlns="http://www.w3.org/2000/svg"
                 className="footer-primary-left_logo">
-                <g clip-path="url(#clip0_133_30)">
+                <g clipPath="url(#clip0_133_30)">
                   <path d="M13.1203 29.0421V9.70816H0.00418091V0.734375H37.2773V9.70816H24.1528V29.0421H13.1203Z"
                     fill="#F2F2F2" />
                   <path
@@ -71,9 +72,15 @@ export default function Footer()
             <a href="https://www.figma.com/deck/rBQAlmywVditVjZ3lsQj4c/Taminsight_Portfolio-2025_Branding-Agency?node-id=1-257&viewport=-159%2C-129%2C0.73&t=DImIymB1uDCa3ur9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
               target="_blank" rel="noopener noreferrer">
               <div className="company-deck">
-                <button className="company-deck-button">
-                  <img src="images/footerElements/footerPrimaryArrow/down-arrow-icon.png" alt="Icon" />
-                </button>
+                <div className="company-deck-button">
+                  <img
+                    src="/images/footerElements/footerPrimaryArrow/arrow-down.svg"
+                    alt="Download arrow"
+                    className="company-deck-icon"
+                    // width="30"
+                    // height="30"
+                  />
+                </div>
                 <div className="company-deck-button-element-container">
                   <div className="company-deck-button-title">Company Deck</div>
                 </div>
@@ -81,8 +88,9 @@ export default function Footer()
             </a>
           </div>
         </div>
-
-
+        
+        <div className="footer-primary-bottom-hr"></div>
+        
         <div className="footer-primary-right">
 
           <div className="footer-primary-right-elements footer-social__media">
@@ -139,7 +147,6 @@ export default function Footer()
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -163,8 +170,8 @@ export default function Footer()
                 <div className="location_col">
                   <div id="time" className="c-text-tertiary">12:00 PM</div>
                 </div>
-                <div className="location_col weather"><img id="weather-icon" loading="lazy" alt=""
-                    src="images/footerElements/watherIcons/clear.svg" className="weather_icon" /></div>
+        <div className="location_col weather"><img id="weather-icon" loading="lazy" alt=""
+          src="/images/footerElements/watherIcons/clear.svg" className="weather_icon" /></div>
               </div>
             </div>
           </div>
