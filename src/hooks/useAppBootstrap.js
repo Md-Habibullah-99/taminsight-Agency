@@ -273,8 +273,10 @@ export default function useAppBootstrap() {
     }
 
     // --- Lenis smooth scrolling (global) ---
-    let rafId;
-    let lenisInstance;
+  let rafId;
+  let lenisInstance;
+  let suspendLenis = false; // when true, skip lenis.raf to avoid fighting programmatic scrolls
+  let resumeLenisTimer;
     const initLenis = () => {
       try {
         const isSalePage = document.body.classList.contains('sale-page');
@@ -298,7 +300,9 @@ export default function useAppBootstrap() {
           infinite: false,
         });
         const raf = (time) => {
-          lenisInstance?.raf(time);
+          if (!suspendLenis) {
+            lenisInstance?.raf(time);
+          }
           rafId = requestAnimationFrame(raf);
         };
         // Optional hook
@@ -313,6 +317,26 @@ export default function useAppBootstrap() {
       }
     };
     const cleanupLenis = initLenis();
+
+    // Give priority to bottom menu navigation: pause Lenis during GSAP-driven scroll
+    const pauseLenis = () => {
+      suspendLenis = true;
+      try { lenisInstance?.stop?.(); } catch (_) {}
+    };
+    const resumeLenis = () => {
+      try { lenisInstance?.start?.(); } catch (_) {}
+      suspendLenis = false;
+    };
+    const onBottomMenuClick = (e) => {
+      const a = e.target.closest('.bottom-menu .bottom-menu-link');
+      if (!a) return;
+      // Pause Lenis to avoid momentum interfering with GSAP ScrollTo in BottomMenu
+      pauseLenis();
+      // Resume Lenis after the bottom menu scroll animation likely completes (~1s)
+      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
+      resumeLenisTimer = setTimeout(resumeLenis, 1200);
+    };
+    document.addEventListener('click', onBottomMenuClick, true);
 
     // --- Time and Weather ---
     const updateTime = () => {
@@ -370,6 +394,8 @@ export default function useAppBootstrap() {
       if (typeof cleanupCursorTooltipAndCopy === 'function') cleanupCursorTooltipAndCopy();
       if (typeof cleanupNavbar === 'function') cleanupNavbar();
       if (typeof cleanupLenis === 'function') cleanupLenis();
+      document.removeEventListener('click', onBottomMenuClick, true);
+      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
       if (timeIntervalId) clearInterval(timeIntervalId);
       if (weatherIntervalId) clearInterval(weatherIntervalId);
     };
