@@ -1,7 +1,75 @@
 
+import { useEffect } from 'react';
 
-export default function Footer()
-{
+export default function Footer() {
+  useEffect(() => {
+    // Update time every minute (Asia/Dhaka)
+    function updateTime() {
+      const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'Asia/Dhaka' };
+      const timeStr = new Date().toLocaleString('en-US', options);
+      const timeElem = document.getElementById('time');
+      if (timeElem) timeElem.textContent = timeStr;
+    }
+
+    // Map OpenWeather 'main' to local icon URL
+    function getWeatherIcon(main) {
+      const baseUrl = '/images/footerElements/watherIcons/';
+      switch (main) {
+        case 'Clouds':
+          return `${baseUrl}clouds.svg`;
+        case 'Rain':
+          return `${baseUrl}rain.svg`;
+        case 'Snow':
+          return `${baseUrl}snow.svg`;
+        case 'Night':
+          return `${baseUrl}moon.png`;
+        case 'Clear':
+        default:
+          return `${baseUrl}clear.svg`;
+      }
+    }
+
+    // Fetch and update weather (Dhaka) every 10 minutes
+    function updateWeather() {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=d1e52eafe56386f1439142c04afc5b44`;
+      const tempElem = document.getElementById('temperature');
+      const iconElem = document.getElementById('weather-icon');
+      if (!(tempElem && iconElem)) return;
+
+      fetch(apiUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data || !data.main || !data.weather) throw new Error('Bad weather payload');
+          const tempC = (data.main.temp - 273.15).toFixed(1);
+          tempElem.textContent = `${tempC}°C`;
+          iconElem.src = getWeatherIcon(data.weather[0].main);
+          iconElem.alt = data.weather[0].description || data.weather[0].main || 'weather';
+        })
+        .catch(() => {
+          tempElem.textContent = 'N/A';
+        });
+    }
+
+    // Initialize and schedule updates if the targets exist
+    const hasTime = !!document.getElementById('time');
+    const hasTemp = !!document.getElementById('temperature');
+    let timeIntervalId;
+    let weatherIntervalId;
+
+    if (hasTime) {
+      updateTime();
+      timeIntervalId = setInterval(updateTime, 60_000);
+    }
+    if (hasTemp) {
+      updateWeather();
+      weatherIntervalId = setInterval(updateWeather, 600_000);
+    }
+
+    return () => {
+      if (timeIntervalId) clearInterval(timeIntervalId);
+      if (weatherIntervalId) clearInterval(weatherIntervalId);
+    };
+  }, []);
   return (
     <>
     <footer className="footer">
