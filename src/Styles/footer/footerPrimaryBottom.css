@@ -17,8 +17,8 @@
     padding: 20px 3vw;
     gap: 12px;
   }
-  .footer-primary-right{
-    border-top: #b3b3b9be 1px solid;
+  .footer-primary-bottom-hr{
+    display: contents;
   }
 }
 
@@ -28,6 +28,7 @@
     gap: 8px;
   }
 }
+
 /* left */
 
 .footer-primary-left{
@@ -67,9 +68,8 @@
 }
 
 .company-deck-button img{
-  width: 50%;
-  margin-bottom: 4px;
-  transform: rotate(-90deg);
+  width: 80%;
+  margin-left: 3px;
 }
 .company-deck-button-title{
   font-size: 20px;
@@ -77,6 +77,16 @@
   color: #ffffff;
 }
 
+/* horaizontal line */
+.footer-primary-bottom-hr{
+  display: none;
+  margin-top: -24px;
+  margin-left: -18px;
+  margin-right: -18px;
+  border-top: 1px solid #b4b4b454;
+  height: 1px;
+  display: block;
+}
 
 /* right */
 
