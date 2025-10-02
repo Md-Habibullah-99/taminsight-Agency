@@ -123,10 +123,66 @@ const Header = () => {
     menuOverlay.addEventListener("click", onOverlayClick);
     window.addEventListener("scroll", onScroll);
 
+    // Smooth scrolling with Lenis (from global script)
+    let rafId;
+    let lenisInstance;
+    function initLenis() {
+      try {
+        const isSalePage = document.body.classList.contains("sale-page");
+        const isWebflowEditor = typeof window !== 'undefined' && window.Webflow && typeof window.Webflow.env === 'function'
+          ? window.Webflow.env("editor") !== undefined
+          : false;
+        if (isSalePage || isWebflowEditor) return () => {};
+
+        const LenisCtor = typeof window !== 'undefined' ? window.Lenis : undefined;
+        if (!LenisCtor) return () => {};
+
+        lenisInstance = new LenisCtor({
+          duration: 1,
+          easing: (e) => Math.min(1, 1.001 - Math.pow(2, -10 * e)),
+          direction: 'vertical',
+          gestureDirection: 'vertical',
+          smooth: true,
+          mouseMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 1,
+          infinite: false,
+        });
+
+        const raf = (time) => {
+          lenisInstance?.raf(time);
+          rafId = requestAnimationFrame(raf);
+        };
+
+        // Optional: handle scroll events
+        lenisInstance.on('scroll', () => {
+          // hook point if needed
+        });
+
+        rafId = requestAnimationFrame(raf);
+
+        // Previously disabled Lenis for Safari/Firefox; now kept enabled across browsers.
+
+        // Cleanup function
+        return () => {
+          if (rafId) cancelAnimationFrame(rafId);
+          if (lenisInstance) {
+            try { lenisInstance.destroy(); } catch (_) { /* noop */ }
+            lenisInstance = undefined;
+          }
+        };
+      } catch (_) {
+        return () => {};
+      }
+    }
+
+    const cleanupLenis = initLenis();
+
     return () => {
       hamburgerBtn.removeEventListener("click", onHamburgerClick);
       menuOverlay.removeEventListener("click", onOverlayClick);
       window.removeEventListener("scroll", onScroll);
+      if (typeof cleanupLenis === 'function') cleanupLenis();
     };
   }, []);
   return (
