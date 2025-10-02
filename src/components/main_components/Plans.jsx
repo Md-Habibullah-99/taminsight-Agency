@@ -97,8 +97,59 @@ export default function Plans() {
       }
     }
 
-    const cleanup = clientSwiper();
-    return cleanup;
+    const cleanupSwiper = clientSwiper();
+
+    // Tab toggle functionality
+    function setupTabToggles() {
+      const tabLinks = Array.from(document.querySelectorAll('.toggle_tabs a[data-tab]'));
+      const contentPanels = Array.from(document.querySelectorAll('.toggle_content > div[data-tab]'));
+
+      if (tabLinks.length === 0 || contentPanels.length === 0) {
+        return () => {};
+      }
+
+      const clickHandlers = new Map();
+
+      tabLinks.forEach((link) => {
+        const handler = (e) => {
+          e.preventDefault();
+          const tab = link.getAttribute('data-tab');
+
+          // Toggle active state on tabs
+          tabLinks.forEach((t) => t.classList.remove('active'));
+          link.classList.add('active');
+
+          // Toggle active state on content panels
+          contentPanels.forEach((panel) => {
+            if (panel.getAttribute('data-tab') === tab) {
+              panel.classList.add('active');
+            } else {
+              panel.classList.remove('active');
+            }
+          });
+        };
+        clickHandlers.set(link, handler);
+        link.addEventListener('click', handler);
+      });
+
+      // Activate default tab (monthly) to ensure consistent initial state
+      const defaultTab = document.querySelector('.toggle_tabs a[data-tab="monthly"]');
+      if (defaultTab) defaultTab.click();
+
+      // Cleanup listeners
+      return () => {
+        clickHandlers.forEach((handler, link) => {
+          link.removeEventListener('click', handler);
+        });
+      };
+    }
+
+    const cleanupTabs = setupTabToggles();
+
+    return () => {
+      if (typeof cleanupSwiper === 'function') cleanupSwiper();
+      if (typeof cleanupTabs === 'function') cleanupTabs();
+    };
   }, []);
 
   
