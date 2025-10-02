@@ -5,6 +5,12 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   useEffect(() => {
+    // Reload if page is restored from back-forward cache to ensure fresh state
+    const onPageShow = (event) => {
+      if (event.persisted) window.location.reload();
+    };
+    window.addEventListener('pageshow', onPageShow);
+
     const cursorDot = document.querySelector("[data-cursor-dot]");
     const cursorOutline = document.querySelector("[data-cursor-outline]");
     const cursorAnotherOutline = document.querySelector("[data-another-cursor-outline]");
@@ -220,6 +226,7 @@ export default function Layout() {
     const cleanupCursorTooltipAndCopy = setupCursorTooltipAndCopy();
 
     return () => {
+      window.removeEventListener('pageshow', onPageShow);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("click", onClick);
       cleanupChangeCursorColor();
