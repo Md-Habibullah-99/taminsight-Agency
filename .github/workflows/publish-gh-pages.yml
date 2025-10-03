@@ -27,6 +27,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy raw CSS folder into dist for Pages
+        run: |
+          mkdir -p dist/src
+          cp -R src/Styles dist/src/Styles
+
       - name: Publish to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
