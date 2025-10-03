@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { withBase } from '../../utils/withBase.js';
 
 export default function Footer() {
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function Footer() {
 
     // Map OpenWeather 'main' to local icon URL
     function getWeatherIcon(main) {
-      const baseUrl = '/images/footerElements/watherIcons/';
+      const baseUrl = withBase('/images/footerElements/watherIcons/');
       switch (main) {
         case 'Clouds':
           return `${baseUrl}clouds.svg`;
@@ -79,10 +80,10 @@ export default function Footer() {
           <div className="footer-primary-up_title">
 
             <p className="footer-primary-up-title_header">Click<img
-              src="/images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
+              src={withBase('/images/footerElements/footerPrimaryArrow/right-arrow-icon.png')}
               alt=""
               className="footer-primary-up-title_header_arrow" />Copy<img
-                src="/images/footerElements/footerPrimaryArrow/right-arrow-icon.png"
+                src={withBase('/images/footerElements/footerPrimaryArrow/right-arrow-icon.png')}
                 alt=""
                 className="footer-primary-up-title_header_arrow" />Contact</p>
           </div>
@@ -142,7 +143,7 @@ export default function Footer() {
               <div className="company-deck">
                 <div className="company-deck-button">
                   <img
-                    src="/images/footerElements/footerPrimaryArrow/arrow-down.svg"
+                    src={withBase('/images/footerElements/footerPrimaryArrow/arrow-down.svg')}
                     alt="Download arrow"
                     className="company-deck-icon"
                     // width="30"
@@ -239,7 +240,7 @@ export default function Footer() {
                   <div id="time" className="c-text-tertiary">12:00 PM</div>
                 </div>
         <div className="location_col weather"><img id="weather-icon" loading="lazy" alt=""
-          src="/images/footerElements/watherIcons/clear.svg" className="weather_icon" /></div>
+          src={withBase('/images/footerElements/watherIcons/clear.svg')} className="weather_icon" /></div>
               </div>
             </div>
           </div>

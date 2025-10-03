@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { withBase } from '../../utils/withBase.js';
 import "../../Styles/selected_projects/selectedProjects.css";
 
 function Projects() {
@@ -136,25 +137,25 @@ function Projects() {
                 className="project w-inline-block">
                 <div className="project_preview aspect-2">
                   <div className="project_cover"><img sizes="(max-width: 1500px) 100vw, 1500px"
-                    srcSet="/images/selectedProjects/publication/tamim-khan-annual-report-9-500.jpg 500w, /images/selectedProjects/publication/tamim-khan-annual-report-9-800.jpg 800w, /images/selectedProjects/publication/tamim-khan-annual-report-9-1080.jpg 1080w"
+                    srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/publication/tamim-khan-annual-report-9-'+w+'.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src="/images/selectedProjects/publication/tamim-khan-annual-report-9-1080.jpg"
+                    src={withBase('/images/selectedProjects/publication/tamim-khan-annual-report-9-1080.jpg')}
                     loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                      srcSet="/images/selectedProjects/publication/tamim-khan-annual-report-2-500.jpg 500w, /images/selectedProjects/publication/tamim-khan-annual-report-2-800.jpg 800w, /images/selectedProjects/publication/tamim-khan-annual-report-2-1080.jpg 1080w"
+                      srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/publication/tamim-khan-annual-report-2-'+w+'.jpg')} ${w}w`).join(', ')}
                       alt=""
-                      src="/images/selectedProjects/publication/tamim-khan-annual-report-2-1080.jpg"
+                      src={withBase('/images/selectedProjects/publication/tamim-khan-annual-report-2-1080.jpg')}
                       loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                        srcSet="/images/selectedProjects/publication/tamim-khan-annual-report-3-500.jpg 500w, /images/selectedProjects/publication/tamim-khan-annual-report-3-800.jpg 800w, /images/selectedProjects/publication/tamim-khan-annual-report-3-1080.jpg 1080w"
+                        srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/publication/tamim-khan-annual-report-3-'+w+'.jpg')} ${w}w`).join(', ')}
                         alt=""
-                        src="/images/selectedProjects/publication/tamim-khan-annual-report-3-1080.jpg"
+                        src={withBase('/images/selectedProjects/publication/tamim-khan-annual-report-3-1080.jpg')}
                         loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                          srcSet="/images/selectedProjects/publication/tamim-khan-annual-report-4-500.jpg 500w, /images/selectedProjects/publication/tamim-khan-annual-report-4-800.jpg 800w, /images/selectedProjects/publication/tamim-khan-annual-report-4-1080.jpg 1080w"
+                          srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/publication/tamim-khan-annual-report-4-'+w+'.jpg')} ${w}w`).join(', ')}
                           alt=""
-                          src="/images/selectedProjects/publication/tamim-khan-annual-report-4-1080.jpg"
+                          src={withBase('/images/selectedProjects/publication/tamim-khan-annual-report-4-1080.jpg')}
                           loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                            srcSet="/images/selectedProjects/publication/tamim-khan-annual-report-6-500.jpg 500w, /images/selectedProjects/publication/tamim-khan-annual-report-6-800.jpg 800w, /images/selectedProjects/publication/tamim-khan-annual-report-6-1080.jpg 1080w"
+                            srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/publication/tamim-khan-annual-report-6-'+w+'.jpg')} ${w}w`).join(', ')}
                             alt=""
-                            src="/images/selectedProjects/publication/tamim-khan-annual-report-6-1080.jpg"
+                            src={withBase('/images/selectedProjects/publication/tamim-khan-annual-report-6-1080.jpg')}
                             loading="lazy" className="img_absolute" /></div>
                 </div>
                 <div className="project_caption">
@@ -169,25 +170,25 @@ function Projects() {
                 className="project w-inline-block">
                 <div className="project_preview aspect-1">
                   <div className="project_cover"><img sizes="(max-width: 1000px) 100vw, 1000px"
-                    srcSet="/images/selectedProjects/packaging/tamim-khan-packaging-01-500.jpg 500w, /images/selectedProjects/packaging/tamim-khan-packaging-01-800.jpg 800w"
+                    srcSet={[500,800].map(w=>`${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-01-'+w+'.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src="/images/selectedProjects/packaging/tamim-khan-packaging-01-800.jpg"
+                    src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-01-800.jpg')}
                     loading="lazy" className="img_absolute" /><img sizes="(max-width: 1000px) 100vw, 1000px"
-                      srcSet="/images/selectedProjects/packaging/tamim-khan-packaging-02-500.jpg 500w, /images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg 800w"
+                      srcSet={[500,800].map(w=>`${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-'+w+'.jpg')} ${w}w`).join(', ')}
                       alt=""
-                      src="/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg"
+                      src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg')}
                       loading="lazy" className="img_absolute" /><img sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcSet="/images/selectedProjects/packaging/tamim-khan-packaging-03-500.jpg 500w, /images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg 800w"
+                        srcSet={[500,800].map(w=>`${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-'+w+'.jpg')} ${w}w`).join(', ')}
                         alt=""
-                        src="/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg"
+                        src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg')}
                         loading="lazy" className="img_absolute" /><img sizes="(max-width: 1000px) 100vw, 1000px"
-                          srcSet="/images/selectedProjects/packaging/tamim-khan-packaging-04.jpg 800w"
+                          srcSet={`${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-04.jpg')} 800w`}
                           alt=""
-                          src="/images/selectedProjects/packaging/tamim-khan-packaging-04.jpg"
+                          src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-04.jpg')}
                           loading="lazy" className="img_absolute" /><img sizes="(max-width: 1000px) 100vw, 1000px"
-                            srcSet="/images/selectedProjects/packaging/tamim-khan-packaging-05-500.jpg 500w, /images/selectedProjects/packaging/tamim-khan-packaging-05-800.jpg 800w"
+                            srcSet={[500,800].map(w=>`${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-05-'+w+'.jpg')} ${w}w`).join(', ')}
                             alt="vi"
-                            src="/images/selectedProjects/packaging/tamim-khan-packaging-05-800.jpg"
+                            src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-05-800.jpg')}
                             loading="lazy" className="img_absolute" /></div>
                 </div>
                 <div className="project_caption">
@@ -202,21 +203,21 @@ function Projects() {
                 className="project w-inline-block">
                 <div className="project_preview aspect-4">
                   <div className="project_cover"><img sizes="(max-width: 1500px) 100vw, 1500px"
-                    srcSet="/images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-500.jpg 500w, /images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-800.jpg 800w, /images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-1080.jpg 1080w"
+                    srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-'+w+'.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src="/images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-1080.jpg"
+                    src={withBase('/images/selectedProjects/media/tamim-khan-fathers-day-gazi-tyre-1080.jpg')}
                     loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                      srcSet="/images/selectedProjects/media/tamim-khan-social-media-02-500.jpg 500w, /images/selectedProjects/media/tamim-khan-social-media-02-800.jpg 800w, /images/selectedProjects/media/tamim-khan-social-media-02-1080.jpg 1080w"
+                      srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/media/tamim-khan-social-media-02-'+w+'.jpg')} ${w}w`).join(', ')}
                       alt=""
-                      src="/images/selectedProjects/media/tamim-khan-social-media-02-1080.jpg"
+                      src={withBase('/images/selectedProjects/media/tamim-khan-social-media-02-1080.jpg')}
                       loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                        srcSet="/images/selectedProjects/media/tamim-khan-gazi-tyre-03-500.jpg 500w, /images/selectedProjects/media/tamim-khan-gazi-tyre-03-800.jpg 800w, /images/selectedProjects/media/tamim-khan-gazi-tyre-03-1080.jpg 1080w"
+                        srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/media/tamim-khan-gazi-tyre-03-'+w+'.jpg')} ${w}w`).join(', ')}
                         alt=""
-                        src="/images/selectedProjects/media/tamim-khan-gazi-tyre-03-1080.jpg"
+                        src={withBase('/images/selectedProjects/media/tamim-khan-gazi-tyre-03-1080.jpg')}
                         loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                          srcSet="/images/selectedProjects/media/tamim-khan-social-media-04-500.jpg 500w, /images/selectedProjects/media/tamim-khan-social-media-04-800.jpg 800w, /images/selectedProjects/media/tamim-khan-social-media-04-1080.jpg 1080w"
+                          srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/media/tamim-khan-social-media-04-'+w+'.jpg')} ${w}w`).join(', ')}
                           alt=""
-                          src="/images/selectedProjects/media/tamim-khan-social-media-04-1080.jpg"
+                          src={withBase('/images/selectedProjects/media/tamim-khan-social-media-04-1080.jpg')}
                           loading="lazy" className="img_absolute" /></div>
                 </div>
                 <div className="project_caption">
@@ -234,21 +235,21 @@ function Projects() {
                 className="project w-inline-block">
                 <div className="project_preview aspect-2">
                   <div className="project_cover"><img sizes="(max-width: 1500px) 100vw, 1500px"
-                    srcSet="/images/selectedProjects/press-ads/tamim-khan-press-ads-01-500.jpg 500w, /images/selectedProjects/press-ads/tamim-khan-press-ads-01-800.jpg 800w, /images/selectedProjects/press-ads/tamim-khan-press-ads-01-1080.jpg 1080w"
+                    srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-01-'+w+'.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src="/images/selectedProjects/press-ads/tamim-khan-press-ads-01-1080.jpg"
+                    src={withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-01-1080.jpg')}
                     loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                      srcSet="/images/selectedProjects/press-ads/tamim-khan-press-ads-02-500.jpg 500w, /images/selectedProjects/press-ads/tamim-khan-press-ads-02-800.jpg 800w, /images/selectedProjects/press-ads/tamim-khan-press-ads-02-1080.jpg 1080w"
+                      srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-02-'+w+'.jpg')} ${w}w`).join(', ')}
                       alt=""
-                      src="/images/selectedProjects/press-ads/tamim-khan-press-ads-02-1080.jpg"
+                      src={withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-02-1080.jpg')}
                       loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                        srcSet="/images/selectedProjects/press-ads/tamim-khan-press-ads-03-500.jpg 500w, /images/selectedProjects/press-ads/tamim-khan-press-ads-03-800.jpg 800w, /images/selectedProjects/press-ads/tamim-khan-press-ads-03-1080.jpg 1080w"
+                        srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-03-'+w+'.jpg')} ${w}w`).join(', ')}
                         alt=""
-                        src="/images/selectedProjects/press-ads/tamim-khan-press-ads-03-1080.jpg"
+                        src={withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-03-1080.jpg')}
                         loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                          srcSet="/images/selectedProjects/press-ads/tamim-khan-press-ads-04-500.jpg 500w, /images/selectedProjects/press-ads/tamim-khan-press-ads-04-800.jpg 800w, /images/selectedProjects/press-ads/tamim-khan-press-ads-04-1080.jpg 1080w"
+                          srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-04-'+w+'.jpg')} ${w}w`).join(', ')}
                           alt=""
-                          src="/images/selectedProjects/press-ads/tamim-khan-press-ads-04-1080.jpg"
+                          src={withBase('/images/selectedProjects/press-ads/tamim-khan-press-ads-04-1080.jpg')}
                           loading="lazy" className="img_absolute" /></div>
                 </div>
                 <div className="project_caption">
@@ -263,25 +264,25 @@ function Projects() {
                 className="project w-inline-block">
                 <div className="project_preview aspect-2">
                   <div className="project_cover"><img sizes="(max-width: 1500px) 100vw, 1500px"
-                    srcSet="/images/selectedProjects/logo&identity/tamim-khan-logo-design-01-500.jpg 500w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-01-800.jpg 800w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-01-1080.jpg 1080w"
+                    srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-01-'+w+'.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src="/images/selectedProjects/logo&identity/tamim-khan-logo-design-01-1080.jpg"
+                    src={withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-01-1080.jpg')}
                     loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                      srcSet="/images/selectedProjects/logo&identity/tamim-khan-logo-design-02-500.jpg 500w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-02-800.jpg 800w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-02-1080.jpg 1080w"
+                      srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-02-'+w+'.jpg')} ${w}w`).join(', ')}
                       alt=""
-                      src="/images/selectedProjects/logo&identity/tamim-khan-logo-design-02-1080.jpg"
+                      src={withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-02-1080.jpg')}
                       loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                        srcSet="/images/selectedProjects/logo&identity/tamim-khan-logo-design-03-500.jpg 500w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-03-800.jpg 800w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-03-1080.jpg 1080w"
+                        srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-03-'+w+'.jpg')} ${w}w`).join(', ')}
                         alt=""
-                        src="/images/selectedProjects/logo&identity/tamim-khan-logo-design-03-1080.jpg"
+                        src={withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-03-1080.jpg')}
                         loading="lazy" className="img_absolute" /><img sizes="(max-width: 1500px) 100vw, 1500px"
-                          srcSet="/images/selectedProjects/logo&identity/tamim-khan-logo-design-04-500.jpg 500w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-04-800.jpg 800w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-04-1080.jpg 1080w"
+                          srcSet={[500,800,1080].map(w=>`${withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-04-'+w+'.jpg')} ${w}w`).join(', ')}
                           alt=""
-                          src="/images/selectedProjects/logo&identity/tamim-khan-logo-design-04-1080.jpg"
+                          src={withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-04-1080.jpg')}
                           loading="lazy" className="img_absolute" /><img sizes="(max-width: 1000px) 100vw, 1000px"
-                            srcSet="/images/selectedProjects/logo&identity/tamim-khan-logo-design-05-500.jpg 500w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-05-800.jpg 800w, /images/selectedProjects/logo&identity/tamim-khan-logo-design-05-1080.jpg 1000w"
+                            srcSet={[500,800,1000].map(w=>`${withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-05-'+w+'.jpg')} ${w}w`).join(', ')}
                             alt=""
-                            src="/images/selectedProjects/logo&identity/tamim-khan-logo-design-05-1080.jpg"
+                            src={withBase('/images/selectedProjects/logo&identity/tamim-khan-logo-design-05-1080.jpg')}
                             loading="lazy" className="img_absolute" /></div>
                 </div>
                 <div className="project_caption">
@@ -304,7 +305,7 @@ function Projects() {
                       loop
                       playsInline
                       preload="metadata"
-                      poster="/images/selectedProjects/motion-visual/tamim-khan-gazitayre-post-01.png"
+                      poster={withBase('/images/selectedProjects/motion-visual/tamim-khan-gazitayre-post-01.png')}
                     ></video>
                   </div>
                 </div>

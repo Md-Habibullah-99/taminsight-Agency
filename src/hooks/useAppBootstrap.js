@@ -1,3 +1,4 @@
+import { withBase } from '../utils/withBase.js';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 
@@ -346,7 +347,7 @@ export default function useAppBootstrap() {
       if (timeElem) timeElem.textContent = timeStr;
     };
     const getWeatherIcon = (main) => {
-      const baseUrl = '/images/footerElements/watherIcons/';
+      const baseUrl = withBase('/images/footerElements/watherIcons/');
       switch (main) {
         case 'Clouds': return `${baseUrl}clouds.svg`;
         case 'Rain': return `${baseUrl}rain.svg`;
