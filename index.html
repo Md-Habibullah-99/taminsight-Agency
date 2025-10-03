@@ -23,20 +23,39 @@
     }(window, document);
   </script>
 
-  <!-- CSS Files: keep minimal here; app imports CSS so they bundle into assets -->
+  <!-- CSS Files -->
+  <link href="src/Styles/main.css" rel="stylesheet" type="text/css" />
   
 
   <!-- Favicon -->
   <link href="/images/favIcon.jpg" rel="shortcut icon" type="image/x-icon" />
   <link href="/images/favIcon.jpg" rel="apple-touch-icon" />
 
-  <!-- Styles (css) are imported within the React app and bundled by Vite -->
+  <!-- Styles (css) -->
+
+  <!-- <link rel="stylesheet" href="src/Styles/main.css"> -->
+   <link rel="stylesheet" href="src/Styles/utils/cssVariables.css">
+  <link rel="stylesheet" href="src/Styles/utils/buttons.css">
+  <link rel="stylesheet" href="src/Styles/utils/newsLetterTextFormating.css">
+  <link rel="stylesheet" href="src/Styles/utils/visibilityUtilities.css">
+  <link rel="stylesheet" href="src/Styles/utils/mobileStyles.css">
+  <link rel="stylesheet" href="src/Styles/animations/allanimations.css">
+  <link rel="stylesheet" href="src/Styles/animations/cursor.css">
+  <link rel="stylesheet" href="src/Styles/footer/footerPrimary.css">
+  <link rel="stylesheet" href="src/Styles/footer/footerPrimaryRight.css">
+  <link rel="stylesheet" href="src/Styles/footer/footerPrimaryLeft.css">
+  <link rel="stylesheet" href="src/Styles/footer/footerPrimaryUp.css">
+  <link rel="stylesheet" href="src/Styles/footer/footerPrimaryBottom.css">
+  <link rel="stylesheet" href="src/Styles/footer/bottomMenu/bottomMenuSticky.css">
+  <link rel="stylesheet" href="src/Styles/utils/clickOnCopyEmail.css">
+  <link rel="stylesheet" href="src/Styles/logoes/client-logo-settings.css">
+  <link rel="stylesheet" href="src/Styles/services/services.css">
+  <link rel="stylesheet" href="src/Styles/services/awards/awards.css">
 
 </head>
 
 <body>
   <div id="root"></div>
-  <!-- Vite replaces this entry during build; keep dev entry here -->
   <script type="module" src="/src/main.jsx"></script>
   <script src="/scripts/clickOnCopyEmail.js"></script>
   <script src="/scripts/cursor.js"></script>
