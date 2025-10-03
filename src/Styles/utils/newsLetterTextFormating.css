@@ -1,0 +1,101 @@
+        /* NEWSLETTER TEXT FORMATTING */
+        /* Common font settings */
+        .nl_block :is(h2, h3, h4, h5, h6),
+        .nl_block_cta h4,
+        .nl_block_form h4 {
+          font-family: var(--font-serif) !important;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+        }
+
+        /* Headings */
+        .nl_block h2 {
+          margin: 3rem 0 1.5rem;
+          font-size: 2rem;
+        }
+
+        .nl_block h3 {
+          margin: 2.5rem 0 1.25rem;
+          font-size: 1.75rem;
+        }
+
+        .nl_block h4 {
+          margin: 2rem 0 1rem;
+          font-size: 1.5rem;
+        }
+
+        .nl_block h5 {
+          font-size: 1.25rem;
+          margin-bottom: 1.25rem;
+        }
+
+        /* Paragraphs */
+        .nl_block p {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          line-height: 1.75;
+        }
+
+        /* List styling */
+        .page-nl .w-richtext ol,
+        .page-nl .w-richtext li,
+        .page-nl .w-richtext ul {
+          overflow: unset !important;
+        }
+
+        .page-nl ul {
+          list-style-type: disc;
+          padding-left: 1.5rem;
+          color: inherit;
+        }
+
+        .page-nl ol {
+          list-style-type: decimal;
+          padding-left: 1.5rem;
+        }
+
+        .page-nl ul li::marker,
+        .page-nl ol li::marker {
+          color: var(--btn-primary);
+        }
+
+        /* Figures */
+        .w-richtext figure {
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        /* Call to action blocks */
+        .nl_block_cta a {
+          text-decoration: underline;
+          box-shadow: none;
+          font-weight: bold;
+          color: var(--color--cta-primary);
+        }
+
+        .nl_block_cta a:hover {
+          box-shadow: none;
+        }
+
+        .nl_block_cta h4,
+        .nl_block_form h4 {
+          margin: 0 0 1.5rem;
+        }
+
+        /* Newsletter list items */
+        .new_list {
+          transition: all 0.5s var(--btn-ease, cubic-bezier(0.4, 0, 0, 1));
+        }
+
+        .new_list:hover .nl_headline,
+        .new_list:hover .nl-item-sn {
+          color: var(--color--cta-primary-hover);
+        }
+
+        .new_list .nl-arrow {
+          transition: transform 0.8s var(--btn-bounce, cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .new_list:hover .nl-arrow {
+          transform: translate3d(10px, 0, 0);
+        }

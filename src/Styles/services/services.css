@@ -1,0 +1,135 @@
+.service_offer_title-container{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 40px;
+  max-width: 500px;
+}
+
+.service_offer_title{
+  position: sticky;
+  top: 112px;
+  padding-bottom: 250px;
+  margin-left: 30px;
+  margin-right: 20px;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.service_offer {
+  display: flex;
+}
+
+.service_offer-services{
+  margin-left: 50px;
+}
+
+.service_offer-service{
+  margin-bottom: 100px;
+}
+.service_offer-service_title{
+  margin-bottom: 20px;
+  font-size: 83px;
+  font-weight: 450;
+}
+
+.service_offer-service_description{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service_offer-service_description-element {
+  display: inline-block;
+  position: relative;
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+
+@media screen and (max-width:1300px) {
+  .service_offer_title{
+    margin-bottom: 70px;
+  }
+}
+@media screen and (max-width:1189px) {
+  .service_offer_title{
+    margin-bottom: 90px;
+  }
+}
+@media screen and (max-width:1155px) {
+  .service_offer_title{
+    margin-bottom: 120px;
+  }
+}
+@media screen and (max-width:1086px) {
+  .service_offer_title{
+    margin-bottom: 170px;
+  }
+}
+@media screen and (max-width:991px) {
+  
+  .service_offer {
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+  .service_offer_title{
+    margin-bottom: 100px;
+    padding-bottom: 0px;
+    font-size: 30px;
+  }
+  .service_offer_title-container{
+    padding-bottom: 0px;
+  }
+  .service_offer-services{
+    margin-left: 30px;
+  }
+  .service_offer-service{
+    margin-bottom: 70px;
+  }
+  .service_offer-service_title{
+    font-size: 64px;
+    margin-bottom: 15px;
+  }
+  .service_offer-service_description-element{
+    font-size: 22px;
+  }
+}
+@media screen and (max-width:767px) {
+  .service_offer {
+    grid-column-gap: var(--space--12);
+    grid-row-gap: var(--space--12)
+  }
+  .service_offer_title{
+    margin-bottom: 70px;
+    font-size: 26px;
+  }
+  .service_offer-service_title{
+    font-size: 56px;
+  }
+  .service_offer-service_description-element{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:720px) {
+  .service_offer_title{
+    margin-bottom: 50px;
+    font-size: 22px;
+  }
+  .service_offer-service{
+    margin-bottom: 50px;
+  }
+  .service_offer-service_title{
+    font-size: 48px;
+  }
+  .service_offer-service_description-element{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:479px) {
+  .service_offer {
+    grid-column-gap: var(--space--16);
+    grid-row-gap: var(--space--16)
+  }
+}
