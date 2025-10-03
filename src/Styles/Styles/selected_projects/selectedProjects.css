@@ -1,0 +1,121 @@
+/* Styles for SelectedProjects component */
+
+:root {
+    --space--24: 1.5rem;
+    --radius--24: 1.5rem;
+    --color--gray-200: #e0e0e0;
+    --space--s-8: .5rem;
+    --font--text-lg: 1.375rem;
+}
+
+.section-projects {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.project_grid {
+    display: grid;
+    grid-column-gap: var(--space--48);
+    grid-row-gap: var(--space--96);
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+.project_card {
+    padding-bottom: 10vh;
+}
+
+.project_card.is-last-project {
+    padding-bottom: 0;
+}
+
+.project_preview {
+    margin-bottom: var(--space--24);
+    border-radius: var(--radius--24);
+    background-color: var(--color--gray-200);
+    text-transform: none;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%; /* Or other aspect ratio */
+}
+
+.aspect-4 {
+    padding-bottom: 125%;
+}
+
+.project_caption {
+    padding-right: var(--space--24);
+    font-size: var(--font--text-lg);
+    text-align: left;
+    display: block;
+    margin-top: 1rem;
+}
+
+.project_cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0%;
+    background-color: #fff;
+}
+
+.project_description {
+    color: #757575;
+    display: inline;
+}
+
+.project_headling {
+    font-weight: 700;
+    display: inline;
+    color: #000;
+}
+
+.project {
+    cursor: grab;
+    order: 1;
+    align-self: flex-start;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.img_absolute {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0%;
+}
+
+/* Image cycling: stack all images and fade between them */
+.project .project_cover img {
+    opacity: 0;
+    /* transition-all kept similar to legacy for smoothness across engines */
+    transition: opacity 0.8s cubic-bezier(0.67, 0, 0.285, 1);
+    pointer-events: none; /* prevent image layers from blocking hover */
+}
+
+.project .project_cover img:first-child {
+    opacity: 1;
+}
+
+.project .project_cover img.style-show {
+    opacity: 1;
+}
+
+.aspect-1 {
+    padding-bottom: 100%;
+}
+
+.aspect-2 {
+    padding-bottom: 66.66%;
+}
+
+.aspect-3 {
+    padding-bottom: 50%;
+}
+
+.aspect-4 {
+    padding-bottom: 125%;
+}
