@@ -1,36 +1,9 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import AnimatedCards from "../sub_components/AnimatedCards";
 import LottiePlayer from "../sub_components/LottiePlayer";
-
-const steps = [
-  {
-    title: "Creative Director with Vision",
-    description:
-      "I help brands and founders achieve meaningful results, which drives business and improves lives. My approach is straightforward: I focus on four key areas - design, business, marketing, and psychology.",
-    lottie_src:
-      "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/654fa7c15cc9f1e795bb9529_unlimted-request.json",
-  },
-  {
-    title: "Fast-Track Delivery",
-    description:
-      "From concept to Figma design, and on to Webflow or Framer projects, I deliver results. I'll keep you updated every 48 hours to ensure your project stays on track.",
-    lottie_src:
-      "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-  },
-  {
-    title: "Your Design Partner",
-    description:
-      "As your design partner, I'm here to help you get results fast. This will drive business growth and help us build a strong partnership. If your needs change, we'll change with them. You'll always know what to expect from me.",
-    lottie_src:
-      "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/654fcc1a8009cb2c99f9d328_design-quality.json",
-  },
-];
+import steps from "../../data/process/steps.json";
 
 function Process() {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
   
   return (
     <section id="how-it-works" className="services">
@@ -40,7 +13,7 @@ function Process() {
           <div className="section-header">
             <div className="section_header_wrapper">
               <div data-scroll-reveal="" className="text-eyebrow is-process">
-                <div>from chaos to clarity '</div>
+                <div>from chaos to clarity </div>
               </div>
               <h1 data-scroll-reveal="" className="heading-gradient is-bg-cream"><span className="newline">I keep the process
                 </span><span className="newline">simple and the results</span><span className="newline heading-style-h1">
@@ -50,26 +23,14 @@ function Process() {
           <div className="section-content">
             <div className="block_main_wrapper">
 
-              <div data-scroll-reveal="" className="simple_steps">
-                {steps.map((step, idx) => (
-                  <div
-                    className="simple_steps_item"
-                    data-aos="fade-up"
-                    data-aos-delay={idx * 100}
-                    key={idx}
-                  >
-                    <div className="card_steps_icon">
-                      <LottiePlayer src={step.lottie_src} />
-                    </div>
-                    <div className="simple-step-content">
-                      <h6 className="mb-16">{step.title}</h6>
-                      <div className="body-text line-height-3">
-                        {step.description}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <AnimatedCards
+                items={steps}
+                getKey={(_, idx) => idx}
+                renderIcon={(item) => item?.lottie_src ? <LottiePlayer src={item.lottie_src} /> : null}
+                aos={{ animation: 'fade-up', delayStep: 100 }}
+                className="simple_steps"
+                itemClassName="simple_steps_item"
+              />
               <div className="svg-arrow-down"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 102 110"
                   fill="none" className="svgsprite">
                   <path fillRule="evenodd" clipRule="evenodd"

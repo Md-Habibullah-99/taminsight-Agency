@@ -30,6 +30,13 @@ export default function useAppBootstrap() {
       if (cursorDot) {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
+        // Toggle dot color based on hovered section (robust across route changes)
+        try {
+          const highlight = e.target && typeof e.target.closest === 'function'
+            ? e.target.closest('.intro, .pricing_card, .footer-primary')
+            : null;
+          cursorDot.style.backgroundColor = highlight ? 'white' : 'black';
+        } catch (_) { /* noop */ }
       }
       if (cursorOutline) {
         cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: 'forwards' });
@@ -48,51 +55,12 @@ export default function useAppBootstrap() {
         }, 50);
       }
     };
-    // Cursor color change over specific sections
-    const changeCursorColor = () => {
-      const targetSubsection = document.querySelector('.cursor-dot');
-      const hoverIntro = document.querySelector('.intro');
-      const hoverPricing = document.querySelector('.pricing_card');
-      const hoverFooter = document.querySelector('.footer-primary');
-
-      const handleMouseEnter = () => { if (targetSubsection) targetSubsection.style.backgroundColor = 'white'; };
-      const handleMouseLeave = () => { if (targetSubsection) targetSubsection.style.backgroundColor = 'black'; };
-
-      if (hoverIntro) {
-        hoverIntro.addEventListener('mouseenter', handleMouseEnter);
-        hoverIntro.addEventListener('mouseleave', handleMouseLeave);
-      }
-      if (hoverPricing) {
-        hoverPricing.addEventListener('mouseenter', handleMouseEnter);
-        hoverPricing.addEventListener('mouseleave', handleMouseLeave);
-      }
-      if (hoverFooter) {
-        hoverFooter.addEventListener('mouseenter', handleMouseEnter);
-        hoverFooter.addEventListener('mouseleave', handleMouseLeave);
-      }
-      return () => {
-        if (hoverIntro) {
-          hoverIntro.removeEventListener('mouseenter', handleMouseEnter);
-          hoverIntro.removeEventListener('mouseleave', handleMouseLeave);
-        }
-        if (hoverPricing) {
-          hoverPricing.removeEventListener('mouseenter', handleMouseEnter);
-          hoverPricing.removeEventListener('mouseleave', handleMouseLeave);
-        }
-        if (hoverFooter) {
-          hoverFooter.removeEventListener('mouseenter', handleMouseEnter);
-          hoverFooter.removeEventListener('mouseleave', handleMouseLeave);
-        }
-      };
-    };
-
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
-    const cleanupChangeCursorColor = changeCursorColor();
+    // Color change handled inline in onMouseMove above
 
     // --- Tooltip + Copy Email over footer primary up container ---
     const setupCursorTooltipAndCopy = () => {
-      const container = document.querySelector('.footer-primary-up-container');
       let tooltipTimeout;
 
       function ensureTooltip() {
@@ -130,24 +98,39 @@ export default function useAppBootstrap() {
       };
       document.addEventListener('mousemove', onDocMouseMove);
 
-      const onEnter = () => showCursorTooltip('copy');
-      const onLeave = () => { hideCursorTooltip(); if (tooltipTimeout) clearTimeout(tooltipTimeout); };
-      const onMouseDown = () => {
+      // Delegated interactions to survive re-renders/route changes
+      const delegatedMouseOver = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        container.style.cursor = 'pointer';
+        showCursorTooltip('copy');
+      };
+      const delegatedMouseOut = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        if (tooltipTimeout) clearTimeout(tooltipTimeout);
+        hideCursorTooltip();
+      };
+      const delegatedMouseDown = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
         showCursorTooltip('Email Copied');
         if (tooltipTimeout) clearTimeout(tooltipTimeout);
         tooltipTimeout = setTimeout(() => showCursorTooltip('copy'), 1000);
       };
-      const onClickContainer = (event) => {
-        if (event.target.tagName === 'A') event.preventDefault();
-        const emailLink = container?.querySelector('.email-link-click-to-copy');
-        if (emailLink) {
-          let email = '';
-          const href = emailLink.getAttribute('href');
-          if (href && href.startsWith('mailto:')) email = href.replace('mailto:', '');
-          else email = (emailLink.textContent || '').trim();
-          copyToClipboard(email);
-          if (isMobileDevice()) showCopyConfirmationTooltip(container);
-        }
+      const delegatedClick = (event) => {
+        const container = event.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        const a = event.target.closest('a');
+        if (a) event.preventDefault();
+        const emailLink = container.querySelector('.email-link-click-to-copy');
+        if (!emailLink) return;
+        let email = '';
+        const href = emailLink.getAttribute('href');
+        if (href && href.startsWith('mailto:')) email = href.replace('mailto:', '');
+        else email = (emailLink.textContent || '').trim();
+        copyToClipboard(email);
+        if (isMobileDevice()) showCopyConfirmationTooltip(container);
       };
 
       function copyToClipboard(text) {
@@ -178,22 +161,18 @@ export default function useAppBootstrap() {
         return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       }
 
-      if (container) {
-        container.style.cursor = 'pointer';
-        container.addEventListener('mouseenter', onEnter);
-        container.addEventListener('mouseleave', onLeave);
-        container.addEventListener('mousedown', onMouseDown);
-        container.addEventListener('click', onClickContainer);
-      }
+      // Attach delegated handlers
+      document.addEventListener('mouseover', delegatedMouseOver);
+      document.addEventListener('mouseout', delegatedMouseOut);
+      document.addEventListener('mousedown', delegatedMouseDown);
+      document.addEventListener('click', delegatedClick);
 
       return () => {
         document.removeEventListener('mousemove', onDocMouseMove);
-        if (container) {
-          container.removeEventListener('mouseenter', onEnter);
-          container.removeEventListener('mouseleave', onLeave);
-          container.removeEventListener('mousedown', onMouseDown);
-          container.removeEventListener('click', onClickContainer);
-        }
+        document.removeEventListener('mouseover', delegatedMouseOver);
+        document.removeEventListener('mouseout', delegatedMouseOut);
+        document.removeEventListener('mousedown', delegatedMouseDown);
+        document.removeEventListener('click', delegatedClick);
         if (tooltipTimeout) clearTimeout(tooltipTimeout);
       };
     };
@@ -260,84 +239,42 @@ export default function useAppBootstrap() {
           hamburgerBtn.classList.remove('is-active');
         }
       };
+      const onMenuLinkClick = (e) => {
+        const link = e.target.closest('.navbar_menu_links .btn_link, .navbar_menu_links a');
+        if (!link) return;
+        if (!isAnimating && isOpen) {
+          toggleMenu(false);
+          isOpen = false;
+          navbarMenu.dataset.open = 'false';
+          hamburgerBtn.classList.remove('is-active');
+        }
+      };
+      const onHashChangeCloseMenu = () => {
+        if (!isAnimating && isOpen) {
+          toggleMenu(false);
+          isOpen = false;
+          navbarMenu.dataset.open = 'false';
+          hamburgerBtn.classList.remove('is-active');
+        }
+      };
       const onScroll = debounce(() => { if (window.scrollY === 0) showLogoCta(); }, 100);
 
       hamburgerBtn.addEventListener('click', onHamburgerClick);
       menuOverlay.addEventListener('click', onOverlayClick);
       window.addEventListener('scroll', onScroll);
+      navbarMenu.addEventListener('click', onMenuLinkClick);
+      window.addEventListener('hashchange', onHashChangeCloseMenu);
 
       cleanupNavbar = () => {
         hamburgerBtn.removeEventListener('click', onHamburgerClick);
         menuOverlay.removeEventListener('click', onOverlayClick);
         window.removeEventListener('scroll', onScroll);
+        navbarMenu.removeEventListener('click', onMenuLinkClick);
+        window.removeEventListener('hashchange', onHashChangeCloseMenu);
       };
     }
 
-    // --- Lenis smooth scrolling (global) ---
-  let rafId;
-  let lenisInstance;
-  let suspendLenis = false; // when true, skip lenis.raf to avoid fighting programmatic scrolls
-  let resumeLenisTimer;
-    const initLenis = () => {
-      try {
-        const isSalePage = document.body.classList.contains('sale-page');
-        const isWebflowEditor = typeof window !== 'undefined' && window.Webflow && typeof window.Webflow.env === 'function'
-          ? window.Webflow.env('editor') !== undefined
-          : false;
-        if (isSalePage || isWebflowEditor) return () => {};
-
-        const LenisCtor = typeof window !== 'undefined' ? window.Lenis : undefined;
-        if (!LenisCtor) return () => {};
-
-        lenisInstance = new LenisCtor({
-          duration: 1,
-          easing: (e) => Math.min(1, 1.001 - Math.pow(2, -10 * e)),
-          direction: 'vertical',
-          gestureDirection: 'vertical',
-          smooth: true,
-          mouseMultiplier: 1,
-          smoothTouch: false,
-          touchMultiplier: 1,
-          infinite: false,
-        });
-        const raf = (time) => {
-          if (!suspendLenis) {
-            lenisInstance?.raf(time);
-          }
-          rafId = requestAnimationFrame(raf);
-        };
-        // Optional hook
-        lenisInstance.on('scroll', () => {});
-        rafId = requestAnimationFrame(raf);
-        return () => {
-          if (rafId) cancelAnimationFrame(rafId);
-          if (lenisInstance) { try { lenisInstance.destroy(); } catch (_) {} lenisInstance = undefined; }
-        };
-      } catch (_) {
-        return () => {};
-      }
-    };
-    const cleanupLenis = initLenis();
-
-    // Give priority to bottom menu navigation: pause Lenis during GSAP-driven scroll
-    const pauseLenis = () => {
-      suspendLenis = true;
-      try { lenisInstance?.stop?.(); } catch (_) {}
-    };
-    const resumeLenis = () => {
-      try { lenisInstance?.start?.(); } catch (_) {}
-      suspendLenis = false;
-    };
-    const onBottomMenuClick = (e) => {
-      const a = e.target.closest('.bottom-menu .bottom-menu-link');
-      if (!a) return;
-      // Pause Lenis to avoid momentum interfering with GSAP ScrollTo in BottomMenu
-      pauseLenis();
-      // Resume Lenis after the bottom menu scroll animation likely completes (~1s)
-      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
-      resumeLenisTimer = setTimeout(resumeLenis, 1200);
-    };
-    document.addEventListener('click', onBottomMenuClick, true);
+    // Note: Smooth scrolling (Lenis) fully removed per request
 
     // --- Time and Weather ---
     const updateTime = () => {
@@ -391,12 +328,9 @@ export default function useAppBootstrap() {
       window.removeEventListener('pageshow', onPageShow);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('click', onClick);
-      if (typeof cleanupChangeCursorColor === 'function') cleanupChangeCursorColor();
+  // onMouseMove handles color toggling; no separate cleanup needed
       if (typeof cleanupCursorTooltipAndCopy === 'function') cleanupCursorTooltipAndCopy();
-      if (typeof cleanupNavbar === 'function') cleanupNavbar();
-      if (typeof cleanupLenis === 'function') cleanupLenis();
-      document.removeEventListener('click', onBottomMenuClick, true);
-      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
+    if (typeof cleanupNavbar === 'function') cleanupNavbar();
       if (timeIntervalId) clearInterval(timeIntervalId);
       if (weatherIntervalId) clearInterval(weatherIntervalId);
     };
