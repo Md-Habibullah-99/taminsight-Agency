@@ -2836,6 +2836,9 @@ a {
   display: flex
 }
 
+.hero_header.is_affiliate{
+  align-items: start;
+}
 .hero_header.is-home,
 .hero_header.is-newsletter {
   padding-bottom: var(--space--40)
