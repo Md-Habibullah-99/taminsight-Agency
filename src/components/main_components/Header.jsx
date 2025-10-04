@@ -48,7 +48,11 @@ const Header = () => {
         <div className="menu_list">
           <div className="menu_list_wrapper">
             <Link to="/affiliate"
-              className="btn btn_link w-inline-block"><em><span data-text="Affiliate">Affiliate</span></em></Link>
+              className="btn btn_link w-inline-block">
+                <a href="#">
+                  <em><span data-text="Affiliate">Affiliate</span></em>
+                  </a>
+                  </Link>
             <a
               href="https://www.figma.com/deck/rBQAlmywVditVjZ3lsQj4c/Taminsight_Portfolio-2025_Branding-Agency?node-id=1-257&viewport=-159%2C-129%2C0.73&t=DImIymB1uDCa3ur9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
               className="btn btn_link w-inline-block" target="_blank"><em><span data-text="Company Deck">Company Deck</span></em></a>
