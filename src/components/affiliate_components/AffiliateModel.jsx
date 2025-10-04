@@ -1,6 +1,8 @@
+import AnimatedCards from "../sub_components/AnimatedCards"
+import howAffiliateWorks from "../../data/affiliate/howAffiliateWorks.json"
+import LottiePlayer from "../sub_components/LottiePlayer"
 
-
-export default function AffiliateModel() {
+export default function AffiliateModel({ animate = false }) {
   return (
     <>
     <div id="delete-vars-btn" className="hero_header is-home">
@@ -17,7 +19,15 @@ export default function AffiliateModel() {
             <div className="word">Works</div>
           </h1>
           
-          
+          <AnimatedCards
+                items={howAffiliateWorks}
+                getKey={(_, idx) => idx}
+                renderIcon={(item) => item?.lottie_src ? <LottiePlayer src={item.lottie_src} /> : null}
+                animate={animate}
+                aos={{ animation: 'fade-up', delayStep: 100 }}
+                className="simple_steps"
+                itemClassName="simple_steps_item"
+              />
           
           <div data-scroll-reveal="" className="hero_cta is-home"><a href="#plans"
               className="btn_cta btn-primary w-inline-block">
