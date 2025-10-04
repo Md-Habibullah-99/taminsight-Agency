@@ -30,6 +30,13 @@ export default function useAppBootstrap() {
       if (cursorDot) {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
+        // Toggle dot color based on hovered section (robust across route changes)
+        try {
+          const highlight = e.target && typeof e.target.closest === 'function'
+            ? e.target.closest('.intro, .pricing_card, .footer-primary')
+            : null;
+          cursorDot.style.backgroundColor = highlight ? 'white' : 'black';
+        } catch (_) { /* noop */ }
       }
       if (cursorOutline) {
         cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: 'forwards' });
@@ -48,47 +55,9 @@ export default function useAppBootstrap() {
         }, 50);
       }
     };
-    // Cursor color change over specific sections
-    const changeCursorColor = () => {
-      const targetSubsection = document.querySelector('.cursor-dot');
-      const hoverIntro = document.querySelector('.intro');
-      const hoverPricing = document.querySelector('.pricing_card');
-      const hoverFooter = document.querySelector('.footer-primary');
-
-      const handleMouseEnter = () => { if (targetSubsection) targetSubsection.style.backgroundColor = 'white'; };
-      const handleMouseLeave = () => { if (targetSubsection) targetSubsection.style.backgroundColor = 'black'; };
-
-      if (hoverIntro) {
-        hoverIntro.addEventListener('mouseenter', handleMouseEnter);
-        hoverIntro.addEventListener('mouseleave', handleMouseLeave);
-      }
-      if (hoverPricing) {
-        hoverPricing.addEventListener('mouseenter', handleMouseEnter);
-        hoverPricing.addEventListener('mouseleave', handleMouseLeave);
-      }
-      if (hoverFooter) {
-        hoverFooter.addEventListener('mouseenter', handleMouseEnter);
-        hoverFooter.addEventListener('mouseleave', handleMouseLeave);
-      }
-      return () => {
-        if (hoverIntro) {
-          hoverIntro.removeEventListener('mouseenter', handleMouseEnter);
-          hoverIntro.removeEventListener('mouseleave', handleMouseLeave);
-        }
-        if (hoverPricing) {
-          hoverPricing.removeEventListener('mouseenter', handleMouseEnter);
-          hoverPricing.removeEventListener('mouseleave', handleMouseLeave);
-        }
-        if (hoverFooter) {
-          hoverFooter.removeEventListener('mouseenter', handleMouseEnter);
-          hoverFooter.removeEventListener('mouseleave', handleMouseLeave);
-        }
-      };
-    };
-
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
-    const cleanupChangeCursorColor = changeCursorColor();
+    // Color change handled inline in onMouseMove above
 
     // --- Tooltip + Copy Email over footer primary up container ---
     const setupCursorTooltipAndCopy = () => {
@@ -438,7 +407,7 @@ export default function useAppBootstrap() {
       window.removeEventListener('pageshow', onPageShow);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('click', onClick);
-      if (typeof cleanupChangeCursorColor === 'function') cleanupChangeCursorColor();
+  // onMouseMove handles color toggling; no separate cleanup needed
       if (typeof cleanupCursorTooltipAndCopy === 'function') cleanupCursorTooltipAndCopy();
       if (typeof cleanupNavbar === 'function') cleanupNavbar();
   if (typeof cleanupLenis === 'function') cleanupLenis();
