@@ -92,7 +92,6 @@ export default function useAppBootstrap() {
 
     // --- Tooltip + Copy Email over footer primary up container ---
     const setupCursorTooltipAndCopy = () => {
-      const container = document.querySelector('.footer-primary-up-container');
       let tooltipTimeout;
 
       function ensureTooltip() {
@@ -130,24 +129,39 @@ export default function useAppBootstrap() {
       };
       document.addEventListener('mousemove', onDocMouseMove);
 
-      const onEnter = () => showCursorTooltip('copy');
-      const onLeave = () => { hideCursorTooltip(); if (tooltipTimeout) clearTimeout(tooltipTimeout); };
-      const onMouseDown = () => {
+      // Delegated interactions to survive re-renders/route changes
+      const delegatedMouseOver = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        container.style.cursor = 'pointer';
+        showCursorTooltip('copy');
+      };
+      const delegatedMouseOut = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        if (tooltipTimeout) clearTimeout(tooltipTimeout);
+        hideCursorTooltip();
+      };
+      const delegatedMouseDown = (e) => {
+        const container = e.target.closest('.footer-primary-up-container');
+        if (!container) return;
         showCursorTooltip('Email Copied');
         if (tooltipTimeout) clearTimeout(tooltipTimeout);
         tooltipTimeout = setTimeout(() => showCursorTooltip('copy'), 1000);
       };
-      const onClickContainer = (event) => {
-        if (event.target.tagName === 'A') event.preventDefault();
-        const emailLink = container?.querySelector('.email-link-click-to-copy');
-        if (emailLink) {
-          let email = '';
-          const href = emailLink.getAttribute('href');
-          if (href && href.startsWith('mailto:')) email = href.replace('mailto:', '');
-          else email = (emailLink.textContent || '').trim();
-          copyToClipboard(email);
-          if (isMobileDevice()) showCopyConfirmationTooltip(container);
-        }
+      const delegatedClick = (event) => {
+        const container = event.target.closest('.footer-primary-up-container');
+        if (!container) return;
+        const a = event.target.closest('a');
+        if (a) event.preventDefault();
+        const emailLink = container.querySelector('.email-link-click-to-copy');
+        if (!emailLink) return;
+        let email = '';
+        const href = emailLink.getAttribute('href');
+        if (href && href.startsWith('mailto:')) email = href.replace('mailto:', '');
+        else email = (emailLink.textContent || '').trim();
+        copyToClipboard(email);
+        if (isMobileDevice()) showCopyConfirmationTooltip(container);
       };
 
       function copyToClipboard(text) {
@@ -178,22 +192,18 @@ export default function useAppBootstrap() {
         return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       }
 
-      if (container) {
-        container.style.cursor = 'pointer';
-        container.addEventListener('mouseenter', onEnter);
-        container.addEventListener('mouseleave', onLeave);
-        container.addEventListener('mousedown', onMouseDown);
-        container.addEventListener('click', onClickContainer);
-      }
+      // Attach delegated handlers
+      document.addEventListener('mouseover', delegatedMouseOver);
+      document.addEventListener('mouseout', delegatedMouseOut);
+      document.addEventListener('mousedown', delegatedMouseDown);
+      document.addEventListener('click', delegatedClick);
 
       return () => {
         document.removeEventListener('mousemove', onDocMouseMove);
-        if (container) {
-          container.removeEventListener('mouseenter', onEnter);
-          container.removeEventListener('mouseleave', onLeave);
-          container.removeEventListener('mousedown', onMouseDown);
-          container.removeEventListener('click', onClickContainer);
-        }
+        document.removeEventListener('mouseover', delegatedMouseOver);
+        document.removeEventListener('mouseout', delegatedMouseOut);
+        document.removeEventListener('mousedown', delegatedMouseDown);
+        document.removeEventListener('click', delegatedClick);
         if (tooltipTimeout) clearTimeout(tooltipTimeout);
       };
     };
@@ -260,16 +270,38 @@ export default function useAppBootstrap() {
           hamburgerBtn.classList.remove('is-active');
         }
       };
+      const onMenuLinkClick = (e) => {
+        const link = e.target.closest('.navbar_menu_links .btn_link, .navbar_menu_links a');
+        if (!link) return;
+        if (!isAnimating && isOpen) {
+          toggleMenu(false);
+          isOpen = false;
+          navbarMenu.dataset.open = 'false';
+          hamburgerBtn.classList.remove('is-active');
+        }
+      };
+      const onHashChangeCloseMenu = () => {
+        if (!isAnimating && isOpen) {
+          toggleMenu(false);
+          isOpen = false;
+          navbarMenu.dataset.open = 'false';
+          hamburgerBtn.classList.remove('is-active');
+        }
+      };
       const onScroll = debounce(() => { if (window.scrollY === 0) showLogoCta(); }, 100);
 
       hamburgerBtn.addEventListener('click', onHamburgerClick);
       menuOverlay.addEventListener('click', onOverlayClick);
       window.addEventListener('scroll', onScroll);
+      navbarMenu.addEventListener('click', onMenuLinkClick);
+      window.addEventListener('hashchange', onHashChangeCloseMenu);
 
       cleanupNavbar = () => {
         hamburgerBtn.removeEventListener('click', onHamburgerClick);
         menuOverlay.removeEventListener('click', onOverlayClick);
         window.removeEventListener('scroll', onScroll);
+        navbarMenu.removeEventListener('click', onMenuLinkClick);
+        window.removeEventListener('hashchange', onHashChangeCloseMenu);
       };
     }
 
@@ -284,7 +316,9 @@ export default function useAppBootstrap() {
         const isWebflowEditor = typeof window !== 'undefined' && window.Webflow && typeof window.Webflow.env === 'function'
           ? window.Webflow.env('editor') !== undefined
           : false;
-        if (isSalePage || isWebflowEditor) return () => {};
+        // TEMP: disable Lenis globally to avoid scroll freeze during navigation
+        const ENABLE_LENIS = false;
+        if (ENABLE_LENIS === false || isSalePage || isWebflowEditor) return () => {};
 
         const LenisCtor = typeof window !== 'undefined' ? window.Lenis : undefined;
         if (!LenisCtor) return () => {};
@@ -317,7 +351,19 @@ export default function useAppBootstrap() {
         return () => {};
       }
     };
-    const cleanupLenis = initLenis();
+    // Make Lenis re-creatable across hash-based navigation (HashRouter)
+    let cleanupLenis = initLenis();
+    const recreateLenis = () => {
+      try {
+        if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
+        suspendLenis = false;
+        if (typeof cleanupLenis === 'function') cleanupLenis();
+      } catch (_) {}
+      setTimeout(() => {
+        cleanupLenis = initLenis();
+        try { lenisInstance?.scrollTo?.(window.scrollY || 0, { immediate: true }); } catch (_) {}
+      }, 0);
+    };
 
     // Give priority to bottom menu navigation: pause Lenis during GSAP-driven scroll
     const pauseLenis = () => {
@@ -337,7 +383,8 @@ export default function useAppBootstrap() {
       if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
       resumeLenisTimer = setTimeout(resumeLenis, 1200);
     };
-    document.addEventListener('click', onBottomMenuClick, true);
+  document.addEventListener('click', onBottomMenuClick, true);
+  window.addEventListener('hashchange', recreateLenis);
 
     // --- Time and Weather ---
     const updateTime = () => {
@@ -394,7 +441,8 @@ export default function useAppBootstrap() {
       if (typeof cleanupChangeCursorColor === 'function') cleanupChangeCursorColor();
       if (typeof cleanupCursorTooltipAndCopy === 'function') cleanupCursorTooltipAndCopy();
       if (typeof cleanupNavbar === 'function') cleanupNavbar();
-      if (typeof cleanupLenis === 'function') cleanupLenis();
+  if (typeof cleanupLenis === 'function') cleanupLenis();
+  window.removeEventListener('hashchange', recreateLenis);
       document.removeEventListener('click', onBottomMenuClick, true);
       if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
       if (timeIntervalId) clearInterval(timeIntervalId);
