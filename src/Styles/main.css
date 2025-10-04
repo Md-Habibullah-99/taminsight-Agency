@@ -2838,7 +2838,10 @@ a {
 
 .hero_header.is_affiliate{
   flex-flow: row;
-  align-items: flex-end;
+  align-items: center;
+  /* match home sections visual symmetry */
+  justify-content: center;
+  gap: var(--space--32);
 }
 .hero_header.is_affiliate .affiliate-hero-image-container{
   display: flex;
@@ -2847,11 +2850,19 @@ a {
   width: 500px;
   border-radius: 250px;
   contain: content;
-  right: 0px;
+  /* avoid offsetting out of the padded container */
+  right: auto;
+  /* keep predictable width so spacing stays even */
+  flex: 0 0 500px;
 }
 .hero_header.is_affiliate .affiliate-hero-image{
   width: 500px;
   /* border-radius: 250px; */
+}
+/* keep affiliate hero text content from stretching too wide,
+   similar to home hero heading behavior */
+.hero_header.is_affiliate .work_areas {
+  max-width: 56ch;
 }
 .hero_header.is-home,
 .hero_header.is-newsletter {
