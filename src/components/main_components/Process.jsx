@@ -40,7 +40,7 @@ function Process() {
           <div className="section-header">
             <div className="section_header_wrapper">
               <div data-scroll-reveal="" className="text-eyebrow is-process">
-                <div>from chaos to clarity '</div>
+                <div>from chaos to clarity </div>
               </div>
               <h1 data-scroll-reveal="" className="heading-gradient is-bg-cream"><span className="newline">I keep the process
                 </span><span className="newline">simple and the results</span><span className="newline heading-style-h1">

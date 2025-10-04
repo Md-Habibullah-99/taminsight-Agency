@@ -1,13 +1,13 @@
 import React from "react";
-
+import Footer from "../main_components/Footer";
+import AffiliateModel from "../affiliate_components/AffiliateModel";
 
 
 function Affiliate() {
   return (
     <>
-    <h1>
-      this is Affiliate Page
-    </h1>
+      <AffiliateModel />
+      <Footer />
     </>
   )
 }
