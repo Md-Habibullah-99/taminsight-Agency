@@ -2837,7 +2837,21 @@ a {
 }
 
 .hero_header.is_affiliate{
-  align-items: start;
+  flex-flow: row;
+  align-items: flex-end;
+}
+.hero_header.is_affiliate .affiliate-hero-image-container{
+  display: flex;
+  flex-flow: row;
+  justify-content: end;
+  width: 500px;
+  border-radius: 250px;
+  contain: content;
+  right: 0px;
+}
+.hero_header.is_affiliate .affiliate-hero-image{
+  width: 500px;
+  /* border-radius: 250px; */
 }
 .hero_header.is-home,
 .hero_header.is-newsletter {
