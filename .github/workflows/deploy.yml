@@ -2,7 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main", "deploy"]
+    branches:
+      - main
+      - affiliate_hero
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -31,10 +33,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy raw CSS folder into dist for Pages
-        run: |
-          mkdir -p dist/src
-          cp -R src/Styles dist/src/Styles
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
