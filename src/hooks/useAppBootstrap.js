@@ -274,86 +274,7 @@ export default function useAppBootstrap() {
       };
     }
 
-    // --- Lenis smooth scrolling (global) ---
-  let rafId;
-  let lenisInstance;
-  let suspendLenis = false; // when true, skip lenis.raf to avoid fighting programmatic scrolls
-  let resumeLenisTimer;
-    const initLenis = () => {
-      try {
-        const isSalePage = document.body.classList.contains('sale-page');
-        const isWebflowEditor = typeof window !== 'undefined' && window.Webflow && typeof window.Webflow.env === 'function'
-          ? window.Webflow.env('editor') !== undefined
-          : false;
-        // TEMP: disable Lenis globally to avoid scroll freeze during navigation
-        const ENABLE_LENIS = false;
-        if (ENABLE_LENIS === false || isSalePage || isWebflowEditor) return () => {};
-
-        const LenisCtor = typeof window !== 'undefined' ? window.Lenis : undefined;
-        if (!LenisCtor) return () => {};
-
-        lenisInstance = new LenisCtor({
-          duration: 1,
-          easing: (e) => Math.min(1, 1.001 - Math.pow(2, -10 * e)),
-          direction: 'vertical',
-          gestureDirection: 'vertical',
-          smooth: true,
-          mouseMultiplier: 1,
-          smoothTouch: false,
-          touchMultiplier: 1,
-          infinite: false,
-        });
-        const raf = (time) => {
-          if (!suspendLenis) {
-            lenisInstance?.raf(time);
-          }
-          rafId = requestAnimationFrame(raf);
-        };
-        // Optional hook
-        lenisInstance.on('scroll', () => {});
-        rafId = requestAnimationFrame(raf);
-        return () => {
-          if (rafId) cancelAnimationFrame(rafId);
-          if (lenisInstance) { try { lenisInstance.destroy(); } catch (_) {} lenisInstance = undefined; }
-        };
-      } catch (_) {
-        return () => {};
-      }
-    };
-    // Make Lenis re-creatable across hash-based navigation (HashRouter)
-    let cleanupLenis = initLenis();
-    const recreateLenis = () => {
-      try {
-        if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
-        suspendLenis = false;
-        if (typeof cleanupLenis === 'function') cleanupLenis();
-      } catch (_) {}
-      setTimeout(() => {
-        cleanupLenis = initLenis();
-        try { lenisInstance?.scrollTo?.(window.scrollY || 0, { immediate: true }); } catch (_) {}
-      }, 0);
-    };
-
-    // Give priority to bottom menu navigation: pause Lenis during GSAP-driven scroll
-    const pauseLenis = () => {
-      suspendLenis = true;
-      try { lenisInstance?.stop?.(); } catch (_) {}
-    };
-    const resumeLenis = () => {
-      try { lenisInstance?.start?.(); } catch (_) {}
-      suspendLenis = false;
-    };
-    const onBottomMenuClick = (e) => {
-      const a = e.target.closest('.bottom-menu .bottom-menu-link');
-      if (!a) return;
-      // Pause Lenis to avoid momentum interfering with GSAP ScrollTo in BottomMenu
-      pauseLenis();
-      // Resume Lenis after the bottom menu scroll animation likely completes (~1s)
-      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
-      resumeLenisTimer = setTimeout(resumeLenis, 1200);
-    };
-  document.addEventListener('click', onBottomMenuClick, true);
-  window.addEventListener('hashchange', recreateLenis);
+    // Note: Smooth scrolling (Lenis) fully removed per request
 
     // --- Time and Weather ---
     const updateTime = () => {
@@ -409,11 +330,7 @@ export default function useAppBootstrap() {
       window.removeEventListener('click', onClick);
   // onMouseMove handles color toggling; no separate cleanup needed
       if (typeof cleanupCursorTooltipAndCopy === 'function') cleanupCursorTooltipAndCopy();
-      if (typeof cleanupNavbar === 'function') cleanupNavbar();
-  if (typeof cleanupLenis === 'function') cleanupLenis();
-  window.removeEventListener('hashchange', recreateLenis);
-      document.removeEventListener('click', onBottomMenuClick, true);
-      if (resumeLenisTimer) clearTimeout(resumeLenisTimer);
+    if (typeof cleanupNavbar === 'function') cleanupNavbar();
       if (timeIntervalId) clearInterval(timeIntervalId);
       if (weatherIntervalId) clearInterval(weatherIntervalId);
     };
