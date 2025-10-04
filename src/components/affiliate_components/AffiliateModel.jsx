@@ -19,6 +19,8 @@ export default function AffiliateModel({ animate = false }) {
             <div className="word">Works</div>
           </h1>
           
+          <div className="global-padding">
+            <div className="container-large">
           <AnimatedCards
                 items={howAffiliateWorks}
                 getKey={(_, idx) => idx}
@@ -28,6 +30,8 @@ export default function AffiliateModel({ animate = false }) {
                 className="simple_steps"
                 itemClassName="simple_steps_item"
               />
+            </div>
+          </div>
           
           <div data-scroll-reveal="" className="hero_cta is-home"><a href="#plans"
               className="btn_cta btn-primary w-inline-block">

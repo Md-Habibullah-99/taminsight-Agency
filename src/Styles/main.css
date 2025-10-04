@@ -3270,6 +3270,8 @@ a {
   display: flex
 }
 
+/* Removed cards-container overrides; affiliate uses global-padding + container-large like home */
+
 .card_steps_icon {
   flex: none;
   width: 5rem;
