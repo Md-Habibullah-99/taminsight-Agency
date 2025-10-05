@@ -1,0 +1,6 @@
+/* Affiliate model section specific tweaks */
+#delete-vars-btn.hero_header.is-home {
+	position: relative; /* Ensure .c-bg-filled positions correctly within this section */
+}
+
+/* unique hook removed to satisfy linter (no empty rulesets) */

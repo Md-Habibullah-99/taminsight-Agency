@@ -32,6 +32,7 @@ import App from './App.jsx'
 
 // Affiliate
 import './Styles/affiliatePage/affiliate_hero.css'
+import './Styles/affiliatePage/affiliate_model.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
