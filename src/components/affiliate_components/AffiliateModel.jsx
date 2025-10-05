@@ -5,9 +5,9 @@ import LottiePlayer from "../sub_components/LottiePlayer"
 export default function AffiliateModel({ animate = true }) {
   return (
     <>
-    <div id="delete-vars-btn" className="hero_header is-home">
-        {/* Background gradient reused from Process section */}
-        <div className="c-bg-filled gradient-process"></div>
+  <div id="delete-vars-btn" className="hero_header is-home affiliate-model">
+    {/* Background gradient for affiliate model */}
+    <div className="affiliate-model__bg"></div>
         
           <div data-scroll-reveal="" className="hero_subtitle">
             <p>Affilaite Model<br /></p>
