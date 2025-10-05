@@ -4,18 +4,29 @@ export default function AffiliateHero() {
   return (
     <>
       <div id="delete-vars-btn" className="hero_header is_affiliate">
-        <h1 className="work_areas">
-          <div className="gradient-brand">Join the Forces of</div>
+        <div className="hero_header_title-container">
+          <div className="affiliate_hero-title-mini">
+            SHARE, GET PAID, REPEAT
+          </div>
+          <h1 className="work_areas">
+            <div className="gradient-brand">Join the Forces of</div>
 
-          <div className="headlng-gradient">Taminsight Affiliates</div>
-          {/* <span className="work_areas_list">
-              <div className="headlng-gradient">Experience</div>
+            <div className="headlng-gradient">Taminsight Affiliates</div>
 
-            </span>
-            <span className="work_areas_list">
-              <div className="headlng-gradient">Delivered</div>
-            </span> */}
-        </h1>
+          </h1>
+          <div className="affiliate_hero-title-mini">
+            Become our affiliate to enjoy exclusive perks, dedicated support, and unlimited earning potential!
+          </div>
+          <a href="#/affiliate" target="_blank" className="btn_cta btn-border w-inline-block become-affiliate-btn">
+            <div className="btn_content">
+              <div className="weight-bold">Become Our Affiliate Partner</div><svg xmlns="http://www.w3.org/2000/svg"
+                className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
+                <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
+                  strokeLinecap="square"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
         <div className="affiliate-hero-image-container">
           <img src="public/images/cats/TheWahCat.jpg" alt="" className="affiliate-hero-image" />
         </div>

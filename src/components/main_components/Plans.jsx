@@ -324,7 +324,7 @@ export default function Plans() {
                             </svg>
                           </div>
                         </a><a href="https://tally.so/r/3jGGKa" className="btn_cta btn-white w-inline-block">
-                          <div className="btn_content"><span>' Send Inquiry</span></div>
+                          <div className="btn_content"><span>Send Inquiry</span></div>
                         </a></div>
                     </div>
                   </div>
