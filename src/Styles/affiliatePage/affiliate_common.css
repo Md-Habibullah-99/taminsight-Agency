@@ -1,0 +1,17 @@
+.affiliate-model.hero_header.is-home ,
+.affiliate-program.affiliate-program_container
+{
+	position: relative; /* anchor for absolute background */
+}
+.affiliate-model__bg,
+.affiliate_program__bg {
+	border-radius: var(--radius--40);
+	position: absolute;
+	inset: 0%;
+	z-index: 0;
+  opacity: 1;
+}
+
+.affiliate-title {
+	padding-bottom: 8px;
+}

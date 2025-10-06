@@ -1,15 +1,11 @@
 /* Affiliate model section specific tweaks */
 /* Affiliate Model wrapper */
-.affiliate-model.hero_header.is-home {
-	position: relative; /* anchor for absolute background */
+.is-home.affiliate-model {
+	padding-bottom: 156px;
 }
 
 /* Background behind Affiliate Model content */
 .affiliate-model__bg {
-	border-radius: var(--radius--40);
-	position: absolute;
-	inset: 0%;
-	z-index: 0;
 	/* Same as .c-bg-filled.gradient-process */
 	background-image: radial-gradient(
 		circle farthest-corner at 50% 0%,
@@ -25,6 +21,7 @@
 	z-index: 1;
 	color: var(--color--based-black);
 }
+
 
 
 /* unique hook removed to satisfy linter (no empty rulesets) */

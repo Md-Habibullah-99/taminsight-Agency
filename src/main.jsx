@@ -31,8 +31,10 @@ import './Styles/services/awards/awards.css'
 import App from './App.jsx'
 
 // Affiliate
+import './Styles/affiliatePage/affiliate_common.css'
 import './Styles/affiliatePage/affiliate_hero.css'
 import './Styles/affiliatePage/affiliate_model.css'
+import './Styles/affiliatePage/affiliate_program.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

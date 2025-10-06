@@ -1,0 +1,83 @@
+
+.affiliate_program__bg {
+  background-image: linear-gradient(180deg, var(--color--gray-200), var(--color--gray-100));
+}
+
+.affiliate-program .affiliate-title {
+  z-index: 1;
+}
+
+/* Ensure title sits above the absolute background and has a visible fallback color
+   for browsers/environments where text-clip/transparent fill may hide the text. */
+.affiliate-program {
+  position: relative; /* make sure children z-index applies */
+}
+.affiliate-program .affiliate-program_container-content {
+  position: relative;
+  z-index: 2; /* higher than .affiliate_program__bg (which uses z-index:0 in affiliate_common.css) */
+  /* Fallback color in case background-clip makes text transparent */
+  color: var(--color--text-strong, #2222224b);
+}
+
+/* If using heading-gradient with background-clip text, ensure -webkit-text-fill-color is not forcing transparency
+   unless intentionally using the gradient text. This rule provides a visible fallback. */
+.affiliate-program .heading-gradient {
+  -webkit-text-fill-color: currentColor; /* fallback to the color above */
+}
+
+/* Make the affiliate partner card visible when only the class name is used.
+   This overrides common utility/animation hiding rules without changing markup. */
+
+.program-title-description {
+  margin-top: 24px;
+}
+
+.affiliate-partner-cart-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.affiliate-partner-card {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  /* ensure it sits above background layers if those use z-index */
+  z-index: 3;
+  max-width: 300px;
+  padding-bottom: 4px;
+}
+
+.partner-cart-top-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.partner-card-checkout-list {
+  margin-top: 16px;
+}
+
+.partner-card-max-element {
+  margin-bottom: 14px;
+}
+
+.partner-card-last-option-description {
+  margin-top: 16px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.partner-card-last-option-description .highlight{
+  font-weight: 600;
+}
+
+.affiliate-partner-bottom-button-container {
+  margin-top: 96px;
+  display: block;
+  text-align: center;
+}

@@ -10,10 +10,10 @@ export default function AffiliateModel({ animate = true }) {
     <div className="affiliate-model__bg"></div>
         
           <div data-scroll-reveal="" className="hero_subtitle">
-            <p>Affilaite Model<br /></p>
+            <p>Affiliate Model<br /></p>
           </div>
         <div data-scroll-reveal="" className="hero_content is-home">
-          <h1 className="hero_heading headling-display heading-gradient is-bg-cream">
+          <h1 className="hero_heading headling-display heading-gradient is-bg-cream affiliate-title">
             <div className="word">How</div>
             <div className="word">Taminsight</div>
             <div className="word">Affiliate</div>
@@ -34,25 +34,6 @@ export default function AffiliateModel({ animate = true }) {
               />
             </div>
           </div>
-          
-          <div data-scroll-reveal="" className="hero_cta is-home"><a href="#plans"
-              className="btn_cta btn-primary w-inline-block">
-              <div className="btn_content">
-                <div className="weight-bold">See more</div><svg xmlns="http://www.w3.org/2000/svg"
-                  className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
-                    strokeLinecap="square"></path>
-                </svg>
-              </div>
-            </a><a href="https://www.whatsapp.com/" target="_blank" className="btn_cta btn-border w-inline-block">
-              <div className="btn_content">
-                <div className="weight-bold">Book a Call</div><svg xmlns="http://www.w3.org/2000/svg"
-                  className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
-                  <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
-                    strokeLinecap="square"></path>
-                </svg>
-              </div>
-            </a></div>
         </div>
       </div>
     </>
