@@ -26,5 +26,9 @@
 	color: var(--color--based-black);
 }
 
+.hero_content .affiliate-program-title {
+	padding-bottom: 8px;
+}
+
 
 /* unique hook removed to satisfy linter (no empty rulesets) */

@@ -13,7 +13,7 @@ export default function AffiliateModel({ animate = true }) {
             <p>Affilaite Model<br /></p>
           </div>
         <div data-scroll-reveal="" className="hero_content is-home">
-          <h1 className="hero_heading headling-display heading-gradient is-bg-cream">
+          <h1 className="hero_heading headling-display heading-gradient is-bg-cream affiliate-model-title">
             <div className="word">How</div>
             <div className="word">Taminsight</div>
             <div className="word">Affiliate</div>
