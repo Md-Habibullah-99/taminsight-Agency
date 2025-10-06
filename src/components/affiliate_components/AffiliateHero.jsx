@@ -1,5 +1,7 @@
 
 
+import { withBase } from "../../utils/withBase";
+
 export default function AffiliateHero() {
   return (
     <>
@@ -28,7 +30,7 @@ export default function AffiliateHero() {
           </a>
         </div>
         <div className="affiliate-hero-image-container">
-          <img src="public/images/cats/TheWahCat.jpg" alt="" className="affiliate-hero-image" />
+          <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="affiliate-hero-image" />
         </div>
       </div>
     </>
