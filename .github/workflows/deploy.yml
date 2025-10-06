@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - how_affiliate_works
   workflow_dispatch:
 
 permissions:
