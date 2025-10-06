@@ -3,3 +3,5 @@ compatibility_date = "2025-10-06"
 
 [assets]
 directory = "./dist"
+# Wrangler infers content types based on file extension. Ensure built files are in dist/assets/*.{js,css}.
+

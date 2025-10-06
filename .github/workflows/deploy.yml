@@ -36,6 +36,8 @@ jobs:
           npm ci || npm install --no-audit --no-fund
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE: /taminsight-Agency/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
