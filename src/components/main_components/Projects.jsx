@@ -293,7 +293,7 @@ function Projects() {
                 </div>
               </a></div>
               <div data-scroll-reveal="" className="project_card is-last-project video-container"><a data-cursor-text=""
-                href="https://visualtamim.artstation.com/" target="_blank" className="project w-inline-block">
+                href="https://visualtamim.artstation.com/albums/7184382" target="_blank" className="project w-inline-block">
                 <div className="project_preview aspect-4">
                   <div className="project_cover">
 
