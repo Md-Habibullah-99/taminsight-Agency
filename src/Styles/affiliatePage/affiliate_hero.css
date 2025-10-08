@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .hero_header.is_affiliate{
   flex-flow: row;
   align-items: center;
@@ -5,20 +7,9 @@
   justify-content: center;
   gap: var(--space--140);
 }
-.hero_header.is_affiliate .affiliate-hero-image-container{
-  display: flex;
-  flex-flow: row;
-  justify-content: end;
-  width: 454px;
-  border-radius: 224px;
-  contain: content;
-  /* avoid offsetting out of the padded container */
-  right: auto;
-  /* keep predictable width so spacing stays even */
-  flex: 0 0 454px;
-}
-.hero_header.is_affiliate .affiliate-hero-image{
-  width: 100%;
+
+.affiliate-hero-image-text{
+  @apply -mt-20 -ml-9 py-6 px-7;
 }
 
 /* keep affiliate hero text content from stretching too wide,

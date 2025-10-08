@@ -29,8 +29,17 @@ export default function AffiliateHero() {
             </div>
           </a>
         </div>
-        <div className="affiliate-hero-image-container">
-          <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="affiliate-hero-image" />
+        <div className="flex flex-col place-content-end ">
+          <div>
+            <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="rounded-4xl w-96" />
+          </div>
+          <div className="bg-white text-black text-center w-64 text-2xl flex flex-col gap-4 shrink rounded-2xl shadow-xl affiliate-hero-image-text ">
+            <div className="text-3xl text-red-400 font-bold block ">
+              <div className="inline -mt-2">125</div>
+              <div className="text-5xl inline-block leading-none">+</div>
+            </div>
+            <div className="text-xl">Project Completed</div>
+          </div>
         </div>
       </div>
     </>
