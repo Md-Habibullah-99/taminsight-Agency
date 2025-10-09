@@ -21,22 +21,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Setup Node (22.12.x)
         uses: actions/setup-node@v4
         with:
           node-version: '22.12.0'
           cache: 'npm'
+
       - name: Install dependencies (try `npm ci`, fall back to `npm install`)
         run: |
           echo "Node version: $(node -v)"
           echo "NPM version: $(npm -v)"
           npm ci || npm install --no-audit --no-fund
+
       - name: Build
-        run: npm run build
         env:
-          VITE_BASE: /taminsight-Agency/
+          VITE_BASE: '/taminsight-Agency/'
+        run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

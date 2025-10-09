@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+// Tailwind (must be imported early so Preflight/utilities are available)
+import './Styles/tail.css'
 // Base styles
 import './index.css'
 import './Styles/main.css'
