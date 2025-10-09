@@ -31,6 +31,7 @@ import './Styles/services/awards/awards.css'
 import App from './App.jsx'
 
 // Affiliate
+import './Styles/affiliatePage/affiliate.css'
 import './Styles/affiliatePage/affiliate_common.css'
 import './Styles/affiliatePage/affiliate_hero.css'
 import './Styles/affiliatePage/affiliate_model.css'

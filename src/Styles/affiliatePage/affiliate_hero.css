@@ -15,7 +15,7 @@
 /* keep affiliate hero text content from stretching too wide,
    similar to home hero heading behavior */
 .hero_header.is_affiliate .hero_header_title-container{
-  max-width: calc(56ch - var(--space--80));
+  max-width: calc(56ch - var(--space--80) + 32px);
 }
 .hero_header.is_affiliate .work_areas {
   font-size: 58px;
