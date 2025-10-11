@@ -4,3 +4,8 @@
   gap: 24px;
   margin-left: 104px;
 }
+
+.affiliate-faq-dropdownmenu-list {
+  list-style-type: disc;
+  padding-left: 44px;
+}

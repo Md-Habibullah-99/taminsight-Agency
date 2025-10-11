@@ -3,12 +3,12 @@ import "../../Styles/components_Style/FAQSection.css";
 
 const faqs = [
   {
-    question: "What is Reestify?",
-    answer: "Reestify is a creative agency that empowers B2B brands with exceptional white-label solutions, setting the stage for unparalleled success and industry leadership. With Reestify, you can access a team of experienced designers and developers at a flat monthly rate. This means you no longer have to worry about the hassle of recruiting, hiring, and managing your team. Reestify takes care of everything for you, so you can focus on growing your business."
+    question: "What is Taminsight?",
+    answer: "Taminsight is a creative agency that empowers B2B brands with exceptional white-label solutions, setting the stage for unparalleled success and industry leadership. With Taminsight, you can access a team of experienced designers and developers at a flat monthly rate. This means you no longer have to worry about the hassle of recruiting, hiring, and managing your team. Taminsight takes care of everything for you, so you can focus on growing your business."
   },
   {
     question: "How are you different from freelancer marketplaces?",
-    answer: "Good question! Freelancer marketplaces like Upwork and Fiverr give you access to a vast pool of freelancers, but there’s a catch. These platforms take a percentage of the payment to the freelancer, so they have an incentive to gather as many freelancers as possible, regardless of their quality. At Reestify, we do things differently. We only work with a vetted group of designers and developers who are contracted on a full-time basis. This means you can be sure you’re getting high-quality work from experienced professionals."
+    answer: "Good question! Freelancer marketplaces like Upwork and Fiverr give you access to a vast pool of freelancers, but there’s a catch. These platforms take a percentage of the payment to the freelancer, so they have an incentive to gather as many freelancers as possible, regardless of their quality. At Taminsight, we do things differently. We only work with a vetted group of designers and developers who are contracted on a full-time basis. This means you can be sure you’re getting high-quality work from experienced professionals."
   },
   {
     question: "What if I don't like the delivery?",
@@ -24,7 +24,39 @@ const faqs = [
   },
   {
     question: "What does the maintenance plan include?",
-    answer: "The maintenance plan includes all kinds of tasks that are necessary to keep a website up to date, like:"
+    answer: (
+      <>
+        <p>The maintenance plan includes all kinds of tasks that are necessary to keep a website up to date, like:</p>
+        <ul className="affiliate-faq-dropdownmenu-list">
+          <li>Fixing Website Bugs</li>
+          <li>Plugin Updates</li>
+          <li>Security Audit</li>
+          <li>Security Implementation</li>
+          <li>Implementing Website with 3rd Party Tool</li>
+          <li>Website Content Update</li>
+          <li>Adding New Blog Post</li>
+          <li>Site Speed Optimization</li>
+          <li>Site Backup</li>
+          <li>Broken Links and 404</li>
+          <li>Errors Check</li>
+          <li>Google Search Console Setup</li>
+          <li>Google Tag Manager Setup</li>
+          <li>Funnel Analytics Setup</li>
+          <li>Facebook Pixel Setup</li>
+          <li>Payment Integration</li>
+          <li>Cookie Consent Setup</li>
+          <li>Forms and SMTP Checks</li>
+          <li>Database Optimization</li>
+          <li>CDN Checks</li>
+          <li>Cross-Browser Checks</li>
+          <li>Domain and SSL</li>
+          <li>Expiration Review</li>
+          <li>Fixing Hosting Issues</li>
+          <li>Site Migration</li>
+          <li>DNS Setup</li>
+        </ul>
+      </>
+    )
   },
   {
     question: "I have another question that's not listed here. How can I ask it?",
@@ -122,7 +154,9 @@ export function AffiliateFAQItem ({ faq = { question: '', answer: '' }, index = 
           }}
         >
           <div className="faq_content_body">
-            <p>{faq && faq.answer ? faq.answer : ''}</p>
+            {typeof faq?.answer === 'string'
+              ? <p>{faq.answer}</p>
+              : faq?.answer || ''}
           </div>
         </div>
       </div>
