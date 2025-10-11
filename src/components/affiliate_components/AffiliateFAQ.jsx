@@ -3,36 +3,36 @@ import "../../Styles/components_Style/FAQSection.css";
 
 const faqs = [
   {
-    question: "What's my design delivery process?",
-    answer: "I keep it simple and clear. We together begin by understanding your business needs. Then, we move to design concepts, revisions, and delivery. You'll receive regular updates and chances for feedback. This way, you always know our progress and what's next."
+    question: "What is Reestify?",
+    answer: "Reestify is a creative agency that empowers B2B brands with exceptional white-label solutions, setting the stage for unparalleled success and industry leadership. With Reestify, you can access a team of experienced designers and developers at a flat monthly rate. This means you no longer have to worry about the hassle of recruiting, hiring, and managing your team. Reestify takes care of everything for you, so you can focus on growing your business."
   },
   {
-    question: "How does the Monthly Design Partnership work?",
-    answer: "We agree on your project scope upfront. Then, we create a clear timeline based on your needs. Whether it's branding, websites, UI/UX, or marketing materials, it's all included in your plan. No surprises-just focused design work that gets results."
+    question: "How are you different from freelancer marketplaces?",
+    answer: "Good question! Freelancer marketplaces like Upwork and Fiverr give you access to a vast pool of freelancers, but there’s a catch. These platforms take a percentage of the payment to the freelancer, so they have an incentive to gather as many freelancers as possible, regardless of their quality. At Reestify, we do things differently. We only work with a vetted group of designers and developers who are contracted on a full-time basis. This means you can be sure you’re getting high-quality work from experienced professionals."
   },
   {
-    question: "What if I'm not satisfied with the designs?",
-    answer: "I'll keep revising until you're pleased. As design is subjective, it may take a few versions to match your style. My commitment is to provide work you'll love, not just complete a task."
+    question: "What if I don't like the delivery?",
+    answer: "Your satisfaction is not just a priority; it’s our obsession. We pour our hearts and souls into every project, ensuring that you walk away with a smile. Here’s the cherry on top, we’ll continue to revise the design until you’re 100% satisfied, and if your claim is based on reasonable things, you’ll receive a no-questions-asked 100% refund. We are confident in exceeding your expectations and protecting your investment."
   },
   {
-    question: "How do I share feedback?",
-    answer: "For feedback, I prefer Loom and Figma comments. Figma helps keep everything organized, but feel free to send me a quick Slack message if you need to. You can either comment directly on the designs or schedule a call to discuss in more detail."
+    question: "How fast will I receive my requests?",
+    answer: "On average, most requests are completed in just two days or less. However, more complex requests can take longer."
   },
   {
-    question: "Is there a limit to what I can request?",
-    answer: "You can request any design work you need. I'll let you know what's included in your current plan. If you need more, we can explore simple options together. This way, you'll avoid any surprise change orders."
+    question: "How do I pay for the subscription?",
+    answer: "Signing up for your favorite subscription plan has never been easier. Simply head over to our website and effortlessly enroll using Wise, the industry-leading payment gateway trusted by millions. Don’t worry you can still pay directly from the bank as well. Once you’ve subscribed, sit back and relax. We’ll send you a friendly reminder email three days before your next renewal, ensuring you’re always in the loop."
   },
   {
-    question: "Can we schedule calls during the project?",
-    answer: "We'll start with a kickoff call and arrange check-ins at key milestones. I mix good communication with focused work time. This helps me get the best results for your business."
+    question: "What does the maintenance plan include?",
+    answer: "The maintenance plan includes all kinds of tasks that are necessary to keep a website up to date, like:"
   },
   {
-    question: "Why choose monthly instead of fixed projects?",
-    answer: "Monthly Design Partnership is ideal for ongoing design needs. With a retainer, you get continuous access and priority attention from me. You can also add new requests at any time without having to sign a new contract. As I get to know your business better, I can deliver better and faster results. Fixed projects work best for one-time tasks. They have a clear scope and a set deadline."
+    question: "I have another question that's not listed here. How can I ask it?",
+    answer: "If you don’t see the answer to your question here, feel free to email us at taminsight@gmail.com."
   }
 ];
 
-export default function AffiliateFAQItem ({ faq, index, isOpen, onToggle }){
+export function AffiliateFAQItem ({ faq = { question: '', answer: '' }, index = 0, isOpen = false, onToggle = () => {} }){
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
 
@@ -96,7 +96,7 @@ export default function AffiliateFAQItem ({ faq, index, isOpen, onToggle }){
           }}
         >
           <h6 className="faq_headling">
-            {faq.question}
+            {faq && faq.question ? faq.question : ''}
           </h6>
           <div className={`faq_icon ${isOpen ? 'is-rotated' : ''}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none">
@@ -122,7 +122,7 @@ export default function AffiliateFAQItem ({ faq, index, isOpen, onToggle }){
           }}
         >
           <div className="faq_content_body">
-            <p>{faq.answer}</p>
+            <p>{faq && faq.answer ? faq.answer : ''}</p>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@ const FAQs = () => {
             </div>
             <div className="faqs-grid-item is-right">
               {faqs.map((faq, idx) => (
-                <FAQItem
+                <AffiliateFAQItem
                   key={idx}
                   faq={faq}
                   index={idx}
@@ -162,3 +162,7 @@ const FAQs = () => {
     </section>
   );
 };
+// Export the FAQs container as the default export so existing imports that
+// import the default component (e.g. `import AffiliateFAQItem from '../affiliate_components/AffiliateFAQ'`)
+// will render the full FAQ section. The item component is a named export.
+export default FAQs;
