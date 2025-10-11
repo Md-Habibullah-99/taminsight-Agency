@@ -178,7 +178,6 @@ const FAQs = () => {
 
   return (
   <section id="faqs" className="faqs affiliate-faqs">
-      <div className="affiliate_program__bg"></div>
       <div className="global-padding global-padding-section">
         <div className="container-large">
           <div className="faqs-grid">
