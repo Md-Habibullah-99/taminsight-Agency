@@ -14,3 +14,12 @@
   margin-top: 44px;
   margin-bottom: -36px;
 }
+
+.become_our_affiliate_partner_section_content_container {
+  margin-left: -256px;
+  margin-bottom: -44px;
+}
+
+.become_our_affiliate_partner_section_content_container:hover svg {
+  transform: translateX(16px);
+}

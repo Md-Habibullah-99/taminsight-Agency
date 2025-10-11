@@ -6,6 +6,7 @@ import Program from "../affiliate_components/Program";
 import WhyShouldJoin from "../affiliate_components/WhyShouldJoin";
 import AffiliateFAQItem from "../affiliate_components/AffiliateFAQ";
 import AffiliateSupport from "../affiliate_components/AffiliateSupport";
+import BecomeAffiliatePartnerSection from "../affiliate_components/BecomeAffiliatePartnerSection";
 
 
 function Affiliate() {
@@ -17,6 +18,7 @@ function Affiliate() {
       <WhyShouldJoin />
       <AffiliateFAQItem />
       <AffiliateSupport />
+      <BecomeAffiliatePartnerSection />
       <Footer />
     </>
   )
