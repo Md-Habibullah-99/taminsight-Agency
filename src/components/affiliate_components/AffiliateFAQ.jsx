@@ -139,11 +139,13 @@ const FAQs = () => {
 
   return (
     <section id="faqs" className="faqs">
+      <div className="affiliate_program__bg"></div>
       <div className="global-padding global-padding-section">
         <div className="container-large">
           <div className="faqs-grid">
-            <div className="faqs-grid-item is-left">
-              
+            <div className="faqs-grid-item is-left affiliate-fqe-left">
+              <div className="font-bold">FREQUENTLY ASK QUESTION</div>
+              <div className="text-5xl ">In Case You Are Wondering…</div>
             </div>
             <div className="faqs-grid-item is-right">
               {faqs.map((faq, idx) => (

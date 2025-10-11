@@ -1,0 +1,6 @@
+.affiliate-fqe-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-left: 104px;
+}
