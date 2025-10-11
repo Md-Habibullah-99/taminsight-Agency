@@ -9,3 +9,8 @@
   list-style-type: disc;
   padding-left: 44px;
 }
+
+.support-small-description {
+  margin-top: 44px;
+  margin-bottom: -36px;
+}
