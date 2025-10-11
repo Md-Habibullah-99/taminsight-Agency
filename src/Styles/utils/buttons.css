@@ -572,13 +572,11 @@
 
         /* Modern FAQs */
         .faq_content {
-          transition: grid-template-rows 0.3s ease-out, opacity 0.5s ease-out,
-            padding 0.3s ease-out;
+          transition: grid-template-rows 0.3s ease-out, padding 0.3s ease-out;
         }
 
         .faq_item.is-open .faq_content {
           grid-template-rows: 1fr;
-          opacity: 1;
         }
 
         .faq_content>* {

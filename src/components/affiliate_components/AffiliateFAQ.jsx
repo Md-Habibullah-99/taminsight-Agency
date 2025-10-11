@@ -67,44 +67,38 @@ const faqs = [
 export function AffiliateFAQItem ({ faq = { question: '', answer: '' }, index = 0, isOpen = false, onToggle = () => {} }){
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
+  // Control visibility so content only disappears after full collapse
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const measureHeight = () => {
-      if (contentRef.current) {
-        if (isOpen) {
-          // Create a temporary clone to measure natural height
-          const element = contentRef.current;
-          const clone = element.cloneNode(true);
-          
-          // Set clone styles for measurement
-          clone.style.position = 'absolute';
-          clone.style.visibility = 'hidden';
-          clone.style.height = 'auto';
-          clone.style.maxHeight = 'none';
-          clone.style.overflow = 'visible';
-          clone.style.width = element.offsetWidth + 'px';
-          
-          // Add to DOM for measurement
-          element.parentNode.appendChild(clone);
-          
-          // Measure height including all padding, borders, etc.
-          const naturalHeight = clone.offsetHeight;
-          
-          // Remove clone
-          element.parentNode.removeChild(clone);
-          
-          // Add a bit of extra space for safety (10px buffer)
-          setHeight(naturalHeight + 10);
-        } else {
-          setHeight(0);
-        }
+      if (!contentRef.current) return;
+      const element = contentRef.current;
+      if (isOpen) {
+        // Make visible immediately on open
+        setIsVisible(true);
+        // Create a temporary clone to measure natural height
+        const clone = element.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.visibility = 'hidden';
+        clone.style.height = 'auto';
+        clone.style.maxHeight = 'none';
+        clone.style.overflow = 'visible';
+        clone.style.width = element.offsetWidth + 'px';
+        element.parentNode.appendChild(clone);
+        const naturalHeight = clone.offsetHeight;
+        element.parentNode.removeChild(clone);
+        // Add a bit of extra space for safety (10px buffer)
+        setHeight(naturalHeight + 10);
+      } else {
+        // On close just collapse height; keep visible until transition end
+        setHeight(0);
       }
     };
 
     // Measure immediately and also after a small delay
     measureHeight();
     const timeoutId = setTimeout(measureHeight, 50);
-    
     return () => clearTimeout(timeoutId);
   }, [isOpen]);
 
@@ -146,12 +140,23 @@ export function AffiliateFAQItem ({ faq = { question: '', answer: '' }, index = 
         <div 
           className="faq_content"
           ref={contentRef}
+          onTransitionEnd={(e) => {
+            // After height transition ends and panel is closed, hide content
+            if (e.propertyName === 'height' && !isOpen && height === 0) {
+              setIsVisible(false);
+            }
+          }}
           style={{
             height: `${height}px`,
-            opacity: isOpen ? 1 : 0,
-            transition: 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out',
-            overflow: 'hidden'
+            // Keep visible during collapse; hide only after full close
+            opacity: isVisible ? 1 : 0,
+            transition: 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease-in-out',
+            overflow: 'hidden',
+            display: 'block',
+            gridTemplateRows: 'unset',
+            willChange: 'height, opacity'
           }}
+          aria-hidden={!isOpen}
         >
           <div className="faq_content_body">
             {typeof faq?.answer === 'string'
@@ -172,7 +177,7 @@ const FAQs = () => {
   };
 
   return (
-    <section id="faqs" className="faqs">
+  <section id="faqs" className="faqs affiliate-faqs">
       <div className="affiliate_program__bg"></div>
       <div className="global-padding global-padding-section">
         <div className="container-large">

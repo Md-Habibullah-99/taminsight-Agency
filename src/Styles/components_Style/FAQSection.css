@@ -115,10 +115,18 @@
 }
 
 .faq_content {
-  opacity: 0;
   grid-template-rows: 0fr;
   display: grid;
   overflow: hidden;
+}
+
+/* Ensure opacity is controlled by component state, not global defaults */
+.affiliate-faqs .faq_content {
+  opacity: 1;
+}
+
+.main-faqs .faq_content {
+  opacity: 1;
 }
 
 .faq_content_body {
