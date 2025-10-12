@@ -12,7 +12,7 @@ import React from 'react';
 export default function PartnerCard({ title, frequency, percent, features = [], isLast = false }) {
   if (isLast) {
     return (
-      <div className="pricing_card light affiliate-partner-card">
+      <div className="pricing_card affiliate-partner-card">
         <div className="partner-cart-top-elements">
           <h5 className="partner-card-last-option-title">{title}</h5>
         </div>
@@ -25,7 +25,7 @@ export default function PartnerCard({ title, frequency, percent, features = [], 
   }
 
   return (
-    <div className="pricing_card light affiliate-partner-card">
+    <div className="pricing_card affiliate-partner-card">
       <div className="partner-cart-top-elements">
         <h4 className="partner-card-max-element">{title}</h4>
         {frequency && <h6>{frequency}</h6>}
