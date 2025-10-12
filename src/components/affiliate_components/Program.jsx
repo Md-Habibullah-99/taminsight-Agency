@@ -37,7 +37,7 @@ export default function Program() {
     },
     {
       // last special card
-      title: "Become Our Reestify Partner",
+      title: "Become Our Taminsight Partner",
       frequency:
         'Join as Our Partner and Earn Upto <span class="highlight">40%</span> Recurring Profit <br/><br/><br/><br/> <a href="http://www.guthib.com" target="_blank" rel="noopener noreferrer">Learn more</a>',
       isLast: true,
@@ -60,7 +60,7 @@ export default function Program() {
                 </span><span className="newline">Works</span>
                 </h1>
                 <div className="program-title-description">
-                  Join our Affiliate Program, refer your unique link to your community, and enjoy your commissions from the moment a client joins Reestify subscription plan
+                  Join our Affiliate Program, refer your unique link to your community, and enjoy your commissions from the moment a client joins Taminsight subscription plan
                 </div>
               </div>
             </div>

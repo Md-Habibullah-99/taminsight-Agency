@@ -177,10 +177,10 @@ export default function Footer() {
                 Behance</a>
             </div>
             <div className="social-link footer-right-content-elements">
-              <a target="_blank" href="https://www.guthib.com">Instagram</a>
+              <a target="_blank" href="https://www.instagram.com/taminsight/">Instagram</a>
             </div>
             <div className="social-link footer-right-content-elements">
-              <a target="_blank" href="https://twitter.com/Seativedigital">Twitter</a>
+              <a target="_blank" href="https://twitter.com/taminsight">Twitter</a>
             </div>
           </div>
 
@@ -225,7 +225,7 @@ export default function Footer() {
           <div className="footer_secondary-grid">
             <div className="footer_grid-col">
               <div className="text-body-small weight-medium c-text-tertiary">Devoloped by Habibullah <a
-                  href="https://www.github.com/Habibullah-Hisam/" target="_blank">(github</a> <a
+                  href="https://www.github.com/md-habibullah-99/" target="_blank">(github</a> <a
                   href="https://www.linkedin.com/in/habibullah123/">Linkedin)</a> </div>
             </div>
             <div className="footer_grid-col">
