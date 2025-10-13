@@ -16,6 +16,7 @@
 }
 
 .affiliate-image-inner-container {
+  padding-top: 32px;
   width: 220px; /* rail width similar to legacy */
   max-width: 100%;
   display: flex;
@@ -46,6 +47,11 @@
   flex-direction: column;
   align-items: stretch; /* images fill full rail width */
   gap: 16px; /* matches container gap */
+}
+
+/* Extra space after the final image of a sequence so the next sequence doesn't stick to it */
+.affiliate-image-inner-container .ai-marquee-seq > .affiliate-hero-image:last-child {
+  margin-bottom: 16px; /* match gap */
 }
 
 
