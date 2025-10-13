@@ -8,14 +8,28 @@
   gap: var(--space--140);
 }
 
-.affiliate-hero-image-text{
-  @apply -mt-20 -ml-9 py-6 px-7;
+.affiliate-image-outer-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
+
+.affiliate-image-inner-container {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.affiliate-hero-image {
+  @apply rounded-4xl w-60 ;
+}
+
 
 /* keep affiliate hero text content from stretching too wide,
    similar to home hero heading behavior */
 .hero_header.is_affiliate .hero_header_title-container{
-  max-width: calc(56ch - var(--space--80) + 32px);
+  max-width: calc(56ch - var(--space--80) + 16px);
 }
 .hero_header.is_affiliate .work_areas {
   font-size: 58px;
