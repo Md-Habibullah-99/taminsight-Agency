@@ -11,10 +11,10 @@
   gap: var(--space--140);
   position: relative;
   width: 100%;
-  min-height: 100vh; /* give hero stronger presence; adjust as needed */
+  min-height: 104vh; /* give hero stronger presence; adjust as needed */
   padding-top: 172px; /* shift vertical spacing control to inner container for clearer perception */
   padding-bottom: 0;
-  margin-bottom: 0; /* remove external bottom margin if any inherited */
+  margin-bottom: -32px; /* remove external bottom margin if any inherited */
   box-sizing: border-box;
 }
 

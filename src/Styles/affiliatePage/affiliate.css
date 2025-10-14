@@ -30,9 +30,6 @@
 }
 
 .become_our_affiliate_partner_section_content_container:hover svg {
-<<<<<<< HEAD
-  transform: translateX(32px);
-=======
   transform: translateX(16px);
 }
 
@@ -65,5 +62,4 @@
 /* convenience hook if button needs spacing changes later */
 .whyshouldjoin_header .become-affiliate-btn {
   margin-top: 32px;
->>>>>>> affiliate_main
 }
