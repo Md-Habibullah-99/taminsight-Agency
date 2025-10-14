@@ -3,12 +3,43 @@
 .hero_header.is_affiliate{
   background-image: url(../../../public/images/hero/affiliateHeroCroped.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% auto; /* stretch full width, keep computed height */
+  background-position: top center;
   flex-flow: row;
-  align-items: start;
-  /* match home sections visual symmetry */
+  align-items: flex-start;
   justify-content: center;
-  /* gap: var(--space--140); */
+  gap: var(--space--140);
+  position: relative;
+  /* Pure CSS sizing: maintain intrinsic ratio using aspect-ratio; fallback uses min-height */
+  aspect-ratio: 900 / 520; /* update to real w/h of the image */
+  width: 100%;
+  min-height: 520px; /* fallback for browsers without aspect-ratio or very narrow widths */
+}
+
+/* Create a phantom flex item so text aligns as if there were an image column on the left.
+   This avoids adding extra markup while keeping layout symmetry with WhyShouldJoin */
+/* spacer moved to the right so content stays left-aligned */
+/* Reserve space for potential image column (phantom) */
+.hero_header.is_affiliate::after {
+  content: "";
+  display: block;
+  flex: 0 0 400px;
+  max-width: 400px;
+  height: 100%;
+}
+
+/* Responsive: collapse spacer and allow height to adapt on small screens */
+@media (max-width: 900px) {
+  .hero_header.is_affiliate {
+    aspect-ratio: auto;
+    background-size: cover; /* better crop on mobile */
+    min-height: 480px;
+    gap: var(--space--64, 64px);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero_header.is_affiliate::after { flex: 0 0 0; width: 0; height: 0; }
+  .hero_header.is_affiliate .hero_header_title-container { max-width: 44ch; }
 }
 
 .affiliate-image-outer-container {
