@@ -6,12 +6,16 @@ export default function ScrollToTop() {
   const location = useLocation()
 
   useEffect(() => {
+    // If a custom smooth scroll was just initiated (e.g., GSAP via BottomMenu), skip auto scroll.
+    if (window.__customSmoothScrollActive) return
+
     // Ignore router path hashes like "#/route"; only honor element ids like "#section"
     const isRouteHash = location.hash.startsWith('#/')
     if (location.hash && !isRouteHash) {
       try {
         const el = document.querySelector(location.hash)
         if (el) {
+          // Let HashLink/GSAP handle smoothness elsewhere
           el.scrollIntoView({ behavior: 'auto', block: 'start' })
           return
         }

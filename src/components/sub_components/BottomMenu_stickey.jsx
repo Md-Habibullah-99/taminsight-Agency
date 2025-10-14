@@ -222,10 +222,14 @@ export default function BottomMenuSticky() {
   const SCROLL_OFFSET = -80; // keep your existing offset
   const scrollWithOffset = (el) => {
     const y = el.getBoundingClientRect().top + window.pageYOffset + SCROLL_OFFSET;
+    // Mark custom smooth scroll active so ScrollToTop doesn't fight it
+    window.__customSmoothScrollActive = true;
     gsap.to(window, {
       duration: SCROLL_DURATION,
       scrollTo: { y, autoKill: true },
       ease: 'power2.out'
+    }).eventCallback('onComplete', () => {
+      window.__customSmoothScrollActive = false;
     });
   }
 
