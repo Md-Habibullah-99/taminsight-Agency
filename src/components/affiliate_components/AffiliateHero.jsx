@@ -25,11 +25,9 @@ export default function AffiliateHero() {
             <BecomeAffiliateButton />
           
         </div>
-        <div className="affiliate-image-outer-container">
-          <div className="affiliate-image-inner-container">
+        {/* <div className="affiliate-image-outer-container">
             <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="affiliate-hero-image" />
-          </div>
-        </div>
+        </div> */}
       </div>
     </>
   )

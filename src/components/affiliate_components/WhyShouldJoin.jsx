@@ -4,23 +4,18 @@ import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
 
 export default function WhyShouldJoin() {
   return (
-    <div id="delete-vars-btn" className="hero_header is_affiliate ">
-
+    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header">
       <div className="flex flex-col place-content-end ">
         <div>
           <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="rounded-4xl w-96" />
         </div>
       </div>
-      <div className="hero_header_title-container">
-        
-        <h1 className="work_areas">
+      <div className="hero_header_title-container whyshouldjoin_title-container">
+        <h1 className="work_areas whyshouldjoin_heading">
           <div className="headlng-gradient">Why Should You Join the Affiliate Program?</div>
-
-          {/* <div className="headlng-gradient"></div> */}
-
         </h1>
         <div className="flex flex-col gap-5">
-          <div className="affiliate_hero-title-mini">
+          <div className="whyshouldjoin_title-mini">
             Our affiliate program offers an incredible opportunity to turn your influence into income. As a member of our program, you’ll gain access to a wide range of services, allowing you to promote what resonates best with your audience.
           </div>
           <div>
@@ -36,9 +31,7 @@ export default function WhyShouldJoin() {
                     </svg>
                   </div>
                 </div>
-                <div className="font-bold">
-                  Highest Affiliate Commission
-                </div>
+                <div className="font-bold">Highest Affiliate Commission</div>
               </li>
               <li className="featured-checklist">
                 <div className="checklist-icon">
@@ -51,9 +44,7 @@ export default function WhyShouldJoin() {
                     </svg>
                   </div>
                 </div>
-                <div className="font-bold">
-                  Easy & Fast Withdrawals
-                </div>
+                <div className="font-bold">Easy & Fast Withdrawals</div>
               </li>
               <li className="featured-checklist">
                 <div className="checklist-icon">
@@ -66,9 +57,7 @@ export default function WhyShouldJoin() {
                     </svg>
                   </div>
                 </div>
-                <div className="font-bold">
-                  Real-Time Tracking
-                </div>
+                <div className="font-bold">Real-Time Tracking</div>
               </li>
               <li className="featured-checklist">
                 <div className="checklist-icon">
@@ -81,9 +70,7 @@ export default function WhyShouldJoin() {
                     </svg>
                   </div>
                 </div>
-                <div className="font-bold">
-                  Dedicated Affiliate Support
-                </div>
+                <div className="font-bold">Dedicated Affiliate Support</div>
               </li>
             </ul>
           </div>

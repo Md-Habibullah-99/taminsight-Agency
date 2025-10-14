@@ -1,24 +1,20 @@
 @import "tailwindcss";
 
 .hero_header.is_affiliate{
+  background-image: url(../../../public/images/hero/affiliateHeroCroped.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
   flex-flow: row;
-  align-items: center;
+  align-items: start;
   /* match home sections visual symmetry */
   justify-content: center;
-  gap: var(--space--140);
+  /* gap: var(--space--140); */
 }
 
 .affiliate-image-outer-container {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+  width: 400px;
 }
 
-.affiliate-image-inner-container {
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-}
 
 .affiliate-hero-image {
   border-radius: 24px; /* approx rounded-4xl */
