@@ -9,7 +9,7 @@ export default function BecomeAffiliatePartnerSection() {
         <div className="global-padding-section">
           <div className="container-large">
             <div className="section-header">
-              <a href="/#/affiliate" target="_blank" rel="noopener noreferrer">
+              <a href="/#/affiliate_form" rel="noopener noreferrer">
                 <div className="become_our_affiliate_partner_section_content_container">
                   <div data-scroll-reveal="" className="text-eyebrow">
                     <div>Think We Can Help?</div>

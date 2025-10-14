@@ -19,7 +19,6 @@ function Affiliate() {
       <AffiliateFAQItem />
       <AffiliateSupport />
       <BecomeAffiliatePartnerSection />
-      <Footer />
     </>
   )
 }

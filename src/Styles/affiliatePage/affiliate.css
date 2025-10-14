@@ -1,3 +1,12 @@
+.why-should-join {
+  
+  flex-flow: row;
+  align-items: center;
+  /* match home sections visual symmetry */
+  justify-content: center;
+  gap: var(--space--140);
+}
+
 .affiliate-fqe-left {
   display: flex;
   flex-direction: column;
@@ -21,5 +30,40 @@
 }
 
 .become_our_affiliate_partner_section_content_container:hover svg {
+<<<<<<< HEAD
   transform: translateX(32px);
+=======
+  transform: translateX(16px);
+}
+
+/* =============================
+   WhyShouldJoin (separate hero) 
+   Duplicated from affiliate_hero.css so this section can be styled independently
+============================= */
+.whyshouldjoin_header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center; /* keep visual symmetry like home hero */
+  gap: var(--space--140);
+}
+
+.whyshouldjoin_title-container {
+  max-width: calc(56ch - var(--space--80) + 16px); /* match original hero constraint */
+}
+
+.whyshouldjoin_heading {
+  font-size: 58px; /* mirrors .work_areas size used in affiliate hero */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.whyshouldjoin_title-mini {
+  line-height: 1.5; /* from .affiliate_hero-title-mini */
+}
+
+/* convenience hook if button needs spacing changes later */
+.whyshouldjoin_header .become-affiliate-btn {
+  margin-top: 32px;
+>>>>>>> affiliate_main
 }

@@ -1,21 +1,77 @@
 @import "tailwindcss";
 
 .hero_header.is_affiliate{
+  background-image: url(../../../public/images/hero/affiliateHeroCroped.png);
+  background-repeat: no-repeat;
+  background-size: cover; /* ensure full cover including bottom */
+  background-position: center top;
   flex-flow: row;
-  align-items: center;
-  /* match home sections visual symmetry */
+  align-items: flex-start;
   justify-content: center;
   gap: var(--space--140);
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* give hero stronger presence; adjust as needed */
+  padding-top: 172px; /* shift vertical spacing control to inner container for clearer perception */
+  padding-bottom: 0;
+  margin-bottom: 0; /* remove external bottom margin if any inherited */
+  box-sizing: border-box;
 }
 
-.affiliate-hero-image-text{
-  @apply -mt-20 -ml-9 py-6 px-7;
+/* Create a phantom flex item so text aligns as if there were an image column on the left.
+   This avoids adding extra markup while keeping layout symmetry with WhyShouldJoin */
+/* spacer moved to the right so content stays left-aligned */
+/* Reserve space for potential image column (phantom) */
+.hero_header.is_affiliate::after {
+  content: "";
+  display: block;
+  flex: 0 0 400px;
+  max-width: 400px;
+  height: calc(100% - clamp(80px, 12vh, 160px)); /* align with top padding visual */
 }
+
+/* Responsive: collapse spacer and allow height to adapt on small screens */
+@media (max-width: 900px) {
+  .hero_header.is_affiliate {
+    min-height: 520px;
+    gap: var(--space--64, 64px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: clamp(64px, 14vh, 128px);
+  }
+  .hero_header.is_affiliate::after { flex: 0 0 0; width: 0; height: 0; }
+  .hero_header.is_affiliate .hero_header_title-container { max-width: 44ch; }
+}
+
+  /* Dedicated inner spacing for better visual padding without shrinking background coverage */
+  .hero_header.is_affiliate .hero_header_title-container {
+    padding-top: clamp(120px, 18vh, 200px);
+    padding-bottom: clamp(32px, 6vh, 96px);
+  }
+
+  @media (max-width: 900px) {
+    .hero_header.is_affiliate .hero_header_title-container {
+      padding-top: clamp(96px, 20vh, 160px);
+      padding-bottom: clamp(40px, 10vh, 120px);
+    }
+  }
+
+.affiliate-image-outer-container {
+  width: 400px;
+}
+
+
+.affiliate-hero-image {
+  border-radius: 24px; /* approx rounded-4xl */
+  width: 100%;
+  height: auto;
+}
+
 
 /* keep affiliate hero text content from stretching too wide,
    similar to home hero heading behavior */
 .hero_header.is_affiliate .hero_header_title-container{
-  max-width: calc(56ch - var(--space--80) + 32px);
+  max-width: calc(56ch - var(--space--80) + 16px);
 }
 .hero_header.is_affiliate .work_areas {
   font-size: 58px;
