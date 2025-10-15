@@ -50,6 +50,9 @@
   max-width: 320px;
   /* provide comfortable bottom spacing so last line doesn't touch */
   padding-bottom: 28px;
+  /* prevent inherited centering margins from global .pricing_card rules */
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .partner-cart-top-elements {
@@ -83,6 +86,20 @@
   text-align: center;
 }
 
+/* Laptops/desktops: 4 cards in one row with a sensible fixed gap */
+
+@media (min-width: 1200px) {
+  .affiliate-partner-cart-container {
+    gap: 24px;
+    flex-wrap: nowrap; /* force a single row when space allows */
+    justify-content: center; /* keep even margins on both sides */
+  }
+  .affiliate-partner-card {
+    flex: 0 0 290px;
+    max-width: 290px; /* 4 x 290 + 3 x 24 = 1,236px < 1,320px container */
+  }
+}
+
 /* Tablet down: use two columns for cards and bigger tap targets */
 @media (max-width: 991px) {
   .affiliate-partner-cart-container {
@@ -100,7 +117,8 @@
     gap: 12px;
   }
   .affiliate-partner-card {
-    flex: 1 1 100%;
+    /* Allow the card to be narrower than full width and centered */
+    flex: 0 1 auto;
   }
   .affiliate-partner-bottom-button-container {
     margin-top: 56px;
