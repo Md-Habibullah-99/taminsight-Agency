@@ -40,17 +40,15 @@
 }
 
 .affiliate-partner-card {
+  background-color: rgba(196, 196, 196, 0.726) !important;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
   pointer-events: auto !important;
-  /* ensure it sits above background layers if those use z-index */
   z-index: 3;
   max-width: 320px;
-  /* provide comfortable bottom spacing so last line doesn't touch */
   padding-bottom: 28px;
-  /* prevent inherited centering margins from global .pricing_card rules */
   margin-left: 0;
   margin-right: 0;
 }
@@ -59,7 +57,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .partner-card-checkout-list {
