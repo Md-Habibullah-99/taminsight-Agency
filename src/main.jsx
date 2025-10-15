@@ -19,11 +19,7 @@ import './Styles/animations/allanimations.css'
 import './Styles/animations/cursor.css'
 
 // Footer
-import './Styles/footer/footerPrimary.css'
-import './Styles/footer/footerPrimaryRight.css'
-import './Styles/footer/footerPrimaryLeft.css'
-import './Styles/footer/footerPrimaryUp.css'
-import './Styles/footer/footerPrimaryBottom.css'
+import './Styles/footer/footer.css'
 import './Styles/footer/bottomMenu/bottomMenuSticky.css'
 
 // Logo & Services
