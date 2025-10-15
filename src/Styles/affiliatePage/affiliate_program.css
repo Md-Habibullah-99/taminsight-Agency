@@ -48,7 +48,8 @@
   /* ensure it sits above background layers if those use z-index */
   z-index: 3;
   max-width: 320px;
-  padding-bottom: 4px;
+  /* provide comfortable bottom spacing so last line doesn't touch */
+  padding-bottom: 28px;
 }
 
 .partner-cart-top-elements {
@@ -103,5 +104,19 @@
   }
   .affiliate-partner-bottom-button-container {
     margin-top: 56px;
+  }
+}
+
+/* Phones and small tablets: keep cards narrower than full width and well padded at bottom */
+@media (max-width: 767px) {
+  .affiliate-partner-cart-container {
+    justify-content: center;
+  }
+  .affiliate-partner-card {
+    /* Avoid stretching edge-to-edge, keep a comfortable measure */
+    max-width: min(420px, 92vw);
+    width: 100%;
+    margin-inline: auto;
+    padding-bottom: 32px; /* extra safety on small screens */
   }
 }
