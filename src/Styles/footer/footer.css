@@ -75,11 +75,10 @@
 
 /* hr */
 .footer-primary-bottom-hr{
-  display: none;
-  margin-left: -18px;
-  margin-right: -18px;
+  /* full-bleed rule: negate container inline padding */
+  margin-inline: -2rem;
   border-top: 1px solid #b4b4b454;
-  height: 1px;
+  height: 0;
   display: block;
 }
 
@@ -118,10 +117,12 @@
 /* Make primary bottom responsive */
 @media (max-width: 900px) {
   .footer-primary_Bottom_container { flex-direction: column; align-items: stretch; padding: 20px 20px; gap: 16px; }
+  .footer-primary-bottom-hr{ margin-inline: -20px; }
   .footer-primary-left, .footer-primary-right { max-width: 100%; min-width: 0; width: 100%; padding-left: 0; padding-right: 0; }
   .footer-primary-left{ max-height: 156px; }
 }
 @media (max-width: 600px) {
   .footer-primary_Bottom_container { padding: 10px 8px; gap: 8px; }
+  .footer-primary-bottom-hr{ margin-inline: -8px; }
   .footer-primary-right { font-size: 12px; padding: 16px 0 16px 0; }
 }
