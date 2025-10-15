@@ -7,7 +7,6 @@ import Plans from "../main_components/Plans";
 import Intro from "../main_components/Intro";
 import FAQs from "../main_components/FAQs";
 import BottomMenuSticky from "../sub_components/BottomMenu_stickey";
-import Footer from "../main_components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +20,7 @@ export default function Home() {
         <FAQs />
         <BottomMenuSticky />
       </div>
-      <Footer />
+      {/* Footer is rendered by Layout */}
     </>
   )
 }
