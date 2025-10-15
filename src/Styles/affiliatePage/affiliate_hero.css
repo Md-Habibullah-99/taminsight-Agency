@@ -33,14 +33,23 @@
 /* Responsive: collapse spacer and allow height to adapt on small screens */
 @media (max-width: 900px) {
   .hero_header.is_affiliate {
-    min-height: 520px;
-    gap: var(--space--64, 64px);
+    min-height: auto;
+    gap: var(--space--40, 40px);
     flex-direction: column;
     align-items: flex-start;
     padding-top: clamp(64px, 14vh, 128px);
   }
   .hero_header.is_affiliate::after { flex: 0 0 0; width: 0; height: 0; }
   .hero_header.is_affiliate .hero_header_title-container { max-width: 44ch; }
+}
+
+/* Very small devices: reduce gaps and ensure background stays centered */
+@media (max-width: 640px) {
+  .hero_header.is_affiliate {
+    gap: var(--space--24, 24px);
+    padding-top: clamp(48px, 12vh, 96px);
+    background-position: center top;
+  }
 }
 
   /* Dedicated inner spacing for better visual padding without shrinking background coverage */
@@ -74,7 +83,8 @@
   max-width: calc(56ch - var(--space--80) + 16px);
 }
 .hero_header.is_affiliate .work_areas {
-  font-size: 58px;
+  /* Responsive title size roughly equivalent to ~58px on desktop */
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -83,4 +93,11 @@
 }
 .hero_header.is_affiliate .become-affiliate-btn{
   margin-top: 32px;
+}
+
+/* Tighten text widths on very small devices */
+@media (max-width: 480px) {
+  .hero_header.is_affiliate .hero_header_title-container{
+    max-width: 38ch;
+  }
 }

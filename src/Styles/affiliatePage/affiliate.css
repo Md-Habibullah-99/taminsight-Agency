@@ -14,6 +14,12 @@
   margin-left: 104px;
 }
 
+@media (max-width: 991px) {
+  .affiliate-fqe-left {
+    margin-left: 0;
+  }
+}
+
 .affiliate-faq-dropdownmenu-list {
   list-style-type: disc;
   padding-left: 44px;
@@ -22,6 +28,13 @@
 .support-small-description {
   margin-top: 44px;
   margin-bottom: -36px;
+}
+
+@media (max-width: 640px) {
+  .support-small-description {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
 }
 
 .become_our_affiliate_partner_section_content_container-main {
@@ -63,7 +76,7 @@
 }
 
 .whyshouldjoin_heading {
-  font-size: 58px; /* mirrors .work_areas size used in affiliate hero */
+  font-size: clamp(2rem, 4vw + 1rem, 3.5rem); /* mirrors .work_areas size used in affiliate hero */
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -75,4 +88,27 @@
 /* convenience hook if button needs spacing changes later */
 .whyshouldjoin_header .become-affiliate-btn {
   margin-top: 32px;
+}
+
+/* Image container: limit width on large screens, full width on small */
+.affiliate-image-outer-container {
+  width: min(420px, 100%);
+}
+
+/* Make WhyShouldJoin responsive */
+@media (max-width: 991px) {
+  .whyshouldjoin_header {
+    flex-direction: column;
+    gap: var(--space--40, 40px);
+    align-items: flex-start;
+  }
+  .whyshouldjoin_title-container {
+    max-width: 44ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .whyshouldjoin_title-container {
+    max-width: 38ch;
+  }
 }

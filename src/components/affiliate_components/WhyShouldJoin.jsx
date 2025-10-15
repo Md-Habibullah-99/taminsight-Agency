@@ -6,8 +6,13 @@ export default function WhyShouldJoin() {
   return (
     <div id="delete-vars-btn" className="hero_header whyshouldjoin_header">
       <div className="flex flex-col place-content-end ">
-        <div>
-          <img src={withBase('/images/cats/TheWahCat.jpg')} alt="" className="rounded-4xl w-96" />
+        <div className="affiliate-image-outer-container">
+          {/* Make image fluid on small screens; cap width on medium+ */}
+          <img 
+            src={withBase('/images/cats/TheWahCat.jpg')} 
+            alt=""
+            className="rounded-4xl w-full md:w-96 max-w-full"
+          />
         </div>
       </div>
       <div className="hero_header_title-container whyshouldjoin_title-container">

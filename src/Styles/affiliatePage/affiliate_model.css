@@ -25,3 +25,28 @@
 
 
 /* unique hook removed to satisfy linter (no empty rulesets) */
+
+/* Tablet down: reduce bottom padding, allow horizontal scroll for steps */
+@media (max-width: 991px) {
+	.is-home.affiliate-model {
+		padding-bottom: 96px;
+	}
+	/* Ensure AnimatedCards behave well on smaller screens */
+	.affiliate-model .simple_steps {
+		overflow: auto;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.affiliate-model .simple_steps_item {
+		flex: 0 0 60%;
+	}
+}
+
+/* Phones: tighter spacing and larger breakpoint for single card view */
+@media (max-width: 640px) {
+	.affiliate-model .simple_steps_item {
+		flex-basis: 80%;
+	}
+}

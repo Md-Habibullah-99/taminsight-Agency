@@ -1,6 +1,3 @@
-
-
-import { withBase } from "../../utils/withBase";
 import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
 
 export default function AffiliateHero() {

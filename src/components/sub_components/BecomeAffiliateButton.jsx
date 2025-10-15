@@ -1,6 +1,4 @@
-
-
-export default function () {
+export default function BecomeAffiliateButton() {
   return (
     
       <a href="#/affiliate" target="_blank" className="btn_cta btn-border w-inline-block become-affiliate-btn">
