@@ -24,6 +24,12 @@
   margin-bottom: -36px;
 }
 
+.become_our_affiliate_partner_section_content_container-main {
+  padding-top: 52px;
+  padding-bottom: 44px;
+  margin-bottom: -32px;
+}
+
 .become_our_affiliate_partner_section_content_container {
   margin-left: 0; /* align with other sections' left edge */
   margin-bottom: 0; /* avoid unintended overlap; adjust in layout if needed */

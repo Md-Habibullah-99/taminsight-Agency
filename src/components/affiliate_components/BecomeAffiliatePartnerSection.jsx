@@ -6,8 +6,7 @@ export default function BecomeAffiliatePartnerSection() {
       <div className="affiliate-program" id="program">
         {/* color gradient */}
         <div className="affiliate_program__bg"></div>
-        <div className="global-padding-section">
-          <div className="container-large">
+          <div className="container-large become_our_affiliate_partner_section_content_container-main">
             <div className="section-header is-section-align-left">
               <a href="/#/affiliate_form" rel="noopener noreferrer" className="become-affiliate-align-left">
                 <div className="become_our_affiliate_partner_section_content_container">
@@ -27,7 +26,8 @@ export default function BecomeAffiliatePartnerSection() {
               </a>
             </div>
           </div>
-        </div>
+        {/* <div className="global-padding-section">
+        </div> */}
       </div>
     </>
   )
