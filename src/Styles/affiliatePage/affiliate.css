@@ -25,8 +25,15 @@
 }
 
 .become_our_affiliate_partner_section_content_container {
-  margin-left: -456px;
-  margin-bottom: -44px;
+  margin-left: 0; /* align with other sections' left edge */
+  margin-bottom: 0; /* avoid unintended overlap; adjust in layout if needed */
+}
+
+/* Local alignment helper to ensure the link block content hugs the left like other sections */
+.become-affiliate-align-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .become_our_affiliate_partner_section_content_container:hover svg {
