@@ -53,10 +53,26 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%; /* let inner content align to container padding on small screens */
 }
 
 .become_our_affiliate_partner_section_content_container:hover svg {
   transform: translateX(16px);
+}
+
+/* Improve horizontal padding on smaller screens so content doesn't hug the left edge */
+@media (max-width: 991px) {
+  .become_our_affiliate_partner_section_content_container-main {
+    padding-left: clamp(16px, 6vw, 32px);
+    padding-right: clamp(16px, 6vw, 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .become_our_affiliate_partner_section_content_container-main {
+    padding-left: clamp(18px, 7vw, 36px);
+    padding-right: clamp(18px, 7vw, 36px);
+  }
 }
 
 /* =============================

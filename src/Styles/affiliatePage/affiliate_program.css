@@ -103,7 +103,7 @@
 /* Tablet down: use two columns for cards and bigger tap targets */
 @media (max-width: 991px) {
   .affiliate-partner-cart-container {
-    gap: 12px;
+    gap: 16px; /* match >900px spacing */
   }
   .affiliate-partner-card {
     flex: 1 1 calc(50% - 12px);
@@ -114,7 +114,7 @@
 /* Small phones: single column, reduce outer spacing */
 @media (max-width: 640px) {
   .affiliate-partner-cart-container {
-    gap: 12px;
+    gap: 16px; /* match >900px spacing */
   }
   .affiliate-partner-card {
     /* Allow the card to be narrower than full width and centered */

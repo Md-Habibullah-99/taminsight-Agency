@@ -238,7 +238,7 @@
   .footer-primary_Bottom_container {
     flex-direction: column;
     align-items: stretch;
-    padding: 20px 20px;
+    padding: 20px 40px;
     gap: 16px;
   }
 
@@ -255,19 +255,21 @@
     padding-right: 0;
   }
 
-  .footer-primary-left {
-    max-height: 156px;
-  }
 }
 
 @media (max-width: 600px) {
   .footer-primary_Bottom_container {
-    padding: 10px 8px;
-    gap: 8px;
+    padding: 16px 22px;
+    gap: 16px;
   }
 
   .footer-primary-bottom-hr {
-    margin-inline: -8px;
+    margin-inline: -22px;
+  }
+
+  .footer-primary-left {
+    margin-top: -22px;
+    margin-bottom: 16px;
   }
 
   .footer-primary-right {
