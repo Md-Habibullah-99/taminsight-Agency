@@ -80,7 +80,6 @@
 /* horaizontal line */
 .footer-primary-bottom-hr{
   display: none;
-  margin-top: -24px;
   margin-left: -18px;
   margin-right: -18px;
   border-top: 1px solid #b4b4b454;

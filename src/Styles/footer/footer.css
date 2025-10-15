@@ -75,12 +75,12 @@
 
 /* hr */
 .footer-primary-bottom-hr{
-  display: block;
-  margin-top: -24px;
-  margin-left: 0;   /* align with container padding */
-  margin-right: 0;  /* align with container padding */
+  display: none;
+  margin-left: -18px;
+  margin-right: -18px;
   border-top: 1px solid #b4b4b454;
   height: 1px;
+  display: block;
 }
 
 /* right */
