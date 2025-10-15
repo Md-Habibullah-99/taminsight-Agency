@@ -26,3 +26,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#images
+becomeAffiliateSectionsBackgroundCoverBear.jpg
+becomeAffiliateSectionsBackgroundCover.jpg
