@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+.input_container-is_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  select,
+  option,
+  input,
+  textarea {
+    @apply rounded-xl px-4 py-4;
+    font-size: 16px;
+    min-width: 700px;
+    border: 1px solid rgba(201, 201, 201, 0.562);
+  }
+}
+
+.terms_condition_radio {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  
+  .terms_condition_inner_container {
+    max-width: 16px;
+    
+    input{
+      margin-left: -340px;
+    }
+  }
+}
+
+/* .input_container-is_form input,
+.input_container-is_form textarea 
+{
+  @apply rounded-xl px-4 py-4;
+  font-size: 16px;
+  min-width: 200px;
+  border: 1px solid rgba(201, 201, 201, 0.562);
+} */

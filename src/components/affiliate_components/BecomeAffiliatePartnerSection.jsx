@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 export default function BecomeAffiliatePartnerSection() {
   return (
@@ -8,7 +8,7 @@ export default function BecomeAffiliatePartnerSection() {
         <div className="affiliate_program__bg"></div>
           <div className="container-large become_our_affiliate_partner_section_content_container-main">
             <div className="section-header is-section-align-left">
-              <a href="/#/affiliate_form" rel="noopener noreferrer" className="become-affiliate-align-left">
+              <Link to="/affiliate_form" className="become-affiliate-align-left">
                 <div className="become_our_affiliate_partner_section_content_container">
                   <div data-scroll-reveal="" className="text-eyebrow">
                     <div>Think We Can Help?</div>
@@ -23,7 +23,7 @@ export default function BecomeAffiliatePartnerSection() {
                     </div>
                   </h2>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         {/* <div className="global-padding-section">
