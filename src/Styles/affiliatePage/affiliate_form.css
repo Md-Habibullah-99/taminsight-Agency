@@ -4,18 +4,21 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  select,
+  textarea,
+  input:not([type="checkbox"]):not([type="radio"]) {
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    padding: 1rem;
+    /* px-4 py-4 */
+    font-size: 16px;
+    min-width: 724px;
+    border: 1px solid rgba(201, 201, 201, 0.562);
+  }
 }
 
-/* Form controls (exclude checkbox/radio) */
-.input_container-is_form select,
-.input_container-is_form textarea,
-.input_container-is_form input:not([type="checkbox"]):not([type="radio"]) {
-  border-radius: 0.75rem; /* rounded-xl */
-  padding: 1rem; /* px-4 py-4 */
-  font-size: 16px;
-  min-width: 724px;
-  border: 1px solid rgba(201, 201, 201, 0.562);
-}
+
 .input_container-is_form textarea {
   min-height: 200px;
 }
@@ -23,24 +26,31 @@
 .terms_condition_radio {
   /* Keep checkbox pinned to the left */
   display: grid;
-  grid-template-columns: 16px 1fr; /* checkbox column + content */
+  grid-template-columns: 16px 1fr;
+  /* checkbox column + content */
   align-items: flex-start;
   column-gap: 8px;
-  justify-items: start; /* ensure items align to the left in their cells */
-  text-align: left; /* override any centered parent text */
+  justify-items: start;
+  /* ensure items align to the left in their cells */
+  text-align: left;
+  /* override any centered parent text */
 }
 
 .terms_condition_radio .terms_condition_inner_container {
-  width: 16px; /* exact column width */
+  width: 16px;
+  /* exact column width */
 }
 
 .terms_condition_radio .terms_condition_inner_container input[type="checkbox"] {
-  margin: 0; /* remove negative shift */
-  padding: 0; /* don't inherit padding */
+  margin: 0;
+  /* remove negative shift */
+  padding: 0;
+  /* don't inherit padding */
   width: 16px;
   height: 16px;
   min-width: 16px;
-  border-radius: 0; /* default look */
+  border-radius: 0;
+  /* default look */
   justify-self: start;
   align-self: start;
 }
