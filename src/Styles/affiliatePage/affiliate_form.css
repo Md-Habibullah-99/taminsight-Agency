@@ -57,3 +57,10 @@
 
 
 /* End terms section */
+
+/* submit button */
+.affiliate_application-submit_button {
+  display: inline;
+  max-width: 250px;
+  border: 1px solid gray;
+}

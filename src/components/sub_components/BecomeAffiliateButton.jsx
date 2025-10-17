@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
+
 export default function BecomeAffiliateButton() {
   return (
     
-      <a href="#/affiliate" target="_blank" className="btn_cta btn-border w-inline-block become-affiliate-btn">
+      <Link to="/affiliate_form" className="btn_cta btn-border w-inline-block become-affiliate-btn">
         <div className="btn_content">
           <div className="weight-bold">Become Our Affiliate Partner</div><svg xmlns="http://www.w3.org/2000/svg"
             className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
@@ -9,6 +11,6 @@ export default function BecomeAffiliateButton() {
               strokeLinecap="square"></path>
           </svg>
         </div>
-      </a>
+      </Link>
   )
 }
