@@ -83,7 +83,7 @@ export default function AffiliateForm() {
   };
 
   // 3. Conditional Render for Success Message
-  if (true || submissionStatus === 'success') {
+  if (submissionStatus === 'success') {
     return (
       <div className="hero_header submit_another_application-is_affiliate">
         <div data-scroll-reveal="" className="hero_content is-home">

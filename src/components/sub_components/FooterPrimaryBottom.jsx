@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { withBase } from '../../utils/withBase.js';
 
 export default function FooterPrimaryBottom() {
@@ -93,7 +94,7 @@ export default function FooterPrimaryBottom() {
 
         <div className="footer-primary-right-elements footer-terms_and_policies">
           <div className="footer-primary-right-title">
-            <p>Terms & Policies</p>
+            <p>More</p>
           </div>
           <div className="footer-right-content-elements">
             <a href="#" target="_blank">Terms</a>
@@ -101,8 +102,12 @@ export default function FooterPrimaryBottom() {
           <div className="footer-right-content-elements">
             <a href="#" target="_blank">Privacy</a>
           </div>
+          
           <div className="footer-right-content-elements">
-            <a href="#" target="_blank">Data</a>
+            <Link to="/affiliate" >Affiliate</Link>
+          </div>
+          <div className="footer-right-content-elements">
+            <Link to="/partner" >Partner</Link>
           </div>
         </div>
         <div className="footer-primary-right-elements footer-address">

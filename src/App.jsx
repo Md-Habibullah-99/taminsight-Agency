@@ -4,6 +4,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 
 import Home from './components/Pages/Home'
 import Affiliate from './components/Pages/Affiliate'
+import Partner from './components/Pages/Partner'
 import AffiliateFormPage from './components/Pages/AffiliateFormPage'
 import Layout from './components/sub_components/Layout'
 import ScrollToTop from './components/sub_components/ScrollToTop'
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/affiliate" element={<Affiliate />} />
             <Route path="/affiliate_form" element={<AffiliateFormPage />} />
+            <Route path="/partner" element={<Partner />} />
           </Route>
         </Routes>
       </HashRouter>
