@@ -107,7 +107,7 @@ export default function FooterPrimaryBottom() {
             <Link to="/affiliate" >Affiliate</Link>
           </div>
           <div className="footer-right-content-elements">
-            <Link to="/partner" >Partner</Link>
+            <Link to="/partnership" >Partnership</Link>
           </div>
         </div>
         <div className="footer-primary-right-elements footer-address">

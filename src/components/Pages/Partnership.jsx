@@ -2,7 +2,7 @@
 
 
 
-export default function Partner(){
+export default function Partnership(){
   return (
     <>
     <div>
