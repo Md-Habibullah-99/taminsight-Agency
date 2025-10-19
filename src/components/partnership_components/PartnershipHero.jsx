@@ -28,12 +28,7 @@ export default function PartnershipHero() {
       </div>
       <div className="flex flex-col place-content-end ">
         <div className="affiliate-image-outer-container">
-          {/* Make image fluid on small screens; cap width on medium+ */}
-          <img
-            src={withBase('/images/cats/TheWahCat.jpg')}
-            alt=""
-            className="rounded-4xl w-full md:w-96 max-w-full"
-          />
+          {/* we can add image here */}
         </div>
       </div>
       
