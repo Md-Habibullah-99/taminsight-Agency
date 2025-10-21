@@ -6,7 +6,7 @@ import { withBase } from "../../utils/withBase"
 
 export default function PartnershipHero() {
   return (
-    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header">
+    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header global-padding-section-left-right">
       <div className="hero_header_title-container whyshouldjoin_title-container">
         <h6 className="">JOIN US TODAY TO</h6>
         <h2 className="">

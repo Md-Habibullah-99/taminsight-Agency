@@ -4078,6 +4078,10 @@ a {
   padding-top: var(--space--140);
   padding-bottom: var(--space--140)
 }
+.global-padding-section-left-right {
+  padding-left: calc(20ch + var(--space--40) - 124px);
+  padding-right: calc(20ch + var(--space--40) - 136px);
+}
 
 .section-content.is-main-audience {
   grid-column: span 6/span 6

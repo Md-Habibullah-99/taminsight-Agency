@@ -4,7 +4,7 @@ import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
 
 export default function WhyShouldJoin() {
   return (
-    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header">
+    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header global-padding-section-left-right">
       <div className="flex flex-col place-content-end ">
         <div className="affiliate-image-outer-container">
           {/* Make image fluid on small screens; cap width on medium+ */}

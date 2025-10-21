@@ -86,11 +86,12 @@
   flex-flow: row;
   align-items: center;
   justify-content: center; /* keep visual symmetry like home hero */
-  gap: var(--space--140);
+  max-width: calc(136ch + var(--space--80));
+  gap: var(--space--80);
 }
 
 .whyshouldjoin_title-container {
-  max-width: calc(56ch - var(--space--80) + 16px); /* match original hero constraint */
+  max-width: calc(96ch - var(--space--80)); /* match original hero constraint */
 }
 
 .whyshouldjoin_heading {
