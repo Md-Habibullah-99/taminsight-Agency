@@ -5,6 +5,8 @@
   justify-content: center; /* keep visual symmetry like home hero */
   /* gap: var(--space--140); */
   padding-left: calc(32ch + var(--space--40) - 108px);
+  /* padding-bottom: 500px; */
+  z-index: -1;
 } 
 
 .partnership_header-title {
@@ -13,4 +15,23 @@
 
 .partnership_hero-subtitle {
   margin-top: 44px;
+}
+
+.partnership_hero-button-container {
+  margin-top: 20px;
+}
+
+.partnership_hero-image-container {
+
+  margin-top: -272px;
+  max-width: calc(124ch + var(--space--80));
+  padding-left: calc(68ch + var(--space--80) - 108px);
+  padding-right: calc(8ch + var(--space--80) - 124px);
+}
+
+.partnership_hero-image-inner-container {
+  img {
+    border-radius: 32px;
+    
+  }
 }
