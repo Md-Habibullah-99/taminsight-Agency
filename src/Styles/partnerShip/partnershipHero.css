@@ -4,7 +4,7 @@
   align-items: center; 
   justify-content: center; /* keep visual symmetry like home hero */
   /* gap: var(--space--140); */
-  padding-left: calc(32ch + var(--space--40) - 120px);
+  padding-left: calc(32ch + var(--space--40) - 108px);
 } 
 
 .partnership_header-title {
