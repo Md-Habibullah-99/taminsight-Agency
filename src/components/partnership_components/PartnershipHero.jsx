@@ -41,9 +41,9 @@ export default function PartnershipHero() {
 
       <div className="partnership_hero-image-container">
         <div className="free_value">
-          <div className="free_value-tontent">Grab Your</div>
-          <div className="free_value-tontent">Free Value Of</div>
-          <div className="free_value-tontent">$3000</div>
+          <div className="free_value-content">Grab Your</div>
+          <div className="free_value-content">Free Value Of</div>
+          <div className="free_value-content">$3000</div>
         </div>
         <div className="partnership_hero-image-inner-container">
           <img src={withBase('/images/cats/horaizontalCat.jpg')} alt="" />
