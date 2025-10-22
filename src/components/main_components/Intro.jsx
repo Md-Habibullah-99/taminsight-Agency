@@ -47,7 +47,7 @@ export default function Intro() {
                 <h4 className="quickintro-tamim-hi heading-h2 heading-style-h4">Hello <span className="newline">there!</span>
                 </h4>
                 <div className="quickintro-tamim-about">
-                  <p>I'm Tamim, a Prague-based independent designer with over 14 years of
+                  <p>I'm Tamim, a Dhaka-based independent designer with over 14 years of
                     experience.<br /><br />I help founders and brands create digital experiences that drive real
                     business results. As a designer, I focus on authenticity, transparency, and problem-solving above
                     all. No flashy language or trendy tricks-just effective solutions. <br /><br />I listen intently

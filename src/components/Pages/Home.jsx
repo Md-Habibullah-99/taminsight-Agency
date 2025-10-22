@@ -7,10 +7,12 @@ import Plans from "../main_components/Plans";
 import Intro from "../main_components/Intro";
 import FAQs from "../main_components/FAQs";
 import BottomMenuSticky from "../sub_components/BottomMenu_stickey";
+import UnderDevelopmentNotice from "../sub_components/UnderDevelopmentNotice";
 
 export default function Home() {
   return (
     <>
+      <UnderDevelopmentNotice />
       <div className="page_wrap">
         <Hero />
         <Projects />
