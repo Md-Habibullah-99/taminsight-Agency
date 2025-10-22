@@ -6,7 +6,7 @@ import { withBase } from "../../utils/withBase"
 
 export default function PartnershipHero() {
   return (
-    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header global-padding-section-left-right">
+    <div id="delete-vars-btn" className="hero_header whyshouldjoin_header global-padding-section-left-right partnership_header">
       <div className="hero_header_title-container whyshouldjoin_title-container">
         <h6 className="">JOIN US TODAY TO</h6>
         <h2 className="">
@@ -16,7 +16,7 @@ export default function PartnershipHero() {
           </div>
 
         </h2>
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-1 partnership_hero-subtitle">
           {/* <div className="whyshouldjoin_title-mini">
             Our affiliate program offers an incredible opportunity to turn your influence into income. As a member of our program, you’ll gain access to a wide range of services, allowing you to promote what resonates best with your audience.
           </div> */}

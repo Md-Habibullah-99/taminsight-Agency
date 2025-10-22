@@ -1,11 +1,16 @@
-/* .partnership_header {
+.partnership_header {
   display: flex;
   flex-flow: row;
-  align-items: center;
+  align-items: center; 
   justify-content: center; /* keep visual symmetry like home hero */
-  /* gap: var(--space--140);
-}  */
+  /* gap: var(--space--140); */
+  padding-left: calc(32ch + var(--space--40) - 120px);
+} 
 
 .partnership_header-title {
   min-width: 1000px;
+}
+
+.partnership_hero-subtitle {
+  margin-top: 44px;
 }
