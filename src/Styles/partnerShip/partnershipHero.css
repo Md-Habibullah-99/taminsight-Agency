@@ -32,6 +32,8 @@
   max-width: calc(124ch + var(--space--80));
   padding-left: calc(68ch + var(--space--80) - 108px);
   padding-right: calc(8ch + var(--space--80) - 124px);
+  /* Prevent this overlay wrapper from capturing pointer events */
+  pointer-events: none;
 }
 
 /* Image wrapper with safe overflow + subtle depth */
@@ -52,12 +54,20 @@
   border-radius: inherit;
 }
 
+/* Ensure the overlaid hero image doesn't block interactions on header/button */
+.partnership_hero-image-inner-container,
+.partnership_hero-image-inner-container img {
+  pointer-events: none;
+}
+
 /* Floating free-value badge */
 .free_value {
   position: absolute;
   top: -72px;
   left: 1056px;
   z-index: 2;
+  /* Restore interactivity for this floating badge */
+  pointer-events: auto;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
