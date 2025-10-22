@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 // - className: Extra classes to append (keeps default styles)
 // - onClick: Optional click handler
 // - icon: Toggle arrow icon visibility (default: true)
-export default function BecomeAffiliateButton({
+export default function BecomeSoemthingButton({
   to = "/affiliate_form",
   label = "Become Our Affiliate Partner",
   className = "",

@@ -1,4 +1,4 @@
-import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
+import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton";
 
 export default function AffiliateHero() {
   return (
@@ -13,7 +13,7 @@ export default function AffiliateHero() {
           <div className="affiliate_hero-title-mini">
             Become our affiliate to enjoy exclusive perks, dedicated support, and unlimited earning potential!
           </div>
-          <BecomeAffiliateButton />
+          <BecomeSoemthingButton />
         </div>
       </div>
     </>

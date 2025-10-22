@@ -1,6 +1,6 @@
 
 
-import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton"
+import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton"
 import { withBase } from "../../utils/withBase"
 
 
@@ -27,7 +27,7 @@ export default function PartnershipHero() {
           
         </div>
         <div>
-          <BecomeAffiliateButton to = "https://www.guthib.com" label = "Become our paprtner" className = "" onClick icon = {true}  />
+          <BecomeSoemthingButton to="https://www.guthib.com" label="Become our paprtner" className="" onClick icon={true} />
         </div>
       </div>
       <div className="flex flex-col place-content-end "><div className="affiliate-image-outer-container"></div></div>

@@ -1,6 +1,6 @@
 import { withBase } from "../../utils/withBase";
 
-import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
+import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton";
 
 export default function WhyShouldJoin() {
   return (
@@ -80,7 +80,7 @@ export default function WhyShouldJoin() {
             </ul>
           </div>
         </div>
-        <BecomeAffiliateButton />
+  <BecomeSoemthingButton />
       </div>
     </div>
   )

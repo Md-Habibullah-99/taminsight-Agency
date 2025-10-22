@@ -1,7 +1,7 @@
 
 
 import PartnerCard from "../sub_components/PartnerCard";
-import BecomeAffiliateButton from "../sub_components/BecomeAffiliateButton";
+import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton";
 
 export default function Program() {
   const cards = [
@@ -80,7 +80,7 @@ export default function Program() {
 
           </div>
           <div className="affiliate-partner-bottom-button-container">
-            <BecomeAffiliateButton />
+            <BecomeSoemthingButton />
           </div>
         </div>
       </div>
