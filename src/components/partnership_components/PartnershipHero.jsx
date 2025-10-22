@@ -7,7 +7,7 @@ import { withBase } from "../../utils/withBase"
 
 export default function PartnershipHero() {
   return (
-    <>
+    <section className="partnership_hero">
       <div id="delete-vars-btn" className="hero_header whyshouldjoin_header global-padding-section-left-right partnership_header">
         <div className="hero_header_title-container whyshouldjoin_title-container ">
           <h6 className="">JOIN US TODAY TO</h6>
@@ -49,6 +49,6 @@ export default function PartnershipHero() {
           <img src={withBase('/images/cats/horaizontalCat.jpg')} alt="" />
         </div>
       </div>
-    </>
+    </section>
   )
 }

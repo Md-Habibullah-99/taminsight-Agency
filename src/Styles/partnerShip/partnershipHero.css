@@ -71,7 +71,13 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5); */
-  transform: translateZ(0);
+  /* default rotation */
+  --free-rotate: 30deg;
+  /* Use individual transform properties to avoid conflicts with float animation */
+  rotate: var(--free-rotate);
+  translate: 0 0;
+  transform-origin: center;
+  transition: rotate 500ms ease; /* rotation change should take 1s */
   animation: freeValueFloat 6s ease-in-out infinite;
 }
 
@@ -90,13 +96,23 @@
 }
 
 @keyframes freeValueFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -4px; }
 }
 
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .free_value { animation: none; }
+}
+
+/* Interactions: rotate to -15deg when self-hovered or when subtitle hovered */
+.free_value:hover {
+  --free-rotate: -10deg;
+}
+
+/* Requires a wrapper around header and image sections: .partnership_hero */
+.partnership_hero:has(.partnership_hero-subtitle:hover) .free_value {
+  --free-rotate: -10deg;
 }
 
 /* Responsiveness */
@@ -134,10 +150,10 @@
     padding: 8px 12px;
     gap: 2px;
   }
-  .free_value-tontent {
+  .free_value-content {
     font-size: 12px;
   }
-  .free_value-tontent:last-child {
+  .free_value-content:last-child {
     font-size: 18px;
   }
 }
