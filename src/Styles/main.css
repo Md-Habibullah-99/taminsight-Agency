@@ -2223,7 +2223,6 @@ textarea.w-select {
   --content--secondary\<deleted\|variable-154170f1-82d7-08ff-5bcf-5115897a6148\>: var(--brand--cod-gray\<deleted\|variable-cbd5efc7-c7ae-658e-2c45-6572fd717b5f\>);
   --content--tertiary\<deleted\|variable-ff2f7688-82ed-f478-4c9b-389f96158e65\>: var(--brand--boulder\<deleted\|variable-dc87aeaf-8676-3301-c4c2-228cf1d68cd7\>);
   --font--text-xlg: 1.75rem;
-  --radius--radius-8\<deleted\|variable-903dc08b-4524-ee4b-5584-7021a4a96db8\>: .5rem;
   --space--s-0\<deleted\|variable-f70e95cf-0f3f-5965-c0b4-5c8e5f3badac\>: 0px;
   --font--weight-bold: 700;
   --radius--radius-32\<deleted\|variable-92fae6c5-be89-8f7f-bc37-1d58bdf899d6\>: 32px;
@@ -3306,8 +3305,8 @@ a {
 }
 
 .quickintro-hero {
-  margin-bottom: var(--space--s-56\<deleted\|variable-2bb2c0e2-508e-0545-d21f-28c52b8a7440\>);
-  border-radius: var(--radius--radius-8\<deleted\|variable-903dc08b-4524-ee4b-5584-7021a4a96db8\>);
+  margin-bottom: 1rem;
+  border-radius: .5rem;
   padding-bottom: 56.25%;
   position: relative;
   overflow: hidden
