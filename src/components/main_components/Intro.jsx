@@ -40,7 +40,7 @@ export default function Intro() {
                   </div>
                   <div className="pl-8 fw2">Meet Insight Builder<br /></div>
                 </div>
-                <h4>We are the guy insight of the Taminsight.</h4>
+                <h4>We are the insight of the Taminsight.</h4>
                 <div className="quickintro-focus"><span className="quickintro-focus-area">
                   <span></span></span>
                   <span className="quickintro-focus-area"><svg
