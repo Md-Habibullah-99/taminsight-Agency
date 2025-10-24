@@ -7372,3 +7372,12 @@ a {
   font-style: normal;
   font-display: swap;
 }
+
+/* Overrides to prevent double visibility during intro rotations */
+.quickintro-hero .quickintro-img:first-child:not(.style-show) {
+  opacity: 0;
+}
+
+.quickintro-names .name-item:first-child:not(.style-show) {
+  opacity: 0;
+}

@@ -3,7 +3,7 @@ import { withBase } from '../../utils/withBase.js';
 
 export default function Intro() {
   
-  const names = ["Tamim","Shanjida Ferdous","Habibullah","Shakil"]
+  const names = ["Tamim","Shanjida Ferdous"]
   const [nameIndex, setNameIndex] = useState(0)
   const [imgIndex, setImgIndex] = useState(0)
 
@@ -18,7 +18,7 @@ export default function Intro() {
   // Auto-cycle intro images every 3 seconds with the same fade effect timing as projects
   useEffect(() => {
     const id = setInterval(() => {
-      setImgIndex((i) => (i + 1) % 4) // we currently render 4 images below
+      setImgIndex((i) => (i + 1) % 2) // we currently render 2 images below
     }, 3000)
     return () => clearInterval(id)
   }, [])
@@ -57,19 +57,15 @@ export default function Intro() {
 
               <div className="quickintro-grid__item is-right">
                 <div className="quickintro-hero">
-                  <img sizes="(max-width: 1000px) 100vw, 1000px"
-                    srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-' + w + '.jpg')} ${w}w`).join(', ')}
+                  
+                  <img 
+                    // srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg')}
+                    src={withBase('/images/sanjida-ferdous_profile.webp')}
                     loading="lazy" className={`quickintro-img ${imgIndex === 1 ? 'style-show' : ''}`} />
                   <img sizes="(max-width: 1000px) 100vw, 1000px"
-                    srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
-                    alt=""
-                    src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg')}
-                    loading="lazy" className={`quickintro-img ${imgIndex === 2 ? 'style-show' : ''}`} />
-                  <img sizes="(max-width: 1000px) 100vw, 1000px"
-                    srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
-                    src={withBase('/images/tamim_profile_1080.png')}
+                    // srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
+                    src={withBase('/images/tamim_profile.jpg')}
                     loading="lazy" className={`quickintro-img ${imgIndex === 0 ? 'style-show' : ''}`} />
                   
                 </div>
