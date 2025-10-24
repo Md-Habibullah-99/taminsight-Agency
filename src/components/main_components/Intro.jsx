@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { withBase } from '../../utils/withBase.js';
 
 export default function Intro() {
+  
+  const names = ["Tamim","Shanjida Ferdous","Habibullah","Shakil"]
+  const [nameIndex, setNameIndex] = useState(0)
+  const [imgIndex, setImgIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setNameIndex((i) => (i + 1) % names.length)
+    }, 3000)
+    return () => clearInterval(id)
+    // names is constant within this component; length won't change at runtime
+  }, [])
+
+  // Auto-cycle intro images every 3 seconds with the same fade effect timing as projects
+  useEffect(() => {
+    const id = setInterval(() => {
+      setImgIndex((i) => (i + 1) % 4) // we currently render 4 images below
+    }, 3000)
+    return () => clearInterval(id)
+  }, [])
+  
   return (
     <>
       <section id="quick-intro" className="intro">
@@ -28,30 +49,29 @@ export default function Intro() {
                   <path
                     d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
                     fill="currentColor"></path>
-                </svg><span>Educator</span></span>
+                </svg><span>{
+                  names[nameIndex]
+                  }</span></span>
                 </div>
               </div>
 
               <div className="quickintro-grid__item is-right">
                 <div className="quickintro-hero">
                   <img sizes="(max-width: 1000px) 100vw, 1000px"
-                    srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
-                    src={withBase('/images/tamim_profile_1080.png')}
-                    loading="lazy" className="quickintro-img" />
-                  <img sizes="(max-width: 1000px) 100vw, 1000px"
                     srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-' + w + '.jpg')} ${w}w`).join(', ')}
                     alt=""
                     src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg')}
-                    loading="lazy" className="quickintro-img" />
+                    loading="lazy" className={`quickintro-img ${imgIndex === 1 ? 'style-show' : ''}`} />
                   <img sizes="(max-width: 1000px) 100vw, 1000px"
                     srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
                     alt=""
                     src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg')}
-                    loading="lazy" className="quickintro-img" />
+                    loading="lazy" className={`quickintro-img ${imgIndex === 2 ? 'style-show' : ''}`} />
                   <img sizes="(max-width: 1000px) 100vw, 1000px"
                     srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
                     src={withBase('/images/tamim_profile_1080.png')}
-                    loading="lazy" className="quickintro-img" />
+                    loading="lazy" className={`quickintro-img ${imgIndex === 0 ? 'style-show' : ''}`} />
+                  
                 </div>
               </div>
             </div>

@@ -3321,6 +3321,22 @@ a {
   overflow: hidden
 }
 
+/* Mirror project image fade effect for intro carousel */
+.quickintro-hero .quickintro-img {
+  inset: 0%;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.67, 0, 0.285, 1);
+  pointer-events: none;
+}
+
+.quickintro-hero .quickintro-img:first-child {
+  opacity: 1;
+}
+
+.quickintro-hero .quickintro-img.style-show {
+  opacity: 1;
+}
+
 .quickintro-tamim-about {
   padding-right: var(--space--s-56\<deleted\|variable-2bb2c0e2-508e-0545-d21f-28c52b8a7440\>);
   font-size: var(--font--text-lg)
