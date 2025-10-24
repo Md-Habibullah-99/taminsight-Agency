@@ -20,24 +20,16 @@ export default function Intro() {
                   <div className="pl-8 fw2">Meet Insight Builder<br /></div>
                 </div>
                 <h4>We are the guy insight of the Taminsight.</h4>
-                <div className="quickintro-focus"><span className="quickintro-focus-area"><svg xmlns="http://www.w3.org/2000/svg"
-                  width="100%" viewBox="0 0 24 24" fill="none" className="svgsprite svg-s-32">
-                  <path
-                    d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
-                    fill="currentColor"></path>
-                </svg><span>Designer</span></span><span className="quickintro-focus-area"><svg
+                <div className="quickintro-focus"><span className="quickintro-focus-area">
+                  <span></span></span>
+                  <span className="quickintro-focus-area"><svg
                   xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"
                   className="svgsprite svg-s-32">
                   <path
                     d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
                     fill="currentColor"></path>
-                </svg><span>Educator</span></span><span className="quickintro-focus-area"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"
-                  className="svgsprite svg-s-32">
-                  <path
-                    d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
-                    fill="currentColor"></path>
-                </svg><span>Creator</span></span></div>
+                </svg><span>Educator</span></span>
+                </div>
               </div>
 
               <div className="quickintro-grid__item is-right">
