@@ -39,41 +39,27 @@ export default function Intro() {
                     fill="currentColor"></path>
                 </svg><span>Creator</span></span></div>
               </div>
+
               <div className="quickintro-grid__item is-right">
                 <div className="quickintro-hero">
-                  <img
-                    sizes="(max-width: 1464px) 100vw, 1464px"
+                  <img sizes="(max-width: 1000px) 100vw, 1000px"
                     srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
                     src={withBase('/images/tamim_profile_1080.png')}
-                    loading="lazy"
+                    loading="lazy" className="quickintro-img" />
+                  <img sizes="(max-width: 1000px) 100vw, 1000px"
+                    srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-' + w + '.jpg')} ${w}w`).join(', ')}
                     alt=""
-                    className="quickintro-img"
-                  />
-                </div>
-
-                <div data-scroll-reveal="" className="project_card">
-                  <div className="quickintro-grid__item is-right">
-                    <div className="quickintro-hero">
-                      <img sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
-                        src={withBase('/images/tamim_profile_1080.png')}
-                        loading="lazy" className="quickintro-img" />
-                      <img sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-' + w + '.jpg')} ${w}w`).join(', ')}
-                        alt=""
-                        src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg')}
-                        loading="lazy" className="quickintro-img" />
-                      <img sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
-                        alt=""
-                        src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg')}
-                        loading="lazy" className="quickintro-img" />
-                      <img sizes="(max-width: 1000px) 100vw, 1000px"
-                        srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
-                        src={withBase('/images/tamim_profile_1080.png')}
-                        loading="lazy" className="quickintro-img" />
-                    </div>
-                  </div>
+                    src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-02-800.jpg')}
+                    loading="lazy" className="quickintro-img" />
+                  <img sizes="(max-width: 1000px) 100vw, 1000px"
+                    srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
+                    alt=""
+                    src={withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-800.jpg')}
+                    loading="lazy" className="quickintro-img" />
+                  <img sizes="(max-width: 1000px) 100vw, 1000px"
+                    srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
+                    src={withBase('/images/tamim_profile_1080.png')}
+                    loading="lazy" className="quickintro-img" />
                 </div>
               </div>
             </div>
