@@ -3325,7 +3325,8 @@ a {
 .quickintro-hero .quickintro-img {
   inset: 0%;
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.67, 0, 0.285, 1);
+  /* Use a CSS variable so duration can be controlled from React or global CSS */
+  transition: opacity var(--intro-fade-duration, 1.5s) cubic-bezier(0.67, 0, 0.285, 1);
   pointer-events: none;
 }
 

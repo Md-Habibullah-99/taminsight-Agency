@@ -6,11 +6,16 @@ export default function Intro() {
   const names = ["Tamim","Shanjida Ferdous"]
   const [nameIndex, setNameIndex] = useState(0)
   const [imgIndex, setImgIndex] = useState(0)
+  // Control how long the image fade transition takes (matches CSS variable --intro-fade-duration)
+  const INTRO_FADE_DURATION_MS = 1000;
+  // Control how frequently the names and images change
+  const NAME_CYCLE_INTERVAL_MS = 4000;
+  const IMAGE_CYCLE_INTERVAL_MS = NAME_CYCLE_INTERVAL_MS; // keep > INTRO_FADE_DURATION_MS
 
   useEffect(() => {
     const id = setInterval(() => {
       setNameIndex((i) => (i + 1) % names.length)
-    }, 3000)
+    }, NAME_CYCLE_INTERVAL_MS)
     return () => clearInterval(id)
     // names is constant within this component; length won't change at runtime
   }, [])
@@ -19,7 +24,7 @@ export default function Intro() {
   useEffect(() => {
     const id = setInterval(() => {
       setImgIndex((i) => (i + 1) % 2) // we currently render 2 images below
-    }, 3000)
+    }, IMAGE_CYCLE_INTERVAL_MS)
     return () => clearInterval(id)
   }, [])
   
@@ -56,7 +61,7 @@ export default function Intro() {
               </div>
 
               <div className="quickintro-grid__item is-right">
-                <div className="quickintro-hero">
+                <div className="quickintro-hero" style={{"--intro-fade-duration": `${INTRO_FADE_DURATION_MS}ms`}}>
                   
                   <img 
                     // srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}

@@ -28,7 +28,7 @@ export default function UnderDevelopmentNotice() {
           <button style={styles.closeBtn} onClick={dismiss} aria-label="Close">×</button>
         </div>
         <div id="udn-desc" style={styles.body}>
-          The website is <strong>under development</strong>
+          The webpage is <strong>under development</strong>
         </div>
         <div style={styles.footer}>
           <button style={styles.primaryBtn} onClick={dismiss}>OK</button>
