@@ -58,9 +58,9 @@
     margin-top: 70px;
   }
   .service_offer_title{
-    margin-bottom: 0;
+    margin-bottom: 32px;
     padding-bottom: 0;
-    font-size: 28px; /* match .awards_section-title at <=991px */
+    font-size: 28px;
   }
   .service_offer_title-container{
     padding-bottom: 0px;
@@ -86,10 +86,6 @@
     grid-column-gap: var(--space--12);
     grid-row-gap: var(--space--12)
   }
-  .service_offer_title{
-    margin-bottom: 0;
-    font-size: 26px;
-  }
   .service_offer-service_title{
     font-size: 56px;
   }
@@ -98,10 +94,6 @@
   }
 }
 @media screen and (max-width:720px) {
-  .service_offer_title{
-    margin-bottom: 0;
-    font-size: 22px;
-  }
   .service_offer-service{
     margin-bottom: 50px;
   }
