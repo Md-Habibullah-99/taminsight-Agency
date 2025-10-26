@@ -69,12 +69,10 @@ function Process() {
                     <div className="service_offer-service_description_container">
 
                       <div className="service_offer-service_description">
-                      <p className="service_offer-service_description-element">Brand Strategy — </p>
-                      <p className="service_offer-service_description-element">Naming & Positioning</p> <br />
-                      <p className="service_offer-service_description-element">Logos & Identities — </p>
-                      <p className="service_offer-service_description-element">Brand Messaging</p> <br />
-                      <p className="service_offer-service_description-element">Brand & Visual Guidelines — </p>
-                      <p className="service_offer-service_description-element">Stationery Design</p>
+                      <p className="service_offer-service_description-element">Brand Strategy — Naming & Positioning</p>
+                      <p className="service_offer-service_description-element">Logos & Identities — Brand Messaging</p>
+                      <p className="service_offer-service_description-element">Brand & Visual Guidelines — Stationery Design</p>
+                      
                       </div>
                     </div>
                   </div>
@@ -83,15 +81,12 @@ function Process() {
                     <div className="service_offer-service_description_container">
 
                       <div className="service_offer-service_description">
-                      <p className="service_offer-service_description-element">Art Direction — </p>
-                      <p className="service_offer-service_description-element">Copywriting — </p>
-                      <p className="service_offer-service_description-element">Content Design</p> <br />
-                      <p className="service_offer-service_description-element">3D/Motion Graphics — </p>
-                      <p className="service_offer-service_description-element">Illustrations & Infographics</p> <br />
-                      <p className="service_offer-service_description-element">Packaging Design — </p>
-                      <p className="service_offer-service_description-element">Editorial Design</p> <br />
-                      <p className="service_offer-service_description-element">Campaign Development — </p>
-                      <p className="service_offer-service_description-element">Photography </p>
+                      <p className="service_offer-service_description-element">Art Direction — Copywriting — Content Design</p>
+                      <p className="service_offer-service_description-element">3D/Motion Graphics — Illustrations & Infographics</p>
+                      <p className="service_offer-service_description-element">Packaging Design — Editorial Design</p>
+                      
+                      <p className="service_offer-service_description-element">Campaign Development — Photography</p>
+                      
                       </div>
                     </div>
                   </div>

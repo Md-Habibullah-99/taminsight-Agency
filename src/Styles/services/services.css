@@ -37,15 +37,16 @@
 }
 
 .service_offer-service_description{
+  /* Stack items vertically so each <p> is on a new line */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .service_offer-service_description-element {
-  display: inline-block;
+  display: block;
   position: relative;
   font-size: 26px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 
