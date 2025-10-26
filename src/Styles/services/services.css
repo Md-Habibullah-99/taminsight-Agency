@@ -1,36 +1,37 @@
 .service_offer_title-container{
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 30px;
   padding-bottom: 40px;
-  max-width: 500px;
 }
 
 .service_offer_title{
-  position: sticky;
-  top: 112px;
-  padding-bottom: 250px;
-  margin-left: 30px;
-  margin-right: 20px;
   font-size: 34px;
   font-weight: 400;
+  margin: 0;
+  max-width: 280px;
   line-height: 1.3;
 }
 
 .service_offer {
   display: flex;
+  flex-direction: column;
+  /* Keep a two-column layout similar to awards section */
 }
 
 .service_offer-services{
-  margin-left: 50px;
+  /* Match awards list width and alignment */
+  margin-left: auto;
+  align-items: flex-end;
+  margin-top: 24px;
+  width: calc(70% - 10px);
 }
 
 .service_offer-service{
-  margin-bottom: 100px;
+  margin-bottom: 96px;
 }
 .service_offer-service_title{
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-size: 83px;
   font-weight: 450;
 }
@@ -48,26 +49,7 @@
 }
 
 
-@media screen and (max-width:1300px) {
-  .service_offer_title{
-    margin-bottom: 70px;
-  }
-}
-@media screen and (max-width:1189px) {
-  .service_offer_title{
-    margin-bottom: 90px;
-  }
-}
-@media screen and (max-width:1155px) {
-  .service_offer_title{
-    margin-bottom: 120px;
-  }
-}
-@media screen and (max-width:1086px) {
-  .service_offer_title{
-    margin-bottom: 170px;
-  }
-}
+/* Align services title responsive behavior with awards title */
 @media screen and (max-width:991px) {
   
   .service_offer {
@@ -75,15 +57,17 @@
     margin-top: 70px;
   }
   .service_offer_title{
-    margin-bottom: 100px;
-    padding-bottom: 0px;
-    font-size: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 28px; /* match .awards_section-title at <=991px */
   }
   .service_offer_title-container{
     padding-bottom: 0px;
   }
   .service_offer-services{
+    /* Match awards responsive width */
     margin-left: 30px;
+    width: 90%;
   }
   .service_offer-service{
     margin-bottom: 70px;
@@ -102,7 +86,7 @@
     grid-row-gap: var(--space--12)
   }
   .service_offer_title{
-    margin-bottom: 70px;
+    margin-bottom: 0;
     font-size: 26px;
   }
   .service_offer-service_title{
@@ -114,11 +98,14 @@
 }
 @media screen and (max-width:720px) {
   .service_offer_title{
-    margin-bottom: 50px;
+    margin-bottom: 0;
     font-size: 22px;
   }
   .service_offer-service{
     margin-bottom: 50px;
+  }
+  .service_offer-services{
+    width: 100%;
   }
   .service_offer-service_title{
     font-size: 48px;
