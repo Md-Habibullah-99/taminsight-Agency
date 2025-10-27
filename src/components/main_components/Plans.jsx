@@ -181,7 +181,7 @@ export default function Plans() {
                           <h6 className="plan-headline-title">Monthly Design Partnership</h6>
                         </div>
                         <div className="pricing_card_investment">
-                          <h4 className="subscription_price">$8,000</h4>
+                          <h4 className="subscription_price">$2,500</h4>
                           <div className="plan_price_wrapper">
                             <div><span className="newline weight-bold">per month</span> billed monthly</div>
                           </div>
