@@ -3,7 +3,7 @@
 
 
 
-import PartnerCard from "../sub_components/PartnerCard";
+import Benifit_Card from "../sub_components/Benifits_Cards";
 import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton";
 
 
@@ -11,41 +11,64 @@ import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton";
 export default function PartnershipBenifits() {
   const cards = [
     {
-      title: "Star",
-      frequency: "Bi-Weekly Withdrawal",
-      percent: "5 %",
+      title: "Get a Free Custom-Built Website *",
+      frequency: "Stay in control and monitor your projects effortlessly with a swanky website for completely FREE",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "1",
+      features: [],
+    },
+    {
+      title: "Daily Report",
+      frequency: "Stay effortlessly informed with our accessible Daily Report",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "1",
       features: [
-        "Solo Project Enrollment <br />",
-        "5% Commission<br />",
-        "Discount Code<br />",
+        "Access to real-time reports <br />",
+        "Monitor and track your progress <br />",
       ],
     },
     {
-      title: "Champion",
-      frequency: "Weekly Withdrawal",
-      percent: "10 %",
+      title: "Dedicated Team",
+      frequency: "Elevate your project's success with an exclusive dedicated team, customized JUST FOR YOU!",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "2",
       features: [
-        "Monthly Project Enrollment<br />",
-        "8% Commission<br />",
-        "10% Discount Code<br />",
+        "Team solely focused on your project <br />",
+        "Skilled project manager <br />",
+      ],
+    },
+    // right side
+    {
+      title: "Collaborative Growth",
+      frequency: "Unleash your business's potential with collaborative growth",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "2",
+      features: [
+        "24/7 team support <br />",
+        "Comprehensive marketing strategies <br />",
       ],
     },
     {
-      title: "Legacy",
-      frequency: "24/7 Withdrawal",
-      percent: "15 %",
+      title: "Enrollment for FREE",
+      frequency: "Join as our partner and start earning",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "1",
       features: [
-        "Yearly Project Enrollment<br />",
-        "10% Commission<br />",
-        "15% Discount Code<br />",
+        "$0 enrollment fee <br />",
+        "Six star service <br />",
+        "Speedy turnover <br />",
       ],
     },
     {
-      // last special card
-      title: "Become Our Taminsight Partner",
-      frequency:
-        'Join as Our Partner and Earn Upto <span class="highlight">40%</span> Recurring Profit <br/><br/><br/><br/> <a href="http://www.guthib.com" target="_blank" rel="noopener noreferrer">Learn more</a>',
-      isLast: true,
+      title: "Steady Profit",
+      frequency: "Maximize your earnings with effortless recurring profits!",
+      imgLink: "../../../public/images/cats/cat02.jpg",
+      imgPlace: "1",
+      features: [
+        "Earn up to 40% of project earnings <br />",
+        "Unlock unlimited growth <br />",
+        "Expand the network, soar the revenue <br />",
+      ],
     },
   ];
 
@@ -61,26 +84,23 @@ export default function PartnershipBenifits() {
                 <div className="section-header">
                   <div className="section_header_wrapper">
                     <div data-scroll-reveal="" className="text-eyebrow is-process">
-                      <div>AFFILIATE PROGRAM</div>
+                      <div>BENEFITS</div>
                     </div>
-                    <h1 data-scroll-reveal="" className="heading-gradient is-bg-cream"><span className="newline">How Our Affiliate Model
-                    </span><span className="newline">Works</span>
+                    <h1 data-scroll-reveal="" className="heading-gradient is-bg-cream"><span className="newline">Our Partnership Benefits
+                    </span><span className="newline">That You’ll Love</span>
                     </h1>
-                    <div className="program-title-description">
-                      Join our Affiliate Program, refer your unique link to your community, and enjoy your commissions from the moment a client joins Taminsight subscription plan
-                    </div>
                   </div>
                 </div>
     
                 <div className="affiliate-partner-cart-container">
                   {cards.map((c, idx) => (
-                    <PartnerCard
+                    <Benifit_Card
                       key={idx}
                       title={c.title}
                       frequency={c.frequency}
-                      percent={c.percent}
                       features={c.features}
-                      isLast={c.isLast}
+                      imgLink={c.imgLink}
+                      imgPlace={c.imgPlace}
                     />
                   ))}
                 </div>
