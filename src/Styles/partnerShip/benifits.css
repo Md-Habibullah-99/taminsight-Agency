@@ -56,11 +56,6 @@
 	display: flex;
 }
 
-.checklist-icon.is-green {
-	color: var(--color--based-white);
-	background-color: #3dd65d;
-}
-
 /* Pricing card base (from main.css) */
 .pricing_card {
 	padding: var(--space--40);
@@ -73,36 +68,6 @@
 	overflow: hidden;
 }
 
-.pricing_card.active {
-	display: block;
-}
-
-.pricing_card.dark {
-	background-image: url(https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/67f5d074d6428bae2f9aad8f_bg-dark.jpg);
-	background-position: 50% 0;
-	background-size: cover;
-}
-
-.pricing_card.light {
-	box-shadow: inset 0 0 2em .1em #fff9;
-}
-
-/* pricing_card related overrides (from utils/buttons.css) */
-.pricing_card.dark .pricing_card_group {
-	color: var(--color--gray-100);
-}
-
-.pricing_card.dark .subscription_price {
-	color: var(--color--based-white);
-}
-
-.pricing_card.dark .checklist-icon {
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-.pricing_card .checklist-icon {
-	color: var(--color--gray-100);
-}
 
 /* Affiliate-specific card styles (from affiliate_program.css) */
 .affiliate-partner-cart-container {
@@ -144,17 +109,6 @@
 
 .partner-card-max-element {
 	margin-bottom: 14px;
-}
-
-.partner-card-last-option-description {
-	margin-top: 16px;
-	font-weight: 300;
-	font-size: 18px;
-	line-height: 1.5;
-}
-
-.partner-card-last-option-description .highlight{
-	font-weight: 600;
 }
 
 /* Responsive rules copied from affiliate_program.css to keep card behavior consistent */
