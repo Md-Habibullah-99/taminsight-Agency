@@ -92,7 +92,7 @@ export default function PartnershipBenifits() {
                   </div>
                 </div>
     
-                <div className="affiliate-partner-cart-container">
+                <div className="benefits-cart-container">
                   {cards.map((c, idx) => (
                     <Benifit_Card
                       key={idx}

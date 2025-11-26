@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * PartnerCard
+ * benefitCard
  * Props:
  * - title: string
  * - frequency: string (optional)
@@ -13,14 +13,14 @@ import React from 'react';
 export default function Benifit_Card({ title, frequency, imgLink,imgPlace, features = []}) {
   
   return (
-    <div className="pricing_card affiliate-partner-card">
-      <div className="partner-cart-top-elements">
-        <h4 className="partner-card-max-element">{title}</h4>
+    <div className="benefit_card benefit-card">
+      <div className="benefit-cart-top-elements">
+        <h4 className="benefit-card-max-element">{title}</h4>
         {frequency && <h6>{frequency}</h6>}
-        {/* {percent && <h4 className="partner-card-max-element">{percent}</h4>} */}
+        {/* {percent && <h4 className="benefit-card-max-element">{percent}</h4>} */}
       </div>
       {features && features.length > 0 && (
-        <ul role="list" className="checklist is-pricing-checklist partner-card-checkout-list">
+        <ul role="list" className="checklist is-benefits-checklist benefit-card-checkout-list">
           {features.map((f, i) => (
             <li className="featured-checklist" key={i}>
               <div className="checklist-icon">

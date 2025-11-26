@@ -1,11 +1,11 @@
 /*
-	Extracted CSS rules used by `src/components/sub_components/PartnerCard.jsx`.
+	Extracted CSS rules used by `src/components/sub_components/benefitCard.jsx`.
 	Sources:
 	- src/Styles/utils/cssVariables.css (svg/base)
-	- src/Styles/main.css (checklist, icon, pricing_card, etc.)
-	- src/Styles/utils/buttons.css (pricing_card overrides)
+	- src/Styles/main.css (checklist, icon, benefit_card, etc.)
+	- src/Styles/utils/buttons.css (benefit_card overrides)
 	- src/Styles/affiliatePage/affiliate_program.css (affiliate specific styles)
-	Copied here to keep partner/benefits-related rules together.
+	Copied here to keep benefit/benefits-related rules together.
 */
 
 /* SVG base (from cssVariables.css) */
@@ -33,7 +33,7 @@
 	display: flex;
 }
 
-.checklist.is-pricing-checklist {
+.checklist.is-benefits-checklist {
 	min-height: 184px;
 }
 
@@ -56,8 +56,8 @@
 	display: flex;
 }
 
-/* Pricing card base (from main.css) */
-.pricing_card {
+/* benefits card base (from main.css) */
+.benefit_card {
 	padding: var(--space--40);
 	border-radius: var(--space--32);
 	background-color: var(--color--gray-300);
@@ -70,14 +70,14 @@
 
 
 /* Affiliate-specific card styles (from affiliate_program.css) */
-.affiliate-partner-cart-container {
+.benefits-cart-container {
 	display: flex;
 	flex-direction: row;
 	gap: 16px;
 	flex-wrap: wrap;
 }
 
-.affiliate-partner-card {
+.benefit-card {
 	background-color: rgba(196, 196, 196, 0.726) !important;
 	display: block !important;
 	opacity: 1 !important;
@@ -92,65 +92,65 @@
 	margin-right: 0;
 }
 
-.affiliate-partner-card:hover {
+.benefit-card:hover {
 	box-shadow: inset 0 0 2em .1em #fff9;
 }
 
-.partner-cart-top-elements {
+.benefit-cart-top-elements {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 8px;
 }
 
-.partner-card-checkout-list {
+.benefit-card-checkout-list {
 	margin-top: 16px;
 }
 
-.partner-card-max-element {
+.benefit-card-max-element {
 	margin-bottom: 14px;
 }
 
 /* Responsive rules copied from affiliate_program.css to keep card behavior consistent */
 @media (min-width: 1200px) {
-	.affiliate-partner-cart-container {
+	.benefits-cart-container {
 		gap: 24px;
 		flex-wrap: nowrap;
 		justify-content: center;
 	}
-	.affiliate-partner-card {
+	.benefit-card {
 		flex: 0 0 290px;
 		max-width: 290px;
 	}
 }
 
 @media (max-width: 991px) {
-	.affiliate-partner-cart-container {
+	.benefits-cart-container {
 		gap: 16px;
 	}
-	.affiliate-partner-card {
+	.benefit-card {
 		flex: 1 1 calc(50% - 12px);
 		max-width: none;
 	}
 }
 
 @media (max-width: 640px) {
-	.affiliate-partner-cart-container {
+	.benefits-cart-container {
 		gap: 16px;
 	}
-	.affiliate-partner-card {
+	.benefit-card {
 		flex: 0 1 auto;
 	}
-	.affiliate-partner-bottom-button-container {
+	.benefit-bottom-button-container {
 		margin-top: 56px;
 	}
 }
 
 @media (max-width: 767px) {
-	.affiliate-partner-cart-container {
+	.benefits-cart-container {
 		justify-content: center;
 	}
-	.affiliate-partner-card {
+	.benefit-card {
 		max-width: min(420px, 92vw);
 		width: 100%;
 		margin-inline: auto;
