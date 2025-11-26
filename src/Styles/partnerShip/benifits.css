@@ -1,0 +1,206 @@
+/*
+	Extracted CSS rules used by `src/components/sub_components/PartnerCard.jsx`.
+	Sources:
+	- src/Styles/utils/cssVariables.css (svg/base)
+	- src/Styles/main.css (checklist, icon, pricing_card, etc.)
+	- src/Styles/utils/buttons.css (pricing_card overrides)
+	- src/Styles/affiliatePage/affiliate_program.css (affiliate specific styles)
+	Copied here to keep partner/benefits-related rules together.
+*/
+
+/* SVG base (from cssVariables.css) */
+.svgsprite {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: visible !important;
+}
+
+/* icon sizing */
+.icon-16 {
+	width: 1em;
+	height: 1em;
+}
+
+/* Checklist / feature list (from main.css) */
+.checklist {
+	grid-column-gap: var(--space--12);
+	grid-row-gap: var(--space--12);
+	flex-direction: column;
+	flex: 1;
+	padding-left: 0;
+	padding-right: 0;
+	display: flex;
+}
+
+.checklist.is-pricing-checklist {
+	min-height: 184px;
+}
+
+.featured-checklist {
+	grid-column-gap: var(--space--16);
+	grid-row-gap: var(--space--16);
+	align-items: center;
+	display: flex;
+}
+
+/* checklist icon */
+.checklist-icon {
+	border-radius: var(--radius--pill);
+	background-color: var(--color--gray-600);
+	flex: none;
+	justify-content: center;
+	align-items: center;
+	width: 1.5em;
+	height: 1.5em;
+	display: flex;
+}
+
+.checklist-icon.is-green {
+	color: var(--color--based-white);
+	background-color: #3dd65d;
+}
+
+/* Pricing card base (from main.css) */
+.pricing_card {
+	padding: var(--space--40);
+	border-radius: var(--space--32);
+	background-color: var(--color--gray-300);
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+	position: relative;
+	overflow: hidden;
+}
+
+.pricing_card.active {
+	display: block;
+}
+
+.pricing_card.dark {
+	background-image: url(https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/67f5d074d6428bae2f9aad8f_bg-dark.jpg);
+	background-position: 50% 0;
+	background-size: cover;
+}
+
+.pricing_card.light {
+	box-shadow: inset 0 0 2em .1em #fff9;
+}
+
+/* pricing_card related overrides (from utils/buttons.css) */
+.pricing_card.dark .pricing_card_group {
+	color: var(--color--gray-100);
+}
+
+.pricing_card.dark .subscription_price {
+	color: var(--color--based-white);
+}
+
+.pricing_card.dark .checklist-icon {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pricing_card .checklist-icon {
+	color: var(--color--gray-100);
+}
+
+/* Affiliate-specific card styles (from affiliate_program.css) */
+.affiliate-partner-cart-container {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.affiliate-partner-card {
+	background-color: rgba(196, 196, 196, 0.726) !important;
+	display: block !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	transform: none !important;
+	transition: box-shadow 0.25s;
+	pointer-events: auto !important;
+	z-index: 3;
+	max-width: 320px;
+	padding-bottom: 28px;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.affiliate-partner-card:hover {
+	box-shadow: inset 0 0 2em .1em #fff9;
+}
+
+.partner-cart-top-elements {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+.partner-card-checkout-list {
+	margin-top: 16px;
+}
+
+.partner-card-max-element {
+	margin-bottom: 14px;
+}
+
+.partner-card-last-option-description {
+	margin-top: 16px;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.partner-card-last-option-description .highlight{
+	font-weight: 600;
+}
+
+/* Responsive rules copied from affiliate_program.css to keep card behavior consistent */
+@media (min-width: 1200px) {
+	.affiliate-partner-cart-container {
+		gap: 24px;
+		flex-wrap: nowrap;
+		justify-content: center;
+	}
+	.affiliate-partner-card {
+		flex: 0 0 290px;
+		max-width: 290px;
+	}
+}
+
+@media (max-width: 991px) {
+	.affiliate-partner-cart-container {
+		gap: 16px;
+	}
+	.affiliate-partner-card {
+		flex: 1 1 calc(50% - 12px);
+		max-width: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.affiliate-partner-cart-container {
+		gap: 16px;
+	}
+	.affiliate-partner-card {
+		flex: 0 1 auto;
+	}
+	.affiliate-partner-bottom-button-container {
+		margin-top: 56px;
+	}
+}
+
+@media (max-width: 767px) {
+	.affiliate-partner-cart-container {
+		justify-content: center;
+	}
+	.affiliate-partner-card {
+		max-width: min(420px, 92vw);
+		width: 100%;
+		margin-inline: auto;
+		padding-bottom: 32px;
+	}
+}
+
