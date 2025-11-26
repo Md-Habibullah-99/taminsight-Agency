@@ -33,9 +33,6 @@
 	display: flex;
 }
 
-.checklist.is-benefits-checklist {
-	min-height: 184px;
-}
 
 .featured-checklist {
 	grid-column-gap: var(--space--16);
