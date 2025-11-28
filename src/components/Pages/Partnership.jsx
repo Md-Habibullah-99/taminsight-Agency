@@ -3,7 +3,7 @@ import UnderDevelopmentNotice from "../sub_components/UnderDevelopmentNotice";
 import PartnershipHero from "../partnership_components/PartnershipHero";
 import PartnershipHowitsWorks from "../partnership_components/PartnershipHowitsWorks";
 import PartnershipBenifits from "../partnership_components/PartnershipBenifits";
-import FAQs from "../partnership_components/PartnershipFAQs";
+import PartnershipFAQItem from "../partnership_components/PartnershipFAQs";
 
 
 export default function Partnership() {
@@ -13,7 +13,7 @@ export default function Partnership() {
       <PartnershipHero />
       <PartnershipHowitsWorks />
       <PartnershipBenifits />
-      <FAQs />
+      <PartnershipFAQItem />
     </>
   );
 }
