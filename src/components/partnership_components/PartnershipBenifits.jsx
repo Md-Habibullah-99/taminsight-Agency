@@ -72,6 +72,9 @@ export default function PartnershipBenifits() {
     },
   ];
 
+  const leftSideCards = cards.slice(0, Math.ceil(cards.length / 2));
+  const rightSideCards = cards.slice(Math.ceil(cards.length / 2));
+
 
 
   return (
@@ -92,17 +95,43 @@ export default function PartnershipBenifits() {
               </div>
             </div>
 
-            <div className="benefits-cart-container">
-              {cards.map((c, idx) => (
-                <Benifit_Card
-                  key={idx}
-                  title={c.title}
-                  frequency={c.frequency}
-                  features={c.features}
-                  imgLink={c.imgLink}
-                  maxElement={c.maxElement}
-                />
-              ))}
+            <div className="benefits-cart-container-container">
+              <div className="benefits-cart-container">
+                {/* {cards.map((c, idx) => (
+                  <Benifit_Card
+                    key={idx}
+                    title={c.title}
+                    frequency={c.frequency}
+                    features={c.features}
+                    imgLink={c.imgLink}
+                    maxElement={c.maxElement}
+                  />
+                ))} */}
+                <div className="benefits-card-left_right">
+                  {leftSideCards.map((c, idx) => (
+                    <Benifit_Card
+                      key={idx}
+                      title={c.title}
+                      frequency={c.frequency}
+                      features={c.features}
+                      imgLink={c.imgLink}
+                      maxElement={c.maxElement}
+                    />
+                  ))}
+                </div>
+                <div className="benefits-card-left_right">
+                  {rightSideCards.map((c, idx) => (
+                    <Benifit_Card
+                      key={idx}
+                      title={c.title}
+                      frequency={c.frequency}
+                      features={c.features}
+                      imgLink={c.imgLink}
+                      maxElement={c.maxElement}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
           </div>
