@@ -81,7 +81,6 @@
 .benefits-card-left_right{
 	display: flex;
 	flex-direction: column;
-	/* gap: 16px; */
 	.benefits-cart-inner-container {
 		margin-top: 16px;
 		margin-bottom: 8px;
@@ -89,13 +88,13 @@
 }
 
 .benefit-card {
-	background-color: rgba(196, 196, 196, 0.726) !important;
-	display: block !important;
-	opacity: 1 !important;
-	visibility: visible !important;
-	transform: none !important;
+	background-color: rgba(196, 196, 196, 0.726) ;
+	display: block ;
+	opacity: 1 ;
+	visibility: visible ;
+	transform: none ;
 	transition: box-shadow 0.25s;
-	pointer-events: auto !important;
+	pointer-events: auto ;
 	max-width: 512px;
 	z-index: 3;
 	padding-bottom: 28px;
@@ -106,6 +105,13 @@
 .benefit-card:hover {
 	box-shadow: inset 0 0 2em .1em #fff9;
 }
+
+.benefit-card--right-middle {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 48px;
+}
+
 
 .benefit-cart-top-elements {
 	display: flex;
@@ -125,7 +131,17 @@
 .benefits_animation-container {
   margin-top: 16px;
   max-width: 96px;
+	margin-top: 32px;
 }
+.benefits_animation-container.benefit-card--right-float {
+	margin-top: -8px;
+	margin-left: auto;
+}
+
+.benefits_animation-container.benefit-card--bottom {
+	max-width: 144px;
+}
+
 
 /* Responsive rules copied from affiliate_program.css to keep card behavior consistent */
 @media (min-width: 1200px) {

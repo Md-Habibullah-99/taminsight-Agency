@@ -14,14 +14,14 @@ export default function PartnershipBenifits() {
       title: "Get a Free Custom-Built Website *",
       frequency: "Stay in control and monitor your projects effortlessly with a swanky website for completely FREE",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: false,
+      placeImg: "right-middle",
       features: [],
     },
     {
       title: "Daily Report",
       frequency: "Stay effortlessly informed with our accessible Daily Report",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: false,
+      placeImg: "right-float",
       features: [
         "Access to real-time reports <br />",
         "Monitor and track your progress <br />",
@@ -31,7 +31,7 @@ export default function PartnershipBenifits() {
       title: "Dedicated Team",
       frequency: "Elevate your project's success with an exclusive dedicated team, customized JUST FOR YOU!",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: true,
+      placeImg: "bottom",
       features: [
         "Team solely focused on your project <br />",
         "Skilled project manager <br />",
@@ -42,7 +42,7 @@ export default function PartnershipBenifits() {
       title: "Collaborative Growth",
       frequency: "Unleash your business's potential with collaborative growth",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: true,
+      placeImg: "bottom",
       features: [
         "24/7 team support <br />",
         "Comprehensive marketing strategies <br />",
@@ -52,7 +52,7 @@ export default function PartnershipBenifits() {
       title: "Enrollment for FREE",
       frequency: "Join as our partner and start earning",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: false,
+      placeImg: "right-corner",
       features: [
         "$0 enrollment fee <br />",
         "Six star service <br />",
@@ -63,7 +63,7 @@ export default function PartnershipBenifits() {
       title: "Steady Profit",
       frequency: "Maximize your earnings with effortless recurring profits!",
       imgLink: "https://cdn.prod.website-files.com/65111bc3d36d02e461763c5f/655097f7746087a0082c2a85_fast-work.json",
-      maxElement: false,
+      placeImg: "right-corner",
       features: [
         "Earn up to 40% of project earnings <br />",
         "Unlock unlimited growth <br />",
@@ -104,7 +104,7 @@ export default function PartnershipBenifits() {
                     frequency={c.frequency}
                     features={c.features}
                     imgLink={c.imgLink}
-                    maxElement={c.maxElement}
+                    placeImg={c.placeImg}
                   />
                 ))} */}
                 <div className="benefits-card-left_right">
@@ -115,7 +115,7 @@ export default function PartnershipBenifits() {
                       frequency={c.frequency}
                       features={c.features}
                       imgLink={c.imgLink}
-                      maxElement={c.maxElement}
+                      placeImg={c.placeImg}
                     />
                   ))}
                 </div>
@@ -127,7 +127,7 @@ export default function PartnershipBenifits() {
                       frequency={c.frequency}
                       features={c.features}
                       imgLink={c.imgLink}
-                      maxElement={c.maxElement}
+                      placeImg={c.placeImg}
                     />
                   ))}
                 </div>
