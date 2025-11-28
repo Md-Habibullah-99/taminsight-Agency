@@ -3,60 +3,28 @@ import "../../Styles/components_Style/FAQSection.css";
 
 const faqs = [
   {
-    question: "What is Taminsight?",
-    answer: "Taminsight is a creative agency that empowers B2B brands with exceptional white-label solutions, setting the stage for unparalleled success and industry leadership. With Taminsight, you can access a team of experienced designers and developers at a flat monthly rate. This means you no longer have to worry about the hassle of recruiting, hiring, and managing your team. Taminsight takes care of everything for you, so you can focus on growing your business."
+    question: "What is the Partnership Plan?",
+    answer: "The Partnership Plan is a comprehensive business program designed to empower entrepreneurs by providing them with a fully-equipped online presence, including a custom-built website, expert marketing strategies, and the opportunity to earn recurring profits."
   },
   {
-    question: "How are you different from freelancer marketplaces?",
-    answer: "Good question! Freelancer marketplaces like Upwork and Fiverr give you access to a vast pool of freelancers, but there’s a catch. These platforms take a percentage of the payment to the freelancer, so they have an incentive to gather as many freelancers as possible, regardless of their quality. At Taminsight, we do things differently. We only work with a vetted group of designers and developers who are contracted on a full-time basis. This means you can be sure you’re getting high-quality work from experienced professionals."
+    question: "How can I earn recurring profits through the Partnership Plan?",
+    answer: "You can earn up to 40% of the total project earnings by bringing clients to your website. The more clients you attract, the greater your revenue potential, allowing you to earn steady recurring profits."
   },
   {
-    question: "What if I don't like the delivery?",
-    answer: "Your satisfaction is not just a priority; it’s our obsession. We pour our hearts and souls into every project, ensuring that you walk away with a smile. Here’s the cherry on top, we’ll continue to revise the design until you’re 100% satisfied, and if your claim is based on reasonable things, you’ll receive a no-questions-asked 100% refund. We are confident in exceeding your expectations and protecting your investment."
+    question: "What sets the Partnership Plan apart from other business opportunities?",
+    answer: "The Partnership Plan stands out due to its unique combination of a custom-built website, tailored marketing strategies, and the opportunity to earn recurring profits. It offers a complete package that empowers you to establish and grow a successful online business."
   },
   {
-    question: "How fast will I receive my requests?",
-    answer: "On average, most requests are completed in just two days or less. However, more complex requests can take longer."
+    question: "How does the selection process work for becoming a partner?",
+    answer: "To become a partner, Reestify will schedule a meeting with potential partners and conduct interviews to assess their suitability. The aim is to ensure a mutually beneficial partnership and identify individuals who align with the values and goals of the program."
   },
   {
-    question: "How do I pay for the subscription?",
-    answer: "Signing up for your favorite subscription plan has never been easier. Simply head over to our website and effortlessly enroll using Wise, the industry-leading payment gateway trusted by millions. Don’t worry you can still pay directly from the bank as well. Once you’ve subscribed, sit back and relax. We’ll send you a friendly reminder email three days before your next renewal, ensuring you’re always in the loop."
+    question: "Do I need any technical expertise to participate in the Partnership Plan?",
+    answer: "No, you don’t need any technical expertise. The Partnership Plan covers all your technical details, including creating a stunning website. You can focus on your core strengths and leave the technical aspects to the experts."
   },
   {
-    question: "What does the maintenance plan include?",
-    answer: (
-      <>
-        <p>The maintenance plan includes all kinds of tasks that are necessary to keep a website up to date, like:</p>
-        <ul className="affiliate-faq-dropdownmenu-list">
-          <li>Fixing Website Bugs</li>
-          <li>Plugin Updates</li>
-          <li>Security Audit</li>
-          <li>Security Implementation</li>
-          <li>Implementing Website with 3rd Party Tool</li>
-          <li>Website Content Update</li>
-          <li>Adding New Blog Post</li>
-          <li>Site Speed Optimization</li>
-          <li>Site Backup</li>
-          <li>Broken Links and 404</li>
-          <li>Errors Check</li>
-          <li>Google Search Console Setup</li>
-          <li>Google Tag Manager Setup</li>
-          <li>Funnel Analytics Setup</li>
-          <li>Facebook Pixel Setup</li>
-          <li>Payment Integration</li>
-          <li>Cookie Consent Setup</li>
-          <li>Forms and SMTP Checks</li>
-          <li>Database Optimization</li>
-          <li>CDN Checks</li>
-          <li>Cross-Browser Checks</li>
-          <li>Domain and SSL</li>
-          <li>Expiration Review</li>
-          <li>Fixing Hosting Issues</li>
-          <li>Site Migration</li>
-          <li>DNS Setup</li>
-        </ul>
-      </>
-    )
+    question: "Can I access data and analytics to monitor my website's performance?",
+    answer: "Absolutely! The Partnership Plan provides you with advanced tracking tools and access to domain and analytics. This allows you to gain valuable insights into your website’s performance, monitor traffic, and make informed decisions to optimize your strategies for optimal results."
   },
   {
     question: "I have another question that's not listed here. How can I ask it?",
