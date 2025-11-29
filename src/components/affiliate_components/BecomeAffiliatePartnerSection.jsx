@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function BecomeAffiliatePartnerSection() {
+export default function BecomeAffiliatePartnerSection({text}) {
   return (
     <>
       <div className="affiliate-program" id="program">
@@ -15,7 +15,7 @@ export default function BecomeAffiliatePartnerSection() {
                   </div>
                   <h2 data-scroll-reveal="" className="heading-gradient">
                     <div className="btn_content">
-                      <div className="weight-bold">Become Our Affiliate Partner</div><svg xmlns="http://www.w3.org/2000/svg"
+                      <div className="weight-bold">{text}</div><svg xmlns="http://www.w3.org/2000/svg"
                         className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
                         <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" strokeWidth="1.5"
                           strokeLinecap="square"></path>

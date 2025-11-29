@@ -18,7 +18,7 @@ function Affiliate() {
       <WhyShouldJoin />
       <AffiliateFAQItem />
       <AffiliateSupport />
-      <BecomeAffiliatePartnerSection />
+      <BecomeAffiliatePartnerSection text={"Become Our Affiliate Partner"}/>
     </>
   )
 }

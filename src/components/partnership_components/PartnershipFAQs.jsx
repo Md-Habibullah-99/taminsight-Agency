@@ -35,7 +35,5 @@ const faqs = [
 export default function PartnershipFAQItem (){
   return <FAQs faqs={faqs} />;
 };
-// Export the FAQs container as the default export so existing imports that
-// import the default component (e.g. `import PartnershipFAQItem from '../partnership_components/PartnershipFAQ'`)
-// will render the full FAQ section. The item component is a named export.
+
 
