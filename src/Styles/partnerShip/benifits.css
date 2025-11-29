@@ -122,7 +122,6 @@
 .benefit-cart-top-elements {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 8px;
 	h6{
 		font-weight: 400;
@@ -144,7 +143,7 @@
 	margin-top: 32px;
 }
 .benefits_animation-container.benefit-card--right-float {
-	margin-top: -8px;
+	margin-top: -24px;
 	margin-left: auto;
 }
 
