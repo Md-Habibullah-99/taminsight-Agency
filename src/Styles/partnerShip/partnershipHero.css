@@ -61,7 +61,9 @@
 }
 
 /* Floating free-value badge */
-.free_value {
+
+
+.free_value-hero .free_value {
   position: absolute;
   top: -72px;
   left: 1056px;
@@ -92,6 +94,7 @@
 }
 
 .free_value-content {
+  font-size: clamp(16px, 2.1vw, 18px);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.2px;
@@ -99,7 +102,7 @@
 }
 
 /* Make the amount pop a bit more */
-.free_value-content:last-child {
+.free_value-hero .free_value .free_value-content:last-child {
   font-size: clamp(18px, 2.1vw, 28px);
   font-weight: 800;
   color: #111;
