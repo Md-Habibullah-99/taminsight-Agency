@@ -6,7 +6,7 @@ export default function FooterPrimaryBottom() {
     <div className="footer-primary_Bottom_container">
       <div className="footer-primary-left">
         <div className="footer-primary-left_content">
-          <a href="#home" aria-current="page" className="footer-primary-left_logo_aTag w-inline-block">
+          <Link to="/" aria-current="page" className="footer-primary-left_logo_aTag w-inline-block">
 
             <svg width="368" height="30" viewBox="0 0 368 30" fill="none" xmlns="http://www.w3.org/2000/svg"
               className="footer-primary-left_logo">
@@ -45,7 +45,7 @@ export default function FooterPrimaryBottom() {
               </defs>
             </svg>
 
-          </a>
+          </Link>
         </div>
         <div className="footer-primary-left_content">
           <a href="https://www.figma.com/deck/rBQAlmywVditVjZ3lsQj4c/Taminsight_Portfolio-2025_Branding-Agency?node-id=1-257&viewport=-159%2C-129%2C0.73&t=DImIymB1uDCa3ur9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"

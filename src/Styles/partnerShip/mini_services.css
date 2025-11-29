@@ -1,0 +1,73 @@
+.services_mini_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
+
+  .partner-services_bottom-value {
+    margin-left: -96px;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 44px;
+    .price {
+      opacity: 0.8;
+    }
+  }
+}
+
+.services_line-container-main {
+  margin-top: 44px;
+}
+
+.services_line-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 696px;
+  margin-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-bottom: 1px solid rgba(148, 148, 148, 0.5);
+
+  .services_line-price {
+    margin-bottom: 8px;
+  }
+
+  h5 {
+    font-weight: 400;
+    margin-top: 10px;
+    padding-bottom: 12px;
+  }
+}
+
+.free_value {
+  position: absolute;
+  bottom: -28px;
+  right: 8px;
+  z-index: 2;
+  /* Restore interactivity for this floating badge */
+  pointer-events: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 136px;
+  width: 136px;
+  padding: 44px 0px;
+  border-radius: 50%;
+  color: #0a0a0a;
+  background: linear-gradient(135deg, rgba(216, 216, 216, 0.9), rgba(238, 238, 238, 0.8));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.5); */
+  /* default rotation */
+  --free-rotate: 30deg;
+  /* Use individual transform properties to avoid conflicts with float animation */
+  rotate: var(--free-rotate);
+  translate: 0 0;
+  transform-origin: center;
+  transition: rotate 500ms ease; /* rotation change should take 1s */
+  animation: freeValueFloat 6s ease-in-out infinite;
+}
