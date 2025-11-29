@@ -38,6 +38,7 @@ import './Styles/affiliatePage/affiliate_program.css'
 // Partnership
 import './Styles/partnerShip/partnershipHero.css'
 import './Styles/partnerShip/benifits.css'
+import './Styles/partnerShip/mini_services.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

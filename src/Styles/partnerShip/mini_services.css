@@ -1,0 +1,24 @@
+.services_line-container-main {
+  margin-top: 44px;
+}
+
+.services_line-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+  min-width: 696px;
+  margin-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-bottom: 1px solid rgba(148, 148, 148, 0.5);
+  .services_line-price {
+    margin-bottom: 8px;
+  }
+  h5{
+    font-weight: 400;
+    margin-top: 10px;
+    padding-bottom: 12px;
+  }
+}
