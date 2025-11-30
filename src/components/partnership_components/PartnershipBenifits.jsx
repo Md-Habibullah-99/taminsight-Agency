@@ -97,16 +97,6 @@ export default function PartnershipBenifits() {
 
             <div className="benefits-cart-container-container">
               <div className="benefits-cart-container">
-                {/* {cards.map((c, idx) => (
-                  <Benifit_Card
-                    key={idx}
-                    title={c.title}
-                    frequency={c.frequency}
-                    features={c.features}
-                    imgLink={c.imgLink}
-                    placeImg={c.placeImg}
-                  />
-                ))} */}
                 <div className="benefits-card-left_right">
                   {leftSideCards.map((c, idx) => (
                     <Benifit_Card
