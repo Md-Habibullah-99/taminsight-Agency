@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { withBase } from '../../utils/withBase.js';
 
 export default function Intro() {
-  
-  const names = ["Tamim","Shanjida Ferdous"]
+
+  const names = ["Tamim", "Shanjida Ferdous"]
   const [nameIndex, setNameIndex] = useState(0)
   const [imgIndex, setImgIndex] = useState(0)
   // Control how long the image fade transition takes (matches CSS variable --intro-fade-duration)
@@ -27,28 +27,27 @@ export default function Intro() {
     }, IMAGE_CYCLE_INTERVAL_MS)
     return () => clearInterval(id)
   }, [])
-  
+
   return (
-    <>
-      <section id="quick-intro" className="intro">
-        <div className="c-bg-filled into-gradient"></div>
-        <div className="global-padding global-padding-section">
-          <div className="container-large">
-            <div className="quickintro-grid">
-              <div className="quickintro-grid__item is-left">
-                <div data-scroll-reveal="" className="text-eyebrow is-intro">
-                  <div className="icon-16">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 200 200"
-                      fill="none" className="svgsprite">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M120 0H80V51.7157L43.4315 15.1472L15.1472 43.4314L51.7158 80H0V120H51.7157L15.1472 156.568L43.4315 184.853L80 148.284V200H120V148.284L156.569 184.853L184.853 156.569L148.284 120H200V80H148.284L184.853 43.4314L156.569 15.1471L120 51.7157V0Z" fill="currentColor"></path>
-                    </svg>
-                  </div>
-                  <div className="pl-8 fw2">Meet Insight Builder<br /></div>
+    <section id="quick-intro" className="intro">
+      <div className="c-bg-filled into-gradient"></div>
+      <div className="global-padding global-padding-section">
+        <div className="container-large">
+          <div className="quickintro-grid">
+            <div className="quickintro-grid__item is-left">
+              <div data-scroll-reveal="" className="text-eyebrow is-intro">
+                <div className="icon-16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 200 200"
+                    fill="none" className="svgsprite">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M120 0H80V51.7157L43.4315 15.1472L15.1472 43.4314L51.7158 80H0V120H51.7157L15.1472 156.568L43.4315 184.853L80 148.284V200H120V148.284L156.569 184.853L184.853 156.569L148.284 120H200V80H148.284L184.853 43.4314L156.569 15.1471L120 51.7157V0Z" fill="currentColor"></path>
+                  </svg>
                 </div>
-                <h4>We are the insight of the Taminsight.</h4>
-                <div className="quickintro-focus"><span className="quickintro-focus-area">
-                  <span></span></span>
-                  <span className="quickintro-focus-area"><svg
+                <div className="pl-8 fw2">Meet Insight Builder<br /></div>
+              </div>
+              <h4>We are the insight of the Taminsight.</h4>
+              <div className="quickintro-focus"><span className="quickintro-focus-area">
+                <span></span></span>
+                <span className="quickintro-focus-area"><svg
                   xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"
                   className="svgsprite svg-s-32">
                   <path
@@ -56,29 +55,28 @@ export default function Intro() {
                     fill="currentColor"></path>
                 </svg><span>{
                   names[nameIndex]
-                  }</span></span>
-                </div>
+                }</span></span>
               </div>
+            </div>
 
-              <div className="quickintro-grid__item is-right">
-                <div className="quickintro-hero" style={{"--intro-fade-duration": `${INTRO_FADE_DURATION_MS}ms`}}>
-                  
-                  <img 
-                    // srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
-                    alt=""
-                    src={withBase('/images/sanjida-ferdous_profile.webp')}
-                    loading="lazy" className={`quickintro-img ${imgIndex === 1 ? 'style-show' : ''}`} />
-                  <img sizes="(max-width: 1000px) 100vw, 1000px"
-                    // srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
-                    src={withBase('/images/tamim_profile.jpg')}
-                    loading="lazy" className={`quickintro-img ${imgIndex === 0 ? 'style-show' : ''}`} />
-                  
-                </div>
+            <div className="quickintro-grid__item is-right">
+              <div className="quickintro-hero" style={{ "--intro-fade-duration": `${INTRO_FADE_DURATION_MS}ms` }}>
+
+                <img
+                  // srcSet={[500, 800].map(w => `${withBase('/images/selectedProjects/packaging/tamim-khan-packaging-03-' + w + '.jpg')} ${w}w`).join(', ')}
+                  alt=""
+                  src={withBase('/images/sanjida-ferdous_profile.webp')}
+                  loading="lazy" className={`quickintro-img ${imgIndex === 1 ? 'style-show' : ''}`} />
+                <img sizes="(max-width: 1000px) 100vw, 1000px"
+                  // srcSet={[500, 800, 1080, 1600].map(w => `${withBase('/images/tamim_profile_' + w + '.png')} ${w}w`).join(', ')}
+                  src={withBase('/images/tamim_profile.jpg')}
+                  loading="lazy" className={`quickintro-img ${imgIndex === 0 ? 'style-show' : ''}`} />
+
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

@@ -40,6 +40,7 @@ import './Styles/partnerShip/partnershipHero.css'
 import './Styles/partnerShip/benifits.css'
 import './Styles/partnerShip/mini_services.css'
 import './Styles/partnerShip/shared_reasponsibility.css'
+import './Styles/partnerShip/our_partners.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

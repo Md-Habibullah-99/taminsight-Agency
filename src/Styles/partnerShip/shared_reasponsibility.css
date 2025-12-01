@@ -64,7 +64,7 @@
     
     .looking-for-img-container {
       img {
-        border-radius: 32px;
+        border-radius: 20px;
       }
     }
     h6, p{
@@ -75,7 +75,6 @@
 
 .become_something-form-looking-for {
   margin-top: 56px;
-  margin-bottom: -16px;
   display: flex;
   align-items: center;
   justify-content: center;
