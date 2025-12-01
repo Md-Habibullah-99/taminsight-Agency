@@ -48,3 +48,36 @@
     }
   }
 }
+
+
+/* looking for something */
+
+.looking-for-card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  
+  .looking-for-card-sub-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    .looking-for-img-container {
+      img {
+        border-radius: 32px;
+      }
+    }
+    h6, p{
+      margin-left: 2px;
+    }
+  }
+}
+
+.become_something-form-looking-for {
+  margin-top: 56px;
+  margin-bottom: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

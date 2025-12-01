@@ -5,6 +5,7 @@ import PartnershipHowitsWorks from "../partnership_components/PartnershipHowitsW
 import PartnershipBenifits from "../partnership_components/PartnershipBenifits";
 import ValuedOver from "../partnership_components/ValuedOver";
 import SharedResponsibility from "../partnership_components/SharedResponsibility";
+import LookingFor from "../partnership_components/LookingFor";
 
 import PartnershipFAQItem from "../partnership_components/PartnershipFAQs";
 import AffiliateSupport from "../affiliate_components/AffiliateSupport";
@@ -20,6 +21,7 @@ export default function Partnership() {
       <PartnershipBenifits />
       <ValuedOver />
       <SharedResponsibility />
+      <LookingFor />
       <PartnershipFAQItem />
       <AffiliateSupport />
       <BecomeAffiliatePartnerSection text={"Become Our Partner"} />
