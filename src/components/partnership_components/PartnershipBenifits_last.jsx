@@ -54,7 +54,9 @@ export default function PartnershipBenifits_last() {
                 <div class="our-partners-image-container">
                   
                   <div class="overlay-content">
-                    <div className="play-icon"><img src="/public/images/play.png" alt="" /></div>
+                    <div className="play-icon">
+                      <img src="/public/images/play.png" alt="" />
+                      </div>
                     <div className="overlay-content-text">
                       <h3>Alicia Jarrett</h3>
                       <p>Co-Founder, SCO</p>

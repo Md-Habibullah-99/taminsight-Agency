@@ -103,47 +103,63 @@
 /* Text on top of overlay */
 .overlay-content {
   position: absolute;
-  left: 48px;
+  left: 56px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
+  max-width: 46%;
 }
 
 .overlay-content h3 {
   margin: 0;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.05;
 }
 
 .overlay-content p {
-  margin: 5px 0 0;
-  font-size: 16px;
+  margin: 6px 0 0;
+  font-size: 14px;
   opacity: 0.9;
 }
 
 /* Play icon circle */
 .play-icon{
-  /* Use the provided PNG as-is (it includes the circle). No CSS outline. */
-  width: auto;
-  height: auto;
-  background: transparent;
-  border: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
+  /* Clamp to PNG size so only the PNG circle is visible */
+  width: 128px;
+  height: 96px;
+  display: inline-flex;
+  align-items: flex-start;
   justify-content: center;
-  flex: 0 0 auto;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  margin-right: 32px;
+  position: relative;
+}
+.play-icon::before,
+.play-icon::after{
+  display: none;
+  content: none;
 }
 .play-icon img{
-  /* PNG should include the circular background; size it to match layout */
-  width: 88px;
-  height: 88px;
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
+  border: 0;
+}
+
+.overlay-content-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .overlay-content-text h3{ color: #ffffff; }
