@@ -1,6 +1,5 @@
 
 
-import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton"
 
 
 export default function PartnershipBenifits_last() {
@@ -53,7 +52,7 @@ export default function PartnershipBenifits_last() {
                 </a></div>
 
               </div>
-
+{/* 
               <div className="ourpartners-bottom-part-is-left">
                 <div className="ourpartners-bottom-part-is-left-elements">
                   <div className="ourpartners-bottom-part-is-left-title">125<div className="plus text-eyebrow is-intro">+</div></div>
@@ -63,7 +62,7 @@ export default function PartnershipBenifits_last() {
                   <div className="ourpartners-bottom-part-is-left-title">85<div className="plus text-eyebrow is-intro">+</div></div>
                   <div className="ourpartners-bottom-part-is-left-description">Happy Clients</div>
                 </div>
-              </div>
+              </div> */}
 
             </div>
             <div class="quickintro-grid__item is-right">
