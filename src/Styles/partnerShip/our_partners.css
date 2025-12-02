@@ -68,19 +68,13 @@
   height: 260px;
   border-radius: var(--space--32);
   
-  .overlay-content {
-    .play-icon {
-      width: auto;
-      img {
-        width: 70%;
-      }
-    }
-  }
 }
+
 
 
 /* Image */
 .our-partners-image-container img {
+  position: absolute;
   top: 0;
   right: 0;
   width: 50%;
@@ -108,10 +102,15 @@
 
 /* Text on top of overlay */
 .overlay-content {
-  z-index: 2;
-  padding-left: 32px;
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .overlay-content h3 {
@@ -125,4 +124,28 @@
   font-size: 16px;
   opacity: 0.9;
 }
+
+/* Play icon circle */
+.play-icon{
+  /* Use the provided PNG as-is (it includes the circle). No CSS outline. */
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.play-icon img{
+  /* PNG should include the circular background; size it to match layout */
+  width: 88px;
+  height: 88px;
+  display: block;
+  object-fit: contain;
+}
+
+.overlay-content-text h3{ color: #ffffff; }
+.overlay-content-text p{ color: rgba(255,255,255,0.9); margin: 6px 0 0; }
 
