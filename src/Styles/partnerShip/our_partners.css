@@ -57,6 +57,7 @@
   flex-direction: column;
   justify-content: end;
   margin-left: auto;
+  gap: 24px;
 }
 
 .our-partners-image-container {
@@ -83,6 +84,11 @@
   object-fit: cover;
   z-index: 0;
 }
+.our-partners-image-container img:hover {
+  animation-name: myAnimation;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
 
 
 /* The left-to-right fading overlay */
@@ -104,6 +110,7 @@
 .overlay-content {
   position: absolute;
   left: 56px;
+  height: 100%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
@@ -131,7 +138,7 @@
 .play-icon{
   /* Clamp to PNG size so only the PNG circle is visible */
   width: 128px;
-  height: 96px;
+  height: 100%;
   display: inline-flex;
   align-items: flex-start;
   justify-content: center;
@@ -141,6 +148,10 @@
   border: 0;
   margin-right: 32px;
   position: relative;
+  img {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 .play-icon::before,
 .play-icon::after{
@@ -164,4 +175,11 @@
 
 .overlay-content-text h3{ color: #ffffff; }
 .overlay-content-text p{ color: rgba(255,255,255,0.9); margin: 6px 0 0; }
+
+
+@keyframes myAnimation {
+  0%   {transform: scale(1);}
+  50%  {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
 

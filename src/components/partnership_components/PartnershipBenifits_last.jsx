@@ -4,6 +4,23 @@ import BecomeSoemthingButton from "../sub_components/BecomeAffiliateButton"
 
 
 export default function PartnershipBenifits_last() {
+  
+  const our_partners = [
+    {
+      name: "Alicia Jarrett",
+      title: "Co-Founder, SCO",
+      image: "/images/cats/horaizontalCat.jpg",
+      video_link: "https://www.guthib.com"
+    }
+    ,
+    {
+      name: "Mina Soliman",
+      title: "Founder at Culturize.inc",
+      image: "/images/cats/horaizontalCat.jpg",
+      video_link: "https://www.guthib.com"
+    }
+  ]
+  
   return (
     <section id="quick-intro" className="intro">
       <div className="c-bg-filled into-gradient"></div>
@@ -51,20 +68,28 @@ export default function PartnershipBenifits_last() {
             </div>
             <div class="quickintro-grid__item is-right">
               <div class="our-partners-image_card-container" data-scroll-reveal="">
-                <div class="our-partners-image-container">
-                  
-                  <div class="overlay-content">
-                    <div className="play-icon">
-                      <img src="/public/images/play.png" alt="" />
-                      </div>
-                    <div className="overlay-content-text">
-                      <h3>Alicia Jarrett</h3>
-                      <p>Co-Founder, SCO</p>
-                    </div>
-                  </div>
+                {
+                  our_partners.map((partner, idx) => (
+                    <div class="our-partners-image-card" key={idx}>
+                      <div class="our-partners-image-container">
+                        
+                        <div class="overlay-content">
+                          <div className="play-icon">
+                            <a href={partner.video_link}>
+                            <img src="/public/images/play.png" alt="" />
+                            </a>
+                            </div>
+                          <div className="overlay-content-text">
+                            <h3>{partner.name}</h3>
+                            <p>{partner.title}</p>
+                          </div>
+                        </div>
 
-                  <img src="/images/cats/horaizontalCat.jpg" alt="" />
-                </div>
+                        <img src={partner.image} alt="" />
+                      </div>
+                    </div>
+                  ))
+                }
               </div>
             </div>
 
