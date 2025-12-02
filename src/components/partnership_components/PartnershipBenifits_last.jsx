@@ -24,7 +24,7 @@ export default function PartnershipBenifits_last() {
               <div className="our-partners-description">
                 <p>Ready to join the elite league of partners and kickstart your money-making venture today?</p>
               </div>
-              
+
               <div className="become-partner--benefits">
                 <div className="price_card_footer"><a href="https://www.guthib.com/" target="_blank"
                   className="btn_cta btn-white w-inline-block">
@@ -36,7 +36,7 @@ export default function PartnershipBenifits_last() {
                 </a></div>
 
               </div>
-              
+
               <div className="ourpartners-bottom-part-is-left">
                 <div className="ourpartners-bottom-part-is-left-elements">
                   <div className="ourpartners-bottom-part-is-left-title">125<div className="plus text-eyebrow is-intro">+</div></div>
@@ -47,15 +47,22 @@ export default function PartnershipBenifits_last() {
                   <div className="ourpartners-bottom-part-is-left-description">Happy Clients</div>
                 </div>
               </div>
-              
+
             </div>
-            <div className="quickintro-grid__item is-right">
-              <div className="intro-image-wrapper">
-                <div className="intro-image intro-image-1 is-visible"
-                  style={{ backgroundImage: `url('/images/partners/partnership-hero-img.jpg')` }}>
+            <div class="quickintro-grid__item is-right">
+              <div class="our-partners-image_card-container" data-scroll-reveal="">
+                <div class="our-partners-image-container">
+
+                  <div class="overlay-content">
+                    <h3>Alicia Jarrett</h3>
+                    <p>Co-Founder, SCO</p>
+                  </div>
+
+                  <img src="/images/cats/horaizontalCat.jpg" alt="" />
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

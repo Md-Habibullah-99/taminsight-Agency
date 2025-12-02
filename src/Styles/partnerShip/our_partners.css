@@ -49,3 +49,56 @@
 }
 
 
+
+
+.our-partners-image-container {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 260px;
+  border-radius: var(--space--32);
+}
+
+/* The left-to-right fading overlay */
+.our-partners-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #bdbdbd 0%,
+    rgba(224, 224, 224, 0.7) 80%,
+    rgba(224, 224, 224, 0.3) 90%,
+    rgba(224, 224, 224, 0) 100% 
+  );
+  z-index: 1;
+}
+
+/* Text on top of overlay */
+.overlay-content {
+  position: absolute;
+  z-index: 2;
+  padding-left: 30px;
+}
+
+.overlay-content h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.overlay-content p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Image */
+.our-partners-image-container img {
+  width: 50%;
+  object-fit: cover;
+  right: 0px;
+}
+
