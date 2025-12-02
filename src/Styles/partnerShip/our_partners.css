@@ -1,5 +1,12 @@
 
 
+.quickintro-grid__item.is-left.partner-benifits-last {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
 .our-partners-description {
   margin-top: 16px;
   margin-bottom: -32px;
@@ -8,8 +15,37 @@
   }
 }
 
-.become-partner-benefits {
+.become-partner--benefits {
   margin-top: 80px;
+}
+
+
+.ourpartners-bottom-part-is-left {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  
+  .ourpartners-bottom-part-is-left-elements {
+    display: flex;
+    flex-direction: column;
+    
+    .ourpartners-bottom-part-is-left-title {
+      display: flex;
+      flex-direction: row;
+      font-size: 32px;
+      
+      .plus {
+        font-size: 44px;
+        line-height: 1;
+        padding-left: 2px;
+        padding-bottom: 0px;
+      }
+    }
+    .ourpartners-bottom-part-is-left-description {
+      line-height: 1.2;
+    }
+  }
 }
 
 

@@ -10,7 +10,7 @@ export default function PartnershipBenifits_last() {
       <div className="global-padding global-padding-section">
         <div className="container-large">
           <div className="quickintro-grid">
-            <div className="quickintro-grid__item is-left">
+            <div className="quickintro-grid__item is-left partner-benifits-last">
               <div data-scroll-reveal="" className="text-eyebrow is-intro">
                 <div className="icon-16">
                   <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 200 200"
@@ -25,7 +25,7 @@ export default function PartnershipBenifits_last() {
                 <p>Ready to join the elite league of partners and kickstart your money-making venture today?</p>
               </div>
               
-              <div className="become-partner-benefits">
+              <div className="become-partner--benefits">
                 <div className="price_card_footer"><a href="https://www.guthib.com/" target="_blank"
                   className="btn_cta btn-white w-inline-block">
                   <div className="btn_content"><span>Become Our Partner</span><svg xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +36,18 @@ export default function PartnershipBenifits_last() {
                 </a></div>
 
               </div>
+              
+              <div className="ourpartners-bottom-part-is-left">
+                <div className="ourpartners-bottom-part-is-left-elements">
+                  <div className="ourpartners-bottom-part-is-left-title">125<div className="plus text-eyebrow is-intro">+</div></div>
+                  <div className="ourpartners-bottom-part-is-left-description">Project Accomplished</div>
+                </div>
+                <div className="ourpartners-bottom-part-is-left-elements">
+                  <div className="ourpartners-bottom-part-is-left-title">85<div className="plus text-eyebrow is-intro">+</div></div>
+                  <div className="ourpartners-bottom-part-is-left-description">Happy Clients</div>
+                </div>
+              </div>
+              
             </div>
             <div className="quickintro-grid__item is-right">
               <div className="intro-image-wrapper">
