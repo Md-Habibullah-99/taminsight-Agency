@@ -51,6 +51,14 @@
 
 
 
+.our-partners-image_card-container {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-left: auto;
+}
+
 .our-partners-image-container {
   position: relative;
   overflow: hidden;
@@ -59,7 +67,29 @@
   align-items: center;
   height: 260px;
   border-radius: var(--space--32);
+  
+  .overlay-content {
+    .play-icon {
+      width: auto;
+      img {
+        width: 70%;
+      }
+    }
+  }
 }
+
+
+/* Image */
+.our-partners-image-container img {
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  contain: content;
+  object-fit: cover;
+  z-index: 0;
+}
+
 
 /* The left-to-right fading overlay */
 .our-partners-image-container::before {
@@ -68,9 +98,9 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    #bdbdbd 0%,
-    rgba(224, 224, 224, 0.7) 80%,
-    rgba(224, 224, 224, 0.3) 90%,
+    #bdbdbd 50%,
+    rgba(224, 224, 224, 0.7) 70%,
+    rgba(224, 224, 224, 0.3) 85%,
     rgba(224, 224, 224, 0) 100% 
   );
   z-index: 1;
@@ -78,9 +108,10 @@
 
 /* Text on top of overlay */
 .overlay-content {
-  position: absolute;
   z-index: 2;
-  padding-left: 30px;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: row;
 }
 
 .overlay-content h3 {
@@ -93,12 +124,5 @@
   margin: 5px 0 0;
   font-size: 16px;
   opacity: 0.9;
-}
-
-/* Image */
-.our-partners-image-container img {
-  width: 50%;
-  object-fit: cover;
-  right: 0px;
 }
 
