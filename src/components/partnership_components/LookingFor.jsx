@@ -48,7 +48,7 @@ export default function LookingFor() {
           </div>
           <LookingForCard card_arr={card_arr} />
           <div className="become_something-form-looking-for">
-            <BecomeSoemthingButton title="Become Our Partner" />
+            <BecomeSoemthingButton label="Become Our Partner" />
           </div>
         </div>
       </div>

@@ -24,8 +24,17 @@ export default function PartnershipBenifits_last() {
               <div className="our-partners-description">
                 <p>Ready to join the elite league of partners and kickstart your money-making venture today?</p>
               </div>
+              
               <div className="become-partner-benefits">
-                <BecomeSoemthingButton label="Become Our Partner" />
+                <div className="price_card_footer"><a href="https://www.guthib.com/" target="_blank"
+                  className="btn_cta btn-white w-inline-block">
+                  <div className="btn_content"><span>Become Our Partner</span><svg xmlns="http://www.w3.org/2000/svg"
+                    className="svgsprite btn_icon icon" width="100%" viewBox="0 0 16 16" fill="none">
+                    <path d="M9.33333 4L13.5 8L9.33333 12M13 8H2.5" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="square"></path>
+                  </svg></div>
+                </a></div>
+
               </div>
             </div>
             <div className="quickintro-grid__item is-right">
